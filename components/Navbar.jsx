@@ -18,7 +18,7 @@ const menuItems = [
     submenu: [
       { name: "Career Opportunities", path: "/career-opportunities" },
       { name: "Payment Procedures", path: "/payment-procedures" },
-      { name: "Policies", path: "/policies" },
+      { name: "Terms And Condition", path: "/terms-and-conditions" },
       {
         name: "Project Lottery Policy",
         path: "/project-lottery-policy",
@@ -109,22 +109,12 @@ export default function Navbar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="bg-white py-4 border-b"
+          className="bg-white border-b"
         >
-          <div className="custom-container mx-auto px-4 flex justify-between items-center">
+          <div className="custom-container mx-auto flex justify-between items-center">
             <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/anondo-housing-society-logo.jpg"
-                alt="Logo"
-                width={60}
-                height={60}
-              />
-              <div>
-                <h1 className="text-xl font-bold text-primary">Anondo</h1>
-                <p className="text-xs text-gray-500 tracking-wide">
-                  Universal Services
-                </p>
-              </div>
+              <Image src="/logo.jpg" alt="Logo" width={100} height={100} />
+              <div></div>
             </Link>
 
             {/* ✅ Desktop Menu with Dropdown */}
@@ -141,7 +131,7 @@ export default function Navbar() {
 
                   {/* ✅ Dropdown Menu */}
                   {item.submenu && (
-                    <ul className="absolute left-0 top-full mt-3 w-60 bg-white shadow-lg border rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <ul className="absolute left-0 top-full mt-6 w-60 bg-white shadow-lg border rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                       {item.submenu.map((sub, j) => (
                         <li key={j}>
                           <Link
