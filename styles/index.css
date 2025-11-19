@@ -213,8 +213,13 @@ h3 {
   padding: 0 8px;
 } */
 
+/* FIX: Show only 1 image — no overflow */
+.slick-list {
+  overflow: hidden !important;
+}
+
 .slick-slide {
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 /* .slick-slide > div {

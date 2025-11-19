@@ -1,12 +1,15 @@
 "use client";
 
-import AboutSection from "@/components/AboutUsSection";
+import AboutSection from "@/components/AboutSection";
+// import AboutSection from "@/components/AboutUsSection";
 import ContactSection from "@/components/ContactSection";
 import DocumentsSection from "@/components/DocumentsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import HowToBecomeOwner from "@/components/HowToBecomeOwner";
 import LandingPage from "@/components/LandingPage";
+import PresidentSection from "@/components/PresidentSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import StatsSection from "@/components/StatsSection";
 import StepsSection from "@/components/StepsSection";
@@ -42,11 +45,13 @@ export default function Home() {
       <AboutSection data={about} />
       <StatsSection data={stats} />
       <ProjectsSection data={projects} />
-      <StepsSection data={steps} />
+      {/* <StepsSection data={steps} /> */}
+      <HowToBecomeOwner data={steps} />
+      <PresidentSection data={steps} />
       <FAQSection data={faq} />
       <DocumentsSection data={documents} />
       <ContactSection data={contact} />
-      <Footer data={footer} />
+      {/* <Footer data={footer} /> */}
     </div>
   );
 }
