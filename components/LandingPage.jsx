@@ -9,9 +9,7 @@ import { FaArrowLeft, FaArrowRight, FaLeaf } from "react-icons/fa";
 // import Button from "./Button";
 import Link from "next/link";
 import Button from "./Button";
-// import useHasMounted from "@/Hooks/useHasMounted";
 
-// ✅ Static Bangla slider data (3 slides)
 const sliderData = [
   {
     subtitle: "আনন্দ হাউজিং সোসাইটি",
@@ -21,7 +19,7 @@ const sliderData = [
 বাউন্ডারি করা রেডি প্লট, ইতোমধ্যে নির্মিত অভ্যন্তরীন সড়ক,
 বিদ্যুৎ সংযোগ সুবিধাসহ এখনই বাড়ি করে বসবাস করার উপযোগী।
 `,
-    image: "/images/slide1.jpg",
+    image: "/slider/slider1.png",
     primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
   },
   {
@@ -31,7 +29,7 @@ const sliderData = [
 এককালীন ও সুদমুক্ত সহজ কিস্তিতে প্লট বরাদ্দের জন্য আবেদন
 গ্রহণ করা হচ্ছে।
 `,
-    image: "/images/slide2.jpg",
+    image: "/slider/slider2.png",
     primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
   },
   {
@@ -41,7 +39,7 @@ const sliderData = [
 এখন আর স্বপ্ন নয়, বাস্তব পুরোটাই!
 বিস্তারিত জানতে ও প্রকল্প পরিদর্শন করতে যোগাযোগ করুন!
 `,
-    image: "/images/slide3.jpg",
+    image: "/slider/slider3.jpg",
     primaryButton: { text: "যোগাযোগ করুন", link: "/contact" },
   },
 ];

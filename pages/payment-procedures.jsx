@@ -1,10 +1,7 @@
 "use client";
-import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
 import Head from "next/head";
-import EventMap from "@/components/EventMap";
 import Navbar from "@/components/Navbar";
-import CareerPageSection from "@/components/CareerPageSection";
 import PaymentInfo from "@/components/PaymentInfo";
 export default function PaymentProceduresPage() {
   const meta = {

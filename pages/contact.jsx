@@ -3,7 +3,7 @@ import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
 import Head from "next/head";
 import EventMap from "@/components/EventMap";
-import Navbar from "@/components/Navbar";
+import ContactPageSection from "@/components/ContactPageSection";
 export default function ContactPage() {
   const meta = {
     title:
@@ -35,14 +35,13 @@ export default function ContactPage() {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <Navbar hasBackground={true} />
       <HeroSection
         hero={{
           title: "Contact",
           backgroundImage: "/contact-bg.jpeg",
         }}
       />
-      <ContactSection />
+      <ContactPageSection />
       <EventMap />
     </div>
   );

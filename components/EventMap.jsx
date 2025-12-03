@@ -55,7 +55,7 @@ export default function EventMap() {
         center={position}
         zoom={16}
         className="!z-[0]"
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
         style={{ height: "100%", width: "100%" }}
       >
         <TileLayer

@@ -1,7 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import Head from "next/head";
-import Navbar from "@/components/Navbar";
-import GalleryPageSection from "@/components/GalleryPageSection";
 import AttachmentTable from "@/components/AttachmentTable";
 export default function FormPage() {
   const meta = {
@@ -33,7 +31,6 @@ export default function FormPage() {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <Navbar hasBackground={true} />
       <HeroSection
         hero={{
           title: "Application Form",

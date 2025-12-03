@@ -9,17 +9,17 @@ export default function AboutSection() {
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-2">
             <Image
-              src="/images/about1.jpg"
+              src="/about3.jpg"
               alt="about"
               width={600}
               height={400}
               className="rounded-md w-full h-auto object-cover"
             />
           </div>
-
+          {/* 
           <div>
             <Image
-              src="/images/about2.jpg"
+              src="/about2.png"
               alt="about"
               width={300}
               height={300}
@@ -29,13 +29,13 @@ export default function AboutSection() {
 
           <div>
             <Image
-              src="/images/about3.jpg"
+              src="/about3.jpg"
               alt="about"
               width={300}
               height={300}
               className="rounded-md w-full h-auto object-cover"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* RIGHT CONTENT */}

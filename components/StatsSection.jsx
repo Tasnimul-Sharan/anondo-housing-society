@@ -36,7 +36,7 @@ export default function StatsSection() {
           {stats.map((item, index) => (
             <div key={index}>
               {/* Yellow Circle */}
-              <div className="w-24 h-24 bg-[#F5AF17] rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-black">
+              <div className="w-24 h-24 bg-[#F5AF17] rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-white">
                 {item.icon}
               </div>
 

@@ -50,15 +50,30 @@ export default function Footer() {
           </div> */}
         </div>
 
-        {/* SERVICES */}
+        {/* OFFICE & CORPORATE ADDRESS */}
         <div>
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
-            Our Services
+            Office Address
+            <span className="block w-12 h-[3px] bg-yellow-400 mt-1"></span>
+          </h4>
+
+          <ul className="space-y-2 text-sm mb-6">
+            <li>Printers Building</li>
+            <li>11–14th Floor, 5 Rajuk Avenue</li>
+            <li>Motijheel, Dhaka-1000</li>
+            <li>Bangladesh</li>
+          </ul>
+
+          <h4 className="text-xl font-semibold mb-4 relative inline-block">
+            Corporate Address
             <span className="block w-12 h-[3px] bg-yellow-400 mt-1"></span>
           </h4>
 
           <ul className="space-y-2 text-sm">
             <li>Anondo Housing Society</li>
+            <li>Purbachal New Town</li>
+            <li>Rupganj, Narayanganj</li>
+            <li>Bangladesh</li>
           </ul>
         </div>
 

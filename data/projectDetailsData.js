@@ -1,0 +1,245 @@
+export const projectDetailsData = {
+  projects: [
+    {
+      slug: "prokolpo-1",
+      title: "ফেইজ - ১",
+      banner: "/projects/phase-1-banner.jpg",
+      description: [
+        "প্রকল্পের ১ম পর্যায়ের মাটি ভরাট কাজ সম্পন্ন হয়েছে।",
+        "লে–আউট চুড়ান্ত করে ২০১৭ সালে লটারীর মাধ্যমে প্লট হস্তান্তর করা হয়েছে।",
+        "রাস্তাঘাট, বৈদ্যুতিক সংযোগ সহ অবকাঠামো নির্মাণ কাজ চলমান রয়েছে।",
+        "সাফকবলা দলিল হস্তান্তর প্রক্রিয়া চলমান আছে।",
+        "অনেকেই ডু-প্লেক্স/থ্রী-প্লেক্স বাড়ি করেছেন ও নির্মাণাধীন রয়েছে।",
+      ],
+      priceTable: [
+        {
+          serial: 1,
+          type: "সাউথ-কর্নার প্লট",
+          unit: "১",
+          price: "৫০,০০,০০০/-",
+        },
+        {
+          serial: 2,
+          type: "নর্থ-কর্নার প্লট",
+          unit: "১",
+          price: "৪৫,০০,০০০/-",
+        },
+        {
+          serial: 3,
+          type: "ইস্ট-কর্নার প্লট",
+          unit: "১",
+          price: "৪৭,০০,০০০/-",
+        },
+        {
+          serial: 4,
+          type: "ওয়েস্ট-কর্নার প্লট",
+          unit: "১",
+          price: "৪৫,০০,০০০/-",
+        },
+        {
+          serial: 5,
+          type: "নর্থ-ইস্ট কর্নার প্লট",
+          unit: "১",
+          price: "৫০,০০,০০০/-",
+        },
+        {
+          serial: 6,
+          type: "দক্ষিণমুখী সাধারণ প্লট",
+          unit: "১",
+          price: "৪৫,০০,০০০/-",
+        },
+        {
+          serial: 7,
+          type: "উত্তরমুখী সাধারণ প্লট",
+          unit: "১",
+          price: "৪২,০০,০০০/-",
+        },
+        {
+          serial: 8,
+          type: "পূর্বমুখী সাধারণ প্লট",
+          unit: "১",
+          price: "৪৩,০০,০০০/-",
+        },
+        {
+          serial: 9,
+          type: "পশ্চিমমুখী সাধারণ প্লট",
+          unit: "১",
+          price: "৪২,০০,০০০/-",
+        },
+      ],
+      images: [
+        "/projects/phase-1-img-1.jpg",
+        "/projects/phase-1-img-2.jpg",
+        "/projects/phase-1-img-3.jpg",
+      ],
+      notes: [
+        "মূল্য যে কোনো সময় পূর্ব নোটিশ ছাড়াই পরিবর্তন হতে পারে।",
+        "বুকিং অর্থ / আবেদন ফি: ১,০০,০০০/- টাকা।",
+        "আবেদন অনুমোদনের পর ৩০ দিনের মধ্যে ৫০% ডাউনপেমেন্ট দিতে হবে।",
+        "বাকি টাকা ৩৬টি মাসিক কিস্তিতে পরিশোধ করতে হবে।",
+        "মূল্যের মধ্যে জমির মূল্য, ভরাট কাজ ও রোড নির্মাণ অন্তর্ভুক্ত।",
+        "ইউটিলিটি চার্জ, বাউন্ডারি ওয়াল ও রেজিস্ট্রেশন খরচ আলাদা।",
+        "৩ কিস্তি না দিলে বরাদ্দ বাতিল হতে পারে।",
+      ],
+    },
+
+    {
+      slug: "prokolpo-2",
+      title: "ফেইজ - ২",
+      banner: "/projects/phase-2-banner.jpg",
+      description: [
+        "২য় পর্যায়ের মাটি ভরাট কাজ ২০২০ সালে সম্পন্ন হয়েছে।",
+        "২০২১ সালে লটারীর মাধ্যমে প্লট বিতরণ করা হয়েছে।",
+        "রাস্তাঘাট, ড্রেন, সুয়ারেজ, বৈদ্যুতিক সংযোগ চলমান।",
+        "২০২২-২০২৪ এর মধ্যে সম্পূর্ণ উন্নয়ন শেষ হবে।",
+      ],
+      priceTable: [], // ❌ Table নেই → UI তে দেখাবে না
+      images: [
+        "/phase/phase-1-img-1.jpg",
+        "/projects/phase-1-img-2.jpg",
+        "/projects/phase-1-img-3.jpg",
+      ],
+      notes: [], // ❌ Notes নেই → দেখাবে না
+    },
+    {
+      slug: "prokolpo-3",
+      title: "ফেইজ - ৩",
+      banner: "/phase/phase3.jpg",
+      description: ["৩য় পর্যায়ের মাটি ভরাট কাজ সম্পন্ন করা হয়েছে।"],
+      priceTable: [
+        {
+          serial: 1,
+          type: "সাউথ-কর্নার প্লট",
+          unit: "১",
+          price: "৭৫,০০,০০০/-",
+        },
+        {
+          serial: 2,
+          type: "নর্থ-কর্নার প্লট",
+          unit: "১",
+          price: "৭০,০০,০০০/-",
+        },
+        {
+          serial: 3,
+          type: "দক্ষিণমুখী সাধারণ প্লট",
+          unit: "১",
+          price: "৬০,০০,০০০/-",
+        },
+        {
+          serial: 4,
+          type: "উত্তরমুখী সাধারণ প্লট",
+          unit: "১",
+          price: "৫৫,০০,০০০/-",
+        },
+      ],
+      images: [
+        "/phase/phase-3-1.png",
+        "/phase/phase-3-2.png",
+        "/phase/phase-3-3.jpg",
+      ],
+      notes: [
+        "চুক্তির পর মূল্য পরিবর্তন হবে না।",
+        "বুকিং ফি: ১,০০,০০০/-",
+        "৩০ দিনের মধ্যে ৫০% ডাউনপেমেন্ট দিতে হবে।",
+        "বাকিটা ৩৬ মাসিক কিস্তি।",
+        "জমি, ভরাট, রাস্তা নির্মাণ অন্তর্ভুক্ত।",
+        "ইউটিলিটি চার্জ আলাদা।",
+      ],
+    },
+    {
+      slug: "c-d-block",
+      title: "C & D Block",
+      banner: "/projects/c-d-block-banner.jpg",
+
+      description: [
+        "C & D ব্লকের সকল মাটি ভরাট কাজ সম্পন্ন হয়েছে।",
+        "রাস্তাঘাট, বৈদ্যুতিক সংযোগ ও অন্যান্য অবকাঠামো উন্নয়ন চলমান।",
+        "প্লট বরাদ্দ লটারির মাধ্যমে প্রদান করা হবে।",
+      ],
+
+      priceTable: [
+        {
+          serial: 1,
+          block: "C & D",
+          type: "South-Corner Plot",
+          unit: "1",
+          price: "45,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 2,
+          block: "C & D",
+          type: "East-Corner Plot",
+          unit: "1",
+          price: "45,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 3,
+          block: "C & D",
+          type: "North-Corner Plot",
+          unit: "1",
+          price: "43,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 4,
+          block: "C & D",
+          type: "West-Corner Plot",
+          unit: "1",
+          price: "43,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 5,
+          block: "C & D",
+          type: "South Facing General Plot",
+          unit: "1",
+          price: "42,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 6,
+          block: "C & D",
+          type: "East Facing General Plot",
+          unit: "1",
+          price: "42,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 7,
+          block: "C & D",
+          type: "North Facing General Plot",
+          unit: "1",
+          price: "40,00,000/-",
+          inc: "",
+        },
+        {
+          serial: 8,
+          block: "C & D",
+          type: "West Facing General Plot",
+          unit: "1",
+          price: "40,00,000/-",
+          inc: "",
+        },
+      ],
+
+      images: [
+        "/phase/phase-3-1.png",
+        "/phase/phase-3-2.png",
+        "/phase/phase-3-3.jpg",
+      ],
+
+      notes: [
+        "Price may change at any time without prior notice. Once fixed by deed of agreement, it will not change.",
+        "Booking/Application Money: 1,00,000/- BDT per plot, payable at booking time.",
+        "After approval, 50% downpayment must be paid within 30 days.",
+        "Remaining balance must be paid in 36 equal monthly installments (EMI).",
+        "Price includes: Land price, Earth Filling & HBB Road Construction.",
+        "Utility Fee, Boundary Wall cost & Registration cost to be paid before handover/registration.",
+        "If downpayment is not paid within 30 days, allotment will be cancelled and deposit refunded after deducting 10% service charge.",
+        "If 3 installments are missed, allotment will be cancelled automatically without notice.",
+      ],
+    },
+  ],
+};
