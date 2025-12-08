@@ -38,7 +38,6 @@ export default function Custom404() {
           content="The page you are looking for does not exist. Please return to the Anondo Housing Society homepage."
         />
       </Head>
-      <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center text-center text-black px-4">
         <h1 className="text-5xl font-bold mb-4">404 - Page Not Found</h1>
         <p className="text-lg mb-6">Sorry, we couldn’t find that page.</p>

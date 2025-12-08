@@ -1,14 +1,6 @@
-import AboutUsSection from "@/components/AboutUsSection";
 import HeroSection from "@/components/HeroSection";
-import TeamSection from "@/components/TeamSection";
-import Testimonials from "@/components/Testimonials";
-import WorkProcess from "@/components/WorkProcess";
-import WhyUsSection from "@/components/WhyUsSection";
 import Head from "next/head";
-import FAQ from "@/components/FAQ";
 import Navbar from "@/components/Navbar";
-import VisionMissionGoals from "@/components/VisionMissionGoals";
-import FutureVision from "@/components/FutureVision";
 import ProjectPageSection from "@/components/ProjectPageSection";
 export default function ProjectPage() {
   const meta = {
@@ -41,7 +33,6 @@ export default function ProjectPage() {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <Navbar hasBackground={true} />
       <HeroSection
         hero={{
           title: "About",
