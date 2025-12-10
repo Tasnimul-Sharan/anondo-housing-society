@@ -35,7 +35,7 @@
 //         <h2 className="text-4xl font-bold text-gray-900">
 //           কিভাবে জমির মালিক হবেন
 //         </h2>
-//         <div className="w-20 h-1 bg-yellow-500 mx-auto mt-3"></div>
+//         <div className="w-20 h-1 bg-primary mx-auto mt-3"></div>
 //       </div>
 
 //       {/* Steps */}
@@ -103,7 +103,7 @@
 //         <h2 className="text-4xl font-bold text-gray-900">
 //           কিভাবে জমির মালিক হবেন
 //         </h2>
-//         <div className="w-20 h-1 bg-yellow-500 mx-auto mt-3"></div>
+//         <div className="w-20 h-1 bg-primary mx-auto mt-3"></div>
 //       </div>
 
 //       {/* Steps */}
@@ -175,7 +175,7 @@
 //         <h2 className="text-4xl font-bold text-gray-900">
 //           কিভাবে জমির মালিক হবেন
 //         </h2>
-//         <div className="w-20 h-1 bg-yellow-500 mx-auto mt-3"></div>
+//         <div className="w-20 h-1 bg-primary mx-auto mt-3"></div>
 //       </div>
 
 //       <div className="custom-container mx-auto">
@@ -248,7 +248,7 @@
 //         <h2 className="text-4xl font-bold text-gray-900">
 //           কিভাবে জমির মালিক হবেন
 //         </h2>
-//         <div className="w-20 h-1 bg-yellow-500 mx-auto mt-3"></div>
+//         <div className="w-20 h-1 bg-primary mx-auto mt-3"></div>
 //       </div>
 
 //       <div className="max-w-7xl mx-auto px-6">
@@ -319,7 +319,7 @@ export default function HowToBecomeOwner() {
         <h2 className="text-4xl font-bold text-gray-900">
           কিভাবে জমির মালিক হবেন
         </h2>
-        <div className="w-20 h-1 bg-yellow-500 mx-auto mt-3"></div>
+        <div className="w-20 h-1 bg-primary mx-auto mt-3"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6">

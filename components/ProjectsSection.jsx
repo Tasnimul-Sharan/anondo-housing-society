@@ -4,22 +4,22 @@ import Link from "next/link";
 export default function ProjectsSection() {
   const projects = [
     {
-      img: "/images/project-1.jpg",
+      img: "/prokolpo/prokolpo1.jpeg",
       title: "ফেইজ - ১",
       slug: "prokolpo-1",
     },
     {
-      img: "/images/project-2.jpg",
+      img: "/prokolpo/prokolpo2.jpeg",
       title: "ফেইজ - ২",
       slug: "prokolpo-2",
     },
     {
-      img: "/images/project-3.jpg",
+      img: "/prokolpo/prokolpo3.jpg",
       title: "ফেইজ - ৩",
       slug: "prokolpo-3",
     },
     {
-      img: "/images/project-4.jpg",
+      img: "/prokolpo/prokolpo4.jpg",
       title: "C & D Block",
       slug: "c-d-block",
     },
@@ -29,6 +29,8 @@ export default function ProjectsSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-4">আমাদের প্রকল্প</h2>
+        <div className="w-20 h-[3px] bg-primary mt-4 mb-8 mx-auto"></div>
+
         <p className="text-center max-w-3xl mx-auto text-gray-700 leading-relaxed mb-16">
           আনন্দ হাউজিং সোসাইটি তার ক্লায়েন্টদের মন জয় করার জন্য প্রতিটি
           প্রকল্পের সমস্ত দিকগুলিতে শ্রেষ্ঠত্বের জন্য প্রচেষ্টা করে।
@@ -44,7 +46,7 @@ export default function ProjectsSection() {
               />
 
               <Link href={`/prokolpo/${item.slug}`}>
-                <button className="mt-6 bg-[#F5AF17] text-white font-semibold px-8 py-2 rounded shadow-md transition-all hover:bg-[#e0990d]">
+                <button className="mt-6 bg-primary text-white font-semibold px-8 py-2 rounded shadow-md transition-all hover:bg-secondary">
                   {item.title}
                 </button>
               </Link>

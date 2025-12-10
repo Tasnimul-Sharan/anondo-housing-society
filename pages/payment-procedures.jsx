@@ -36,7 +36,7 @@ export default function PaymentProceduresPage() {
       </Head>
       <HeroSection
         hero={{
-          title: "Career Opportunities",
+          title: "Payment Procedures",
           backgroundImage: "/contact-bg.jpeg",
         }}
       />

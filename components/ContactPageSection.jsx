@@ -11,10 +11,14 @@ export default function ContactPageSection() {
       {/* Top Info Cards */}
       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-5">
         {/* Address */}
-        <div className="group bg-white p-8 rounded-2xl border shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-          <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl group-hover:scale-110 transition duration-300">
+        <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+          {/* <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl group-hover:scale-110 group-hover:bg-primary transition duration-300">
+            <FaMapMarkerAlt />
+          </div> */}
+          <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl transition duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:ring-2 group-hover:ring-primary group-hover:ring-offset-2 group-hover:ring-offset-white">
             <FaMapMarkerAlt />
           </div>
+
           <h3 className="text-xl font-semibold text-center mt-4">
             Address Street
           </h3>
@@ -25,8 +29,8 @@ export default function ContactPageSection() {
         </div>
 
         {/* Phone */}
-        <div className="group bg-white p-8 rounded-2xl border shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-          <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl group-hover:scale-110 transition duration-300">
+        <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+          <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl transition duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:ring-2 group-hover:ring-primary group-hover:ring-offset-2 group-hover:ring-offset-white">
             <FaPhoneAlt />
           </div>
           <h3 className="text-xl font-semibold text-center mt-4">
@@ -43,8 +47,8 @@ export default function ContactPageSection() {
         </div>
 
         {/* Email */}
-        <div className="group bg-white p-8 rounded-2xl border shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-          <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl group-hover:scale-110 transition duration-300">
+        <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+          <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl transition duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:ring-2 group-hover:ring-primary group-hover:ring-offset-2 group-hover:ring-offset-white">
             <FaEnvelope />
           </div>
           <h3 className="text-xl font-semibold text-center mt-4">

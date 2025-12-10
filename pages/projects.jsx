@@ -35,8 +35,7 @@ export default function ProjectPage() {
       </Head>
       <HeroSection
         hero={{
-          title: "About",
-          //   subtitle: "About",
+          title: "Project",
           backgroundImage: "/about-bg.jpeg",
         }}
       />

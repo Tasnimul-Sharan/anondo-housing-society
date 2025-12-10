@@ -5,6 +5,12 @@ import Link from "next/link";
 import gsap from "gsap";
 import { FiClock, FiPhoneCall, FiMail } from "react-icons/fi";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaYoutube,
+} from "react-icons/fa";
 
 const menuItems = [
   { name: "Home", path: "/" },
@@ -68,10 +74,29 @@ export default function Navbar() {
     }
   }, [isMenuOpen]);
 
+  // Add at top of Navbar.js
+  useEffect(() => {
+    const addScript = document.createElement("script");
+    addScript.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(addScript);
+
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,bn",
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+  }, []);
+
   return (
     <header
       className={`sticky top-0 left-0 w-full z-50 bg-white transition-shadow duration-300 ${
-        isScrolled ? "shadow-md" : "shadow-none"
+        isScrolled ? "shadow-inner" : "shadow-none"
       }`}
     >
       {/* ========== TOP INFO BAR (NO SHAKING) ========== */}
@@ -112,13 +137,20 @@ export default function Navbar() {
           </div>
         </div>
       </div> */}
-      <div
+      {/* <div
         className={`
-    bg-primary text-white overflow-hidden transition-all duration-500
-    ${isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-[60px] opacity-100 py-2"}
+    bg-secondary text-white overflow-hidden transition-all duration-500
+    ${isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-[60px] opacity-100 py-4"}
   `}
       >
-        <div className="custom-container mx-auto flex items-center justify-between text-sm whitespace-nowrap gap-5">
+        <div className="custom-container mx-auto flex items-center justify-between text-sm whitespace-nowrap gap-5"> */}
+      {/* <div
+        className={`
+    bg-secondary text-white overflow-hidden transition-all duration-500
+    ${isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-5"}
+  `}
+      >
+        <div className="custom-container mx-auto flex items-center justify-between text-[15px] whitespace-nowrap gap-6">
           <div className="flex items-center gap-2">
             <FiPhoneCall className="text-white" />
             <span>+8801318252050</span>
@@ -136,6 +168,91 @@ export default function Navbar() {
               <option>ভাষা বেছে নিন</option>
               <option>English</option>
               <option>Bangla</option>
+            </select>
+          </div>
+        </div>
+      </div> */}
+      <div
+        className={`
+    bg-secondary text-white overflow-hidden transition-all duration-500
+    ${isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-4"}
+  `}
+      >
+        <div className="custom-container mx-auto flex items-center justify-between text-base whitespace-nowrap gap-6">
+          {/* LEFT SIDE: PHONE | EMAIL | TIME */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <FiPhoneCall className="text-white" />
+              <span>+8801318252050</span>
+            </div>
+
+            <span className="opacity-50">|</span>
+
+            <div className="flex items-center gap-2">
+              <FiMail className="text-white" />
+              <span>anondohousings@gmail.com</span>
+            </div>
+
+            <span className="opacity-50">|</span>
+
+            <div className="flex items-center gap-2">
+              <FiClock className="text-white" />
+              <span>Sat–Thu 10–7</span>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE: SOCIAL LINKS */}
+          <div className="flex items-center gap-4 text-xl">
+            <Link href="https://facebook.com" target="_blank">
+              <FaFacebookF className="hover:text-gray-300 cursor-pointer" />
+            </Link>
+
+            <Link href="https://linkedin.com" target="_blank">
+              <FaLinkedinIn className="hover:text-gray-300 cursor-pointer" />
+            </Link>
+
+            <Link href="https://instagram.com" target="_blank">
+              <FaInstagram className="hover:text-gray-300 cursor-pointer" />
+            </Link>
+
+            <Link href="https://youtube.com" target="_blank">
+              <FaYoutube className="hover:text-gray-300 cursor-pointer" />
+            </Link>
+
+            {/* <select className="text-black text-base px-2 py-1 rounded ml-3">
+              <option>ভাষা বেছে নিন</option>
+              <option>English</option>
+              <option>Bangla</option>
+            </select> */}
+            <select
+              className="text-black text-base px-2 py-1 rounded ml-3"
+              onChange={(e) => {
+                const selectedLang = e.target.value;
+
+                // Force URL rewrite (Works even when iframe fails)
+                const googleTranslateCombo =
+                  document.querySelector(".goog-te-combo");
+
+                if (googleTranslateCombo) {
+                  googleTranslateCombo.value = selectedLang;
+                  googleTranslateCombo.dispatchEvent(new Event("change"));
+                  return;
+                }
+
+                // Retry system — wait until translator loads
+                const waitForTranslate = setInterval(() => {
+                  const combo = document.querySelector(".goog-te-combo");
+                  if (combo) {
+                    combo.value = selectedLang;
+                    combo.dispatchEvent(new Event("change"));
+                    clearInterval(waitForTranslate);
+                  }
+                }, 300);
+              }}
+            >
+              <option value="">ভাষা বেছে নিন</option>
+              <option value="en">English</option>
+              <option value="bn">Bangla</option>
             </select>
           </div>
         </div>
@@ -251,6 +368,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+      <div id="google_translate_element" style={{ display: "none" }}></div>
     </header>
   );
 }

@@ -11,6 +11,9 @@ const images = [
   "/clients/client-3.jpg",
   "/clients/client-4.jpg",
   "/clients/client-5.jpg",
+  "/clients/client-6.jpg",
+  "/clients/client-7.jpg",
+  "/clients/client-8.jpg",
 ];
 
 export default function PresidentSection() {
@@ -29,6 +32,7 @@ export default function PresidentSection() {
     <div className="w-full max-w-4xl mx-auto mt-10">
       <div className="text-center">
         <h2 className="text-4xl font-extrabold mb-3">প্রশংসাপত্র</h2>
+        <div className="w-20 h-[3px] bg-primary mt-4 mb-8 mx-auto"></div>
 
         <p className="text-gray-700">
           আনন্দ হাউজিং সোসাইটির বিশ্বাসযোগ্য উন্নয়ন, ব্যবস্থাপনা এবং নিয়মিত

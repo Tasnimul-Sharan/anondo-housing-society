@@ -1,8 +1,6 @@
 import AboutUsSection from "@/components/AboutUsSection";
 import HeroSection from "@/components/HeroSection";
 import TeamSection from "@/components/TeamSection";
-import Testimonials from "@/components/Testimonials";
-import WhyUsSection from "@/components/WhyUsSection";
 import Head from "next/head";
 import FAQ from "@/components/FAQ";
 export default function AboutPage() {
@@ -95,16 +93,11 @@ export default function AboutPage() {
       <HeroSection
         hero={{
           title: "About",
-          //   subtitle: "About",
           backgroundImage: "/hero-bg.jpg",
         }}
       />
       <AboutUsSection />
-      {/* <VisionMissionGoals />
-      <FutureVision /> */}
-      <TeamSection />
-      {/* <Testimonials /> */}
-      {/* <WhyUsSection /> */}
+      {/* <TeamSection /> */}
       <FAQ faqData={faqData} />
     </div>
   );

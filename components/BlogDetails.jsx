@@ -16,7 +16,7 @@ export default function BlogDetails({ blogsData }) {
         alt={blogPost.title}
         width={1200}
         height={1200}
-        className="rounded-xl w-full h-1/2 object-cover"
+        className="rounded-xl w-full h-full object-cover"
       />
 
       <div className="text-sm text-gray-500">
@@ -41,7 +41,7 @@ export default function BlogDetails({ blogsData }) {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {blogPost.subImages.map((img, i) => (
           <Image
             key={i}
@@ -52,7 +52,7 @@ export default function BlogDetails({ blogsData }) {
             className="rounded-lg w-full h-full object-cover"
           />
         ))}
-      </div>
+      </div> */}
 
       <blockquote className="bg-primary/10 text-gray-800 p-6 rounded-lg relative border-l-4 border-primary">
         <FaQuoteLeft className="text-primary text-2xl absolute -top-4 -left-4" />
@@ -72,40 +72,6 @@ export default function BlogDetails({ blogsData }) {
             </p>
           ))}
         </div>
-
-        {/* <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-base text-textPrimary">Share Now</span>
-          <div className="flex items-center gap-2">
-            {blogsData.socialIcons.map(({ icon: Icon, link }, index) => (
-              <a
-                key={index}
-                href={link}
-                rel="noopener noreferrer"
-                aria-label="Social Link"
-                className="w-8 h-8 flex items-center justify-center border border-textSecondary text-textSecondary p-2 rounded-full hover:bg-primaryStart hover:text-textWhite hover:border-transparent cursor-pointer transition duration-500"
-              >
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-        </div> */}
-
-        {/* <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-base text-textPrimary">Share Now:</span>
-          <div className="flex items-center gap-2">
-            {socialIcons.map(({ icon: Icon, link }, index) => (
-              <a
-                key={index}
-                href={link(currentUrl, blogPost.title)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center border border-textSecondary text-textSecondary p-2 rounded-full hover:bg-primary hover:text-white transition"
-              >
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-        </div> */}
 
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-base text-textPrimary">Share Now</span>

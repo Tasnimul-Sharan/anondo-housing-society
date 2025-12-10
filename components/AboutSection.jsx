@@ -44,7 +44,7 @@ export default function AboutSection() {
             আনন্দ হাউজিং সোসাইটি
           </h2>
 
-          <div className="w-20 h-[3px] bg-amber-500 mt-4 mb-8 mx-auto md:mx-0"></div>
+          <div className="w-20 h-[3px] bg-primary mt-4 mb-8 mx-auto md:mx-0"></div>
 
           <p className="text-gray-700 leading-relaxed text-[17px] mb-4">
             আনন্দ হাউজিং সোসাইটি অত্যন্ত সু-পরিকল্পিত একটি আবাসন প্রকল্প। সুস্থ
@@ -65,7 +65,7 @@ export default function AboutSection() {
             বসবাসের জন্য আপনাকে স্বাগতম।
           </p>
 
-          <button className="bg-amber-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-amber-600 transition">
+          <button className="bg-primary text-white font-semibold px-6 py-2 rounded-md hover:bg-amber-600 transition">
             আমাদের কথা
           </button>
         </div>

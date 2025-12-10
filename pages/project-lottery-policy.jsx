@@ -39,7 +39,7 @@ export default function ProjectLotteryPolicy() {
       </Head>
       <HeroSection
         hero={{
-          title: "Career Opportunities",
+          title: "Project Lottery Policy",
           backgroundImage: "/contact-bg.jpeg",
         }}
       />

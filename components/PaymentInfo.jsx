@@ -1,6 +1,6 @@
 export default function PaymentInfo() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 text-gray-800 leading-relaxed">
+    <div className="max-w-6xl mx-auto px-6 py-12 text-gray-800 leading-relaxed">
       {/* ========= Header Text ========= */}
       <p className="text-center text-sm text-gray-600 mb-8">
         Payments may be made direct to our bank account from any country of the

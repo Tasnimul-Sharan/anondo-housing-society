@@ -9,352 +9,211 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export const blogDetailsData = {
   meta: {
-    title: "Blogs | Anondo Housing Society",
+    title: "Notices | Anondo Housing Society",
     description:
-      "Explore in-depth blogs from Anondo Housing Society covering our training academy, 30-day training program, security services, mission & vision, future vision, and quality assurance in the security industry of Bangladesh.",
+      "Official notices, announcements, committee updates, registration updates and important information from Anondo Housing Society.",
     keywords:
-      "Anondo Universal Services blog, security training Bangladesh, 30-day training program, mission and vision, future security vision, quality assurance, comprehensive security services",
+      "Anondo Housing Society notice, committee update, registration notice, official announcement",
     author: "Anondo Housing Society",
-    url: "https://anondouniversalserviceslimited.com/blogs",
-    image: "https://anondouniversalserviceslimited.com/blogs/blogs-og.jpg",
+    url: "https://anondohousingsociety.com/notices",
+    image: "https://anondohousingsociety.com/notices/notice-og.jpg",
   },
+
   blogDetails: [
     {
-      slug: "training-academy-overview",
+      slug: "shubheccha-bani",
       blogPost: {
-        title: "Inside Our State-of-the-Art Training Academy",
-        image: "/blogs/blog-1.jpeg",
-        author: "Anondo Universal Team",
-        date: "25 SEPTEMBER, 2025",
-        description:
-          "Take an inside look at Anondo Universal’s Training Academy — a two-acre facility designed to prepare disciplined security professionals through modern infrastructure and training tools.",
-        checklist: [
-          "Two-acre campus with dormitories and fitness grounds.",
-          "Dedicated CCTV labs and simulation areas.",
-          "Professional trainers ensuring disciplined development.",
-        ],
-        subImages: ["/blogs/blog-2.jpeg", "/blogs/blog-3.jpeg"],
-        quote: "Training builds discipline, discipline builds trust.",
-        postTags: ["Training Academy", "Security Training", "Discipline"],
+        title: "শুভেচ্ছা বাণী",
+        image: "/news/news-1.jpg",
+        author: "Admin",
+        date: "29 May, 2022",
+        description: "শুভেচ্ছা বাণী...",
+        postTags: ["Notice", "Announcement"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "importance-of-security-training",
+      slug: "hospital-committee-gothon",
       blogPost: {
-        title: "Why Training Defines Reliable Security",
-        image: "/blogs/blog-2.jpeg",
-        author: "Anondo Universal Team",
-        date: "20 SEPTEMBER, 2025",
-        description:
-          "Unlike traditional providers, Anondo Universal ensures every guard completes a rigorous 30-day program blending physical drills, legal awareness, and personal development for complete readiness.",
-        checklist: [
-          "Physical training and endurance building.",
-          "Legal rights and compliance awareness.",
-          "Soft skills and professional behavior training.",
-        ],
-        subImages: ["/blogs/blog-1.jpeg", "/blogs/blog-3.jpeg"],
-        quote: "A well-trained guard is the foundation of secure environments.",
-        postTags: ["Security Training", "Professional Guards", "Preparedness"],
+        title: "হাসপাতাল কমিটি গঠন",
+        image: "/news/news-2.jpg",
+        author: "Admin",
+        date: "08 October, 2024",
+        description: "হাসপাতাল ...",
+        postTags: ["Committee", "Update"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "comprehensive-security-services",
+      slug: "school-committee-gothon",
       blogPost: {
-        title: "Comprehensive Services for Every Sector",
-        image: "/blogs/blog-3.jpeg",
-        author: "Anondo Universal Team",
-        date: "15 SEPTEMBER, 2025",
-        description:
-          "From households and offices to factories, events, and financial institutions — explore how our tailored services deliver discipline, trust, and professionalism in every assignment.",
-        checklist: [
-          "Residential and corporate security solutions.",
-          "Event and crowd management expertise.",
-          "Industrial and financial institution security.",
-        ],
-        subImages: ["/blogs/blog-1.jpeg", "/blogs/blog-2.jpeg"],
-        quote: "One company, all-round security for every need.",
-        postTags: ["Security Services", "Corporate Safety", "Event Security"],
+        title: "স্কুল কমিটি গঠন",
+        image: "/news/news-3.jpg",
+        author: "Admin",
+        date: "08 October, 2024",
+        description: "স্কুল কমিটি ...",
+        postTags: ["Committee", "School"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "mission-vision-anondo-universal",
+      slug: "anondo-housing-society-registration-03",
       blogPost: {
-        title: "Our Mission & Vision: Redefining Security in Bangladesh",
-        image: "/blogs/blog-1.jpeg",
-        author: "Anondo Universal Team",
-        date: "10 SEPTEMBER, 2025",
-        description:
-          "Learn how Anondo Universal is setting new benchmarks in private security through uncompromising training quality, ethical values, and future-focused practices.",
-        checklist: [
-          "Clear mission to deliver disciplined services.",
-          "Vision to expand nationwide academies.",
-          "Commitment to ethical values and professionalism.",
-        ],
-        subImages: ["/blogs/blog-2.jpeg", "/blogs/blog-3.jpeg"],
-        quote: "Our mission drives us, our vision guides us.",
-        postTags: ["Mission", "Vision", "Security Standards"],
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ০৩",
+        image: "/news/news-4.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration", "Update"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "30-day-training-program",
+      slug: "anondo-housing-society-registration-1st",
       blogPost: {
-        title: "The 30-Day Training Curriculum Explained",
-        image: "/blogs/blog-2.jpeg",
-        author: "Anondo Universal Team",
-        date: "07 SEPTEMBER, 2025",
-        description:
-          "Discover the four pillars of our training program — Field Training, Professional Skills, Theoretical Knowledge, and Personal Development — that shape disciplined and trustworthy guards.",
-        checklist: [
-          "Intensive field and drill sessions.",
-          "Communication and professional skill-building.",
-          "Theoretical understanding of law and ethics.",
-          "Focus on discipline and personal growth.",
-        ],
-        subImages: ["/blogs/blog-1.jpeg", "/blogs/blog-3.jpeg"],
-        quote: "Training isn’t a phase, it’s a foundation for life.",
-        postTags: ["Training Program", "Skill Development", "Discipline"],
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১ম",
+        image: "/news/news-5.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "future-vision-security",
+      slug: "anondo-housing-society-registration-1",
       blogPost: {
-        title: "Future Vision: Building Tomorrow’s Security Standards",
-        image: "/blogs/blog-3.jpeg",
-        author: "Anondo Universal Team",
-        date: "03 SEPTEMBER, 2025",
-        description:
-          "Our roadmap includes nationwide academies, AI-based surveillance, drone monitoring, and international guard deployment to meet global security demands.",
-        checklist: [
-          "Nationwide training centers expansion.",
-          "AI surveillance and drone deployment.",
-          "International guard services for global markets.",
-        ],
-        subImages: ["/blogs/blog-1.jpeg", "/blogs/blog-2.jpeg"],
-        quote: "The future of security is smart, global, and disciplined.",
-        postTags: ["Future Vision", "AI Surveillance", "Global Security"],
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১",
+        image: "/news/news-6.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "quality-assurance-in-security",
+      slug: "anondo-housing-society-registration-2nd",
       blogPost: {
-        title: "Quality Assurance in Every Guard Deployment",
-        image: "/blogs/blog-1.jpeg",
-        author: "Anondo Universal Team",
-        date: "30 AUGUST, 2025",
-        description:
-          "Strict evaluation, surprise inspections, refresher courses, and client feedback loops ensure every guard remains disciplined, alert, and professional.",
-        checklist: [
-          "Surprise inspections and performance checks.",
-          "Refresher training programs.",
-          "Continuous client feedback and monitoring.",
-        ],
-        subImages: ["/blogs/blog-2.jpeg", "/blogs/blog-3.jpeg"],
-        quote: "Quality assurance is the heartbeat of security.",
-        postTags: ["Quality Control", "Professional Guards", "Client Trust"],
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য়",
+        image: "/news/news-7.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
     },
+
     {
-      slug: "competitive-advantage-anondo-universal",
+      slug: "anondo-housing-society-registration-2nd-copy",
       blogPost: {
-        title: "Competitive Advantage: Why Clients Trust Us",
-        image: "/blogs/blog-2.jpeg",
-        author: "Anondo Universal Team",
-        date: "25 AUGUST, 2025",
-        description:
-          "With our own academy, professional trainers, cutting-edge practices, and a strong value system, Anondo Universal stands apart in Bangladesh’s security industry.",
-        checklist: [
-          "In-house training academy with expert trainers.",
-          "Ethical and professional value system.",
-          "Adoption of modern practices and technology.",
-        ],
-        subImages: ["/blogs/blog-1.jpeg", "/blogs/blog-3.jpeg"],
-        quote: "Our edge is our discipline, values, and training.",
-        postTags: ["Competitive Advantage", "Security Industry", "Trust"],
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য় (ডুপ্লিকেট)",
+        image: "/news/news-8.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration", "Duplicate"],
       },
-      socialIcons: [
-        {
-          icon: FaFacebookF,
-          link: (url) =>
-            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`,
-        },
-        {
-          icon: FaXTwitter,
-          link: (url, title) =>
-            `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              url
-            )}&text=${encodeURIComponent(title)}`,
-        },
-        {
-          icon: FaLinkedinIn,
-          link: (url, title) =>
-            `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-              url
-            )}&title=${encodeURIComponent(title)}`,
-        },
-      ],
+      socialIcons: social(),
+    },
+
+    {
+      slug: "anondo-housing-society-registration-3rd",
+      blogPost: {
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
+        image: "/news/news-9.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration"],
+      },
+      socialIcons: social(),
+    },
+
+    {
+      slug: "anondo-housing-society-registration-3rd-copy",
+      blogPost: {
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
+        image: "/news/news-10.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration", "Duplicate"],
+      },
+      socialIcons: social(),
+    },
+
+    {
+      slug: "anondo-housing-society-registration-3rd-copy-2",
+      blogPost: {
+        title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
+        image: "/news/news-11.jpg",
+        author: "Admin",
+        date: "15 October, 2024",
+        description: "আনন্দ হাউজিং সোসা...",
+        postTags: ["Registration", "Duplicate"],
+      },
+      socialIcons: social(),
+    },
+
+    {
+      slug: "anondo-police-family-cooperative",
+      blogPost: {
+        title: "আনন্দ পুলিশ পরিবার কল্যাণ বহুমুখী সমবায় সমিতি",
+        image: "/news/news-12.jpg",
+        author: "Admin",
+        date: "16 October, 2024",
+        description: "আনন্দ পুলিশ পর...",
+        postTags: ["Cooperative", "Notice"],
+      },
+      socialIcons: social(),
+    },
+
+    {
+      slug: "utility-payment-notice",
+      blogPost: {
+        title: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
+        image: "/news/news-13.jpg",
+        author: "Admin",
+        date: "16 October, 2024",
+        description: "ইউটিলিটি ব্যয়ের ...",
+        postTags: ["Utility", "Payment", "Notice"],
+      },
+      socialIcons: social(),
     },
   ],
 };
+
+// Same social share function reused for all
+function social() {
+  return [
+    {
+      icon: FaFacebookF,
+      link: (url) =>
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          url
+        )}`,
+    },
+    {
+      icon: FaXTwitter,
+      link: (url, title) =>
+        `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+          url
+        )}&text=${encodeURIComponent(title)}`,
+    },
+    {
+      icon: FaLinkedinIn,
+      link: (url, title) =>
+        `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+          url
+        )}&title=${encodeURIComponent(title)}`,
+    },
+  ];
+}

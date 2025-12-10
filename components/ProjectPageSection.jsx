@@ -5,7 +5,7 @@ import Button from "./Button";
 
 export default function ProjectPageSection() {
   return (
-    <section className="w-full bg-white text-gray-800 py-10 md:py-16 px-4 md:px-12 lg:px-24">
+    <section className="w-full bg-white text-gray-800 py-10 md:py-16 max-w-6xl mx-auto px-6 md:px-0">
       {/* Top Image */}
       <div className="w-full mb-10">
         <Image
