@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaLeaf } from "react-icons/fa";
-// import Button from "./Button";
+
 import Link from "next/link";
 import Button from "./Button";
 
@@ -96,7 +96,6 @@ const LandingPage = () => {
             key={index}
             className="relative w-full md:py-96 py-60 overflow-hidden"
           >
-            {/* Background Image */}
             <motion.div
               key={`bg-${index}-${activeIndex}`}
               initial={{ scale: 1.2 }}

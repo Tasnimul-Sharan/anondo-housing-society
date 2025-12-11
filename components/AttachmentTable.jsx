@@ -19,7 +19,7 @@ const attachments = [
   {
     name: "Client Information Update Form",
     size: "250 KB",
-    url: "/pdf/Client Information Update Form.pdf",
+    url: "/pdf/Client Information Update request Form.pdf",
   },
   {
     name: "Plot Selection Form (Lottery)",

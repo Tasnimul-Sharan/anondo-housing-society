@@ -261,7 +261,7 @@ export default function PremiumProjectSection() {
         </div>
 
         {/* Plot Sizes */}
-        <div className="bg-white rounded-3xl shadow p-10 mt-12 border border-orange-100">
+        <div className="bg-white rounded-3xl p-10 mt-12 border border-orange-100">
           <h3 className="text-2xl font-semibold flex items-center gap-2 mb-6 text-gray-900">
             <FaBuilding className="text-primary" /> প্লটের আয়তন
           </h3>
@@ -284,7 +284,7 @@ export default function PremiumProjectSection() {
         </div>
 
         {/* Payment */}
-        <div className="bg-white rounded-3xl shadow p-10 mt-12 border border-orange-100">
+        <div className="bg-white rounded-3xl p-10 mt-12 border border-orange-100">
           <h3 className="text-2xl font-semibold flex items-center gap-2 mb-6 text-gray-900">
             <FaCheckCircle className="text-primary" /> প্লটের মূল্য পরিশোধ
             পদ্ধতি

@@ -3,7 +3,8 @@ import React from "react";
 
 export default function TermsAndConditions() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6 leading-8 text-gray-800">
+    <div className="py-12 px-6 leading-8 bg-orange-50 text-gray-800">
+    <div className="max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8 text-center">শর্তসমূহ</h1>
 
       <h2 className="text-2xl font-semibold mb-4">অবশ্য পালনীয় শর্তসমূহ :</h2>
@@ -143,6 +144,7 @@ export default function TermsAndConditions() {
           ক্রেতার নিকট বিক্রয় করা যাবে।
         </p>
       </div>
+    </div>
     </div>
   );
 }
