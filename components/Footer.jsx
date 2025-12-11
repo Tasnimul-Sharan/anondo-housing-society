@@ -19,10 +19,10 @@ export default function Footer() {
         {/* LEFT SECTION */}
         <div>
           <Image
-            src="/logo.jpg"
+            src="/Anondo-Housing-Logo.png"
             alt="Logo"
-            width={180}
-            height={80}
+            width={200}
+            height={180}
             className="mb-6"
           />
 
