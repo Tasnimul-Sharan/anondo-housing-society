@@ -3,14 +3,14 @@
 // import { FaUser } from "react-icons/fa";
 // import { FiCalendar } from "react-icons/fi";
 
-// export default function NewsSection() {
-//   const newsData = [
+// export default function noticeSection() {
+//   const noticeData = [
 //     {
 //       id: 1,
 //       title: "শুভেচ্ছা বাণী",
 //       author: "Admin",
 //       date: "29/May/2022",
-//       image: "/news/news-1.jpg",
+//       image: "/notice/notice-1.jpg",
 //       description: "শুভেচ্ছা ...",
 //     },
 //     {
@@ -18,7 +18,7 @@
 //       title: "হাসপাতাল কমিটি গঠন",
 //       author: "Committee",
 //       date: "08/Oct/2024",
-//       image: "/news/news-2.jpg",
+//       image: "/notice/notice-2.jpg",
 //       description: "হাসপাতাল ...",
 //     },
 //     {
@@ -26,7 +26,7 @@
 //       title: "স্কুল কমিটি গঠন",
 //       author: "Committee",
 //       date: "08/Oct/2024",
-//       image: "/news/news-3.jpg",
+//       image: "/notice/notice-3.jpg",
 //       description: "স্কুল কমিটি ...",
 //     },
 //   ];
@@ -39,7 +39,7 @@
 //       </p>
 
 //       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-4">
-//         {newsData.map((item) => (
+//         {noticeData.map((item) => (
 //           <div
 //             key={item.id}
 //             className="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer border border-gray-100"
@@ -94,126 +94,126 @@
 // import { FaUser } from "react-icons/fa";
 // import { FiCalendar } from "react-icons/fi";
 
-// export default function NewsSection() {
-  // const newsData = [
-  //   {
-  //     id: 1,
-  //     title: "শুভেচ্ছা বাণী",
-  //     date: "29 May, 2022",
-  //     author: "Admin",
-  //     image: "/news/news-1.jpg",
-  //     description: "শুভেচ্ছা বাণী...",
-  //     slug: "shubheccha-bani",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "হাসপাতাল কমিটি গঠন",
-  //     date: "08 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-2.jpg",
-  //     description: "হাসপাতাল ...",
-  //     slug: "hospital-committee-gothon",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "স্কুল কমিটি গঠন",
-  //     date: "08 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-3.jpg",
-  //     description: "স্কুল কমিটি ...",
-  //     slug: "school-committee-gothon",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ০৩",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-4.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-03",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১ম",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-5.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-1st",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-6.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-1",
-  //   },
-  //   {
-  //     id: 7,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য়",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-7.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-2nd",
-  //   },
-  //   {
-  //     id: 8,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য় (ডুপ্লিকেট)",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-8.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-2nd-copy",
-  //   },
-  //   {
-  //     id: 9,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-9.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-3rd",
-  //   },
-  //   {
-  //     id: 10,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-10.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-3rd-copy",
-  //   },
-  //   {
-  //     id: 11,
-  //     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
-  //     date: "15 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-11.jpg",
-  //     description: "আনন্দ হাউজিং সোসা...",
-  //     slug: "anondo-housing-society-registration-3rd-copy-2",
-  //   },
-  //   {
-  //     id: 12,
-  //     title: "আনন্দ পুলিশ পরিবার কল্যাণ বহুমুখী সমবায় সমিতি",
-  //     date: "16 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-12.jpg",
-  //     description: "আনন্দ পুলিশ পর...",
-  //     slug: "anondo-police-family-cooperative",
-  //   },
-  //   {
-  //     id: 13,
-  //     title: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
-  //     date: "16 October, 2024",
-  //     author: "Admin",
-  //     image: "/news/news-13.jpg",
-  //     description: "ইউটিলিটি ব্যয়ের ...",
-  //     slug: "utility-payment-notice",
-  //   },
-  // ];
+// export default function noticeSection() {
+// const noticeData = [
+//   {
+//     id: 1,
+//     title: "শুভেচ্ছা বাণী",
+//     date: "29 May, 2022",
+//     author: "Admin",
+//     image: "/notice/notice-1.jpg",
+//     description: "শুভেচ্ছা বাণী...",
+//     slug: "shubheccha-bani",
+//   },
+//   {
+//     id: 2,
+//     title: "হাসপাতাল কমিটি গঠন",
+//     date: "08 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-2.jpg",
+//     description: "হাসপাতাল ...",
+//     slug: "hospital-committee-gothon",
+//   },
+//   {
+//     id: 3,
+//     title: "স্কুল কমিটি গঠন",
+//     date: "08 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-3.jpg",
+//     description: "স্কুল কমিটি ...",
+//     slug: "school-committee-gothon",
+//   },
+//   {
+//     id: 4,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ০৩",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-4.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-03",
+//   },
+//   {
+//     id: 5,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১ম",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-5.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-1st",
+//   },
+//   {
+//     id: 6,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-6.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-1",
+//   },
+//   {
+//     id: 7,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য়",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-7.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-2nd",
+//   },
+//   {
+//     id: 8,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য় (ডুপ্লিকেট)",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-8.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-2nd-copy",
+//   },
+//   {
+//     id: 9,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-9.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-3rd",
+//   },
+//   {
+//     id: 10,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-10.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-3rd-copy",
+//   },
+//   {
+//     id: 11,
+//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
+//     date: "15 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-11.jpg",
+//     description: "আনন্দ হাউজিং সোসা...",
+//     slug: "anondo-housing-society-registration-3rd-copy-2",
+//   },
+//   {
+//     id: 12,
+//     title: "আনন্দ পুলিশ পরিবার কল্যাণ বহুমুখী সমবায় সমিতি",
+//     date: "16 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-12.jpg",
+//     description: "আনন্দ পুলিশ পর...",
+//     slug: "anondo-police-family-cooperative",
+//   },
+//   {
+//     id: 13,
+//     title: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
+//     date: "16 October, 2024",
+//     author: "Admin",
+//     image: "/notice/notice-13.jpg",
+//     description: "ইউটিলিটি ব্যয়ের ...",
+//     slug: "utility-payment-notice",
+//   },
+// ];
 
 //   return (
 //     <div className="py-16 bg-white">
@@ -223,7 +223,7 @@
 //       </p>
 
 //       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-4">
-//         {newsData.map((item) => (
+//         {noticeData.map((item) => (
 //           <div
 //             key={item.id}
 //             className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-200 relative"
@@ -279,8 +279,8 @@
 // "use client";
 // import { FaRegFilePdf } from "react-icons/fa";
 
-// export default function NewsSection() {
-//   const newsData = [
+// export default function noticeSection() {
+//   const noticeData = [
 //     {
 //       id: 1,
 //       title: "শুভেচ্ছা বাণী",
@@ -338,7 +338,7 @@
 //             </thead>
 
 //             <tbody>
-//               {newsData.map((item) => (
+//               {noticeData.map((item) => (
 //                 <tr
 //                   key={item.id}
 //                   className="hover:bg-gray-50 transition border-b"
@@ -374,14 +374,14 @@
 import Link from "next/link";
 import { FaRegFilePdf } from "react-icons/fa";
 
-export default function NewsSection() {
-  const newsData = [
+export default function NoticeSection() {
+  const noticeData = [
     {
       id: 1,
       title: "শুভেচ্ছা বাণী",
       date: "29 May, 2022",
       author: "Admin",
-      image: "/news/news-1.jpg",
+      image: "/notice/notice-1.jpg",
       description: "শুভেচ্ছা বাণী...",
       slug: "shubheccha-bani",
     },
@@ -390,7 +390,7 @@ export default function NewsSection() {
       title: "হাসপাতাল কমিটি গঠন",
       date: "08 October, 2024",
       author: "Admin",
-      image: "/news/news-2.jpg",
+      image: "/notice/notice-2.jpg",
       description: "হাসপাতাল ...",
       slug: "hospital-committee-gothon",
     },
@@ -399,7 +399,7 @@ export default function NewsSection() {
       title: "স্কুল কমিটি গঠন",
       date: "08 October, 2024",
       author: "Admin",
-      image: "/news/news-3.jpg",
+      image: "/notice/notice-3.jpg",
       description: "স্কুল কমিটি ...",
       slug: "school-committee-gothon",
     },
@@ -408,7 +408,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ০৩",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-4.jpg",
+      image: "/notice/notice-4.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-03",
     },
@@ -417,7 +417,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১ম",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-5.jpg",
+      image: "/notice/notice-5.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-1st",
     },
@@ -426,7 +426,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-6.jpg",
+      image: "/notice/notice-6.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-1",
     },
@@ -435,7 +435,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য়",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-7.jpg",
+      image: "/notice/notice-7.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-2nd",
     },
@@ -444,7 +444,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য় (ডুপ্লিকেট)",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-8.jpg",
+      image: "/notice/notice-8.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-2nd-copy",
     },
@@ -453,7 +453,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-9.jpg",
+      image: "/notice/notice-9.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-3rd",
     },
@@ -462,7 +462,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-10.jpg",
+      image: "/notice/notice-10.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-3rd-copy",
     },
@@ -471,7 +471,7 @@ export default function NewsSection() {
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
       date: "15 October, 2024",
       author: "Admin",
-      image: "/news/news-11.jpg",
+      image: "/notice/notice-11.jpg",
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-3rd-copy-2",
     },
@@ -480,7 +480,7 @@ export default function NewsSection() {
       title: "আনন্দ পুলিশ পরিবার কল্যাণ বহুমুখী সমবায় সমিতি",
       date: "16 October, 2024",
       author: "Admin",
-      image: "/news/news-12.jpg",
+      image: "/notice/notice-12.jpg",
       description: "আনন্দ পুলিশ পর...",
       slug: "anondo-police-family-cooperative",
     },
@@ -489,7 +489,7 @@ export default function NewsSection() {
       title: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
       date: "16 October, 2024",
       author: "Admin",
-      image: "/news/news-13.jpg",
+      image: "/notice/notice-13.jpg",
       description: "ইউটিলিটি ব্যয়ের ...",
       slug: "utility-payment-notice",
     },
@@ -502,7 +502,7 @@ export default function NewsSection() {
         সর্বশেষ নোটিশ ও আপডেট দেখুন
       </p>
 
-      <div className="container mx-auto px-4">
+      <div className="custom-container mx-auto">
         <div className="overflow-x-auto rounded-lg border border-gray-200">
           <table className="w-full border-collapse text-left">
             <thead>
@@ -515,7 +515,7 @@ export default function NewsSection() {
             </thead>
 
             <tbody>
-              {newsData.map((item) => (
+              {noticeData.map((item) => (
                 <tr
                   key={item.id}
                   className="hover:bg-gray-50 transition border-b"
@@ -532,7 +532,7 @@ export default function NewsSection() {
 
                   <td className="py-3 px-3 border text-center">
                     <Link
-                      href={`/news/${item.slug}`}
+                      href={`/notice/${item.slug}`}
                       className="text-blue-600 hover:text-blue-800 font-semibold"
                     >
                       বিস্তারিত →

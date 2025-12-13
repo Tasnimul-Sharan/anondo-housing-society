@@ -3,11 +3,10 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { RiLoader2Fill } from "react-icons/ri";
 import HeroSection from "@/components/HeroSection";
-import { blogDetailsData } from "@/data/blogDetailsData";
-import BlogDetails from "@/components/BlogDetails";
-import Navbar from "@/components/Navbar";
+import { blogDetailsData, NoticeDetailsData } from "@/data/NoticeDetailsData";
+import NoticeDetails from "@/components/BlogDetails";
 
-export default function BlogDetailsDataPage() {
+export default function NewsDetailsDataPage() {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -20,7 +19,7 @@ export default function BlogDetailsDataPage() {
     );
   }
 
-  const { blogDetails } = blogDetailsData;
+  const { blogDetails } = NoticeDetailsData;
 
   const blog = blogDetails.find((item) => item.slug === slug);
 
@@ -72,7 +71,7 @@ export default function BlogDetailsDataPage() {
           backgroundImage: "/blogs/blog-bg.jpeg",
         }}
       />
-      <BlogDetails blogsData={blog} />
+      <NoticeDetails blogsData={blog} />
     </div>
   );
 }
