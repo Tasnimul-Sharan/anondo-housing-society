@@ -113,6 +113,11 @@ export default function NoticeDetails({ blogsData }) {
         {blogPost.title}
       </h1>
 
+      {/* Description */}
+      <p className="text-center text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        {blogPost.description}
+      </p>
+
       {/* Date */}
       <p className="text-center text-sm text-gray-500">{blogPost.date}</p>
 
@@ -129,7 +134,7 @@ export default function NoticeDetails({ blogsData }) {
               href={link(currentUrl, blogPost.title)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:text-white transition"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-primary hover:border-transparent hover:text-white transition-all transform duration-500"
             >
               <Icon className="w-4 h-4" />
             </a>

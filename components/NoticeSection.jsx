@@ -1,375 +1,3 @@
-// "use client";
-// import Image from "next/image";
-// import { FaUser } from "react-icons/fa";
-// import { FiCalendar } from "react-icons/fi";
-
-// export default function noticeSection() {
-//   const noticeData = [
-//     {
-//       id: 1,
-//       title: "শুভেচ্ছা বাণী",
-//       author: "Admin",
-//       date: "29/May/2022",
-//       image: "/notice/notice-1.jpg",
-//       description: "শুভেচ্ছা ...",
-//     },
-//     {
-//       id: 2,
-//       title: "হাসপাতাল কমিটি গঠন",
-//       author: "Committee",
-//       date: "08/Oct/2024",
-//       image: "/notice/notice-2.jpg",
-//       description: "হাসপাতাল ...",
-//     },
-//     {
-//       id: 3,
-//       title: "স্কুল কমিটি গঠন",
-//       author: "Committee",
-//       date: "08/Oct/2024",
-//       image: "/notice/notice-3.jpg",
-//       description: "স্কুল কমিটি ...",
-//     },
-//   ];
-
-//   return (
-//     <div className="py-16 bg-white">
-//       <h2 className="text-4xl font-bold text-center mb-2">নিউজ</h2>
-//       <p className="text-center text-gray-600 mb-12">
-//         আমাদের সকল ব্লগ পড়ুন এখানে
-//       </p>
-
-//       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-4">
-//         {noticeData.map((item) => (
-//           <div
-//             key={item.id}
-//             className="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer border border-gray-100"
-//           >
-//             {/* Image */}
-//             <div className="overflow-hidden relative">
-//               <Image
-//                 src={item.image}
-//                 alt={item.title}
-//                 width={600}
-//                 height={400}
-//                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-//               />
-//             </div>
-
-//             {/* Content */}
-//             <div className="p-6">
-//               {/* Meta */}
-//               <div className="flex items-center gap-6 text-gray-500 text-sm mb-3">
-//                 <div className="flex items-center gap-2">
-//                   <FaUser className="text-gray-400" />
-//                   <span>{item.author}</span>
-//                 </div>
-//                 <div className="flex items-center gap-2">
-//                   <FiCalendar className="text-gray-400" />
-//                   <span>{item.date}</span>
-//                 </div>
-//               </div>
-
-//               {/* Title */}
-//               <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition">
-//                 {item.title}
-//               </h3>
-
-//               {/* Description */}
-//               <p className="text-gray-600 mt-2 mb-5">{item.description}</p>
-
-//               {/* Button */}
-//               <button className="px-5 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition">
-//                 READ MORE
-//               </button>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// "use client";
-// import Image from "next/image";
-// import { FaUser } from "react-icons/fa";
-// import { FiCalendar } from "react-icons/fi";
-
-// export default function noticeSection() {
-// const noticeData = [
-//   {
-//     id: 1,
-//     title: "শুভেচ্ছা বাণী",
-//     date: "29 May, 2022",
-//     author: "Admin",
-//     image: "/notice/notice-1.jpg",
-//     description: "শুভেচ্ছা বাণী...",
-//     slug: "shubheccha-bani",
-//   },
-//   {
-//     id: 2,
-//     title: "হাসপাতাল কমিটি গঠন",
-//     date: "08 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-2.jpg",
-//     description: "হাসপাতাল ...",
-//     slug: "hospital-committee-gothon",
-//   },
-//   {
-//     id: 3,
-//     title: "স্কুল কমিটি গঠন",
-//     date: "08 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-3.jpg",
-//     description: "স্কুল কমিটি ...",
-//     slug: "school-committee-gothon",
-//   },
-//   {
-//     id: 4,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ০৩",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-4.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-03",
-//   },
-//   {
-//     id: 5,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১ম",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-5.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-1st",
-//   },
-//   {
-//     id: 6,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-6.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-1",
-//   },
-//   {
-//     id: 7,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য়",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-7.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-2nd",
-//   },
-//   {
-//     id: 8,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য় (ডুপ্লিকেট)",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-8.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-2nd-copy",
-//   },
-//   {
-//     id: 9,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-9.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-3rd",
-//   },
-//   {
-//     id: 10,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-10.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-3rd-copy",
-//   },
-//   {
-//     id: 11,
-//     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
-//     date: "15 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-11.jpg",
-//     description: "আনন্দ হাউজিং সোসা...",
-//     slug: "anondo-housing-society-registration-3rd-copy-2",
-//   },
-//   {
-//     id: 12,
-//     title: "আনন্দ পুলিশ পরিবার কল্যাণ বহুমুখী সমবায় সমিতি",
-//     date: "16 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-12.jpg",
-//     description: "আনন্দ পুলিশ পর...",
-//     slug: "anondo-police-family-cooperative",
-//   },
-//   {
-//     id: 13,
-//     title: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
-//     date: "16 October, 2024",
-//     author: "Admin",
-//     image: "/notice/notice-13.jpg",
-//     description: "ইউটিলিটি ব্যয়ের ...",
-//     slug: "utility-payment-notice",
-//   },
-// ];
-
-//   return (
-//     <div className="py-16 bg-white">
-//       <h2 className="text-4xl font-bold text-center mb-2">সরকারি নোটিশ</h2>
-//       <p className="text-center text-gray-600 mb-12">
-//         সর্বশেষ নোটিশ ও আপডেট দেখুন
-//       </p>
-
-//       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-4">
-//         {noticeData.map((item) => (
-//           <div
-//             key={item.id}
-//             className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-200 relative"
-//           >
-//             {/* Left Yellow Strip */}
-//             <div className="absolute left-0 top-0 h-full w-2 bg-yellow-500"></div>
-
-//             {/* Image */}
-//             <div className="overflow-hidden relative">
-//               <Image
-//                 src={item.image}
-//                 alt={item.title}
-//                 width={600}
-//                 height={400}
-//                 className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105"
-//               />
-//             </div>
-
-//             {/* Content */}
-//             <div className="p-6">
-//               {/* Meta */}
-//               <div className="flex items-center gap-6 text-gray-600 text-sm mb-3">
-//                 <div className="flex items-center gap-2">
-//                   <FaUser className="text-gray-400" />
-//                   <span>{item.author}</span>
-//                 </div>
-//                 <div className="flex items-center gap-2">
-//                   <FiCalendar className="text-gray-400" />
-//                   <span>{item.date}</span>
-//                 </div>
-//               </div>
-
-//               {/* Title */}
-//               <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition">
-//                 {item.title}
-//               </h3>
-
-//               {/* Description */}
-//               <p className="text-gray-700 mt-2 mb-5">{item.description}</p>
-
-//               {/* Button */}
-//               <button className="px-5 py-2 bg-yellow-500 text-black rounded-md text-sm font-semibold hover:bg-yellow-600 transition">
-//                 বিস্তারিত
-//               </button>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// "use client";
-// import { FaRegFilePdf } from "react-icons/fa";
-
-// export default function noticeSection() {
-//   const noticeData = [
-//     {
-//       id: 1,
-//       title: "শুভেচ্ছা বাণী",
-//       date: "29 May, 2022",
-//       author: "Admin",
-//       file: "/notices/notice-1.pdf",
-//     },
-//     {
-//       id: 2,
-//       title: "হাসপাতাল কমিটি গঠন",
-//       date: "08 October, 2024",
-//       author: "Admin",
-//       file: "/notices/notice-2.pdf",
-//     },
-//     {
-//       id: 3,
-//       title: "স্কুল কমিটি গঠন",
-//       date: "08 October, 2024",
-//       author: "Admin",
-//       file: "/notices/notice-3.pdf",
-//     },
-//     {
-//       id: 4,
-//       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ০৩",
-//       date: "15 October, 2024",
-//       author: "Admin",
-//       file: "/notices/notice-4.pdf",
-//     },
-//     {
-//       id: 5,
-//       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১ম",
-//       date: "15 October, 2024",
-//       author: "Admin",
-//       file: "/notices/notice-5.pdf",
-//     },
-//   ];
-
-//   return (
-//     <div className="py-16 bg-white">
-//       <h2 className="text-4xl font-bold text-center mb-2">সরকারি নোটিশ</h2>
-//       <p className="text-center text-gray-600 mb-12">
-//         সর্বশেষ নোটিশ ও আপডেট দেখুন
-//       </p>
-
-//       <div className="container mx-auto px-4">
-//         <div className="overflow-x-auto shadow-lg rounded-lg border border-gray-200">
-//           <table className="w-full border-collapse text-left">
-//             <thead>
-//               <tr className="bg-gray-100 text-gray-800">
-//                 <th className="py-4 px-3 border">ক্রমিক</th>
-//                 <th className="py-4 px-3 border">শিরোনাম</th>
-//                 <th className="py-4 px-3 border">প্রকাশের তারিখ</th>
-//                 <th className="py-4 px-3 border text-center">ডাউনলোড</th>
-//               </tr>
-//             </thead>
-
-//             <tbody>
-//               {noticeData.map((item) => (
-//                 <tr
-//                   key={item.id}
-//                   className="hover:bg-gray-50 transition border-b"
-//                 >
-//                   <td className="py-3 px-3 border text-center">{item.id}</td>
-
-//                   <td className="py-3 px-3 border text-gray-900 font-medium">
-//                     {item.title}
-//                   </td>
-
-//                   <td className="py-3 px-3 border text-gray-700">{item.date}</td>
-
-//                   <td className="py-3 px-3 border text-center">
-//                     <a
-//                       href={item.file}
-//                       target="_blank"
-//                       className="text-red-600 hover:text-red-800 text-2xl"
-//                     >
-//                       <FaRegFilePdf />
-//                     </a>
-//                   </td>
-//                 </tr>
-//               ))}
-//             </tbody>
-//           </table>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 import Link from "next/link";
 import { FaRegFilePdf } from "react-icons/fa";
@@ -378,7 +6,7 @@ export default function NoticeSection() {
   const noticeData = [
     {
       id: 1,
-      title: "শুভেচ্ছা বাণী",
+      title: "শুভেচ্ছা বাণী", 
       date: "29 May, 2022",
       author: "Admin",
       image: "/notice/notice-1.jpg",
@@ -448,17 +76,17 @@ export default function NoticeSection() {
       description: "আনন্দ হাউজিং সোসা...",
       slug: "anondo-housing-society-registration-2nd-copy",
     },
+    // {
+    //   id: 9,
+    //   title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
+    //   date: "15 October, 2024",
+    //   author: "Admin",
+    //   image: "/notice/notice-9.jpg",
+    //   description: "আনন্দ হাউজিং সোসা...",
+    //   slug: "anondo-housing-society-registration-3rd",
+    // },
     {
       id: 9,
-      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
-      date: "15 October, 2024",
-      author: "Admin",
-      image: "/notice/notice-9.jpg",
-      description: "আনন্দ হাউজিং সোসা...",
-      slug: "anondo-housing-society-registration-3rd",
-    },
-    {
-      id: 10,
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
       date: "15 October, 2024",
       author: "Admin",
@@ -467,7 +95,7 @@ export default function NoticeSection() {
       slug: "anondo-housing-society-registration-3rd-copy",
     },
     {
-      id: 11,
+      id: 10,
       title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
       date: "15 October, 2024",
       author: "Admin",
@@ -476,7 +104,7 @@ export default function NoticeSection() {
       slug: "anondo-housing-society-registration-3rd-copy-2",
     },
     {
-      id: 12,
+      id: 11,
       title: "আনন্দ পুলিশ পরিবার কল্যাণ বহুমুখী সমবায় সমিতি",
       date: "16 October, 2024",
       author: "Admin",
@@ -485,7 +113,7 @@ export default function NoticeSection() {
       slug: "anondo-police-family-cooperative",
     },
     {
-      id: 13,
+      id: 12,
       title: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
       date: "16 October, 2024",
       author: "Admin",
