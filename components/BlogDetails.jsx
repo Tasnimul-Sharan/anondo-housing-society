@@ -127,7 +127,7 @@ export default function NoticeDetails({ blogsData }) {
       {/* Social Share */}
       <div className="flex justify-center items-center gap-3">
         {blogsData.socialIcons.map(({ icon: Icon, link }, index) => {
-          const currentUrl = `https://www.anondobari.com/blogs/${blogsData.slug}`;
+          const currentUrl = `https://anondohousing.com/notice/${blogsData.slug}`;
           return (
             <a
               key={index}

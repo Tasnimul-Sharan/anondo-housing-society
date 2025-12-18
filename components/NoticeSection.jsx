@@ -6,7 +6,7 @@ export default function NoticeSection() {
   const noticeData = [
     {
       id: 1,
-      title: "শুভেচ্ছা বাণী", 
+      title: "শুভেচ্ছা বাণী",
       date: "29 May, 2022",
       author: "Admin",
       image: "/notice/notice-1.jpg",
@@ -51,7 +51,7 @@ export default function NoticeSection() {
     },
     {
       id: 6,
-      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ১",
+      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য",
       date: "15 October, 2024",
       author: "Admin",
       image: "/notice/notice-6.jpg",
@@ -69,7 +69,7 @@ export default function NoticeSection() {
     },
     {
       id: 8,
-      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য় (ডুপ্লিকেট)",
+      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ২য়",
       date: "15 October, 2024",
       author: "Admin",
       image: "/notice/notice-8.jpg",
@@ -87,7 +87,7 @@ export default function NoticeSection() {
     // },
     {
       id: 9,
-      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট)",
+      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
       date: "15 October, 2024",
       author: "Admin",
       image: "/notice/notice-10.jpg",
@@ -96,7 +96,7 @@ export default function NoticeSection() {
     },
     {
       id: 10,
-      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য় (ডুপ্লিকেট ২)",
+      title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়",
       date: "15 October, 2024",
       author: "Admin",
       image: "/notice/notice-11.jpg",
@@ -123,9 +123,16 @@ export default function NoticeSection() {
     },
   ];
 
+  const sortedNoticeData = [...noticeData].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+
   return (
     <div className="py-16 bg-white">
-      <h2 className="text-4xl font-bold text-center mb-2">সরকারি নোটিশ</h2>
+      <h2 className="text-4xl font-bold text-center mb-2">
+        গুরুত্বপূর্ণ নোটিশ
+      </h2>
+      <div className="w-20 h-[3px] bg-primary mt-4 mb-4 mx-auto"></div>
       <p className="text-center text-gray-600 mb-12">
         সর্বশেষ নোটিশ ও আপডেট দেখুন
       </p>
@@ -143,12 +150,12 @@ export default function NoticeSection() {
             </thead>
 
             <tbody>
-              {noticeData.map((item) => (
+              {sortedNoticeData.map((item, index) => (
                 <tr
-                  key={item.id}
+                  key={item.slug}
                   className="hover:bg-gray-50 transition border-b"
                 >
-                  <td className="py-3 px-3 border text-center">{item.id}</td>
+                  <td className="py-3 px-3 border text-center">{index + 1}</td>
 
                   <td className="py-3 px-3 border text-gray-900 font-medium">
                     {item.title}
@@ -161,7 +168,7 @@ export default function NoticeSection() {
                   <td className="py-3 px-3 border text-center">
                     <Link
                       href={`/notice/${item.slug}`}
-                      className="text-blue-600 hover:text-blue-800 font-semibold"
+                      className="text-secondary hover:text-primary font-semibold transition-all transform duration-500"
                     >
                       বিস্তারিত →
                     </Link>

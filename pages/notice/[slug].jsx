@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { RiLoader2Fill } from "react-icons/ri";
 import HeroSection from "@/components/HeroSection";
-import { blogDetailsData, NoticeDetailsData } from "@/data/NoticeDetailsData";
+import { NoticeDetailsData } from "@/data/NoticeDetailsData";
 import NoticeDetails from "@/components/BlogDetails";
+import { noticeData } from "@/data/noticeData";
 
 export default function NewsDetailsDataPage() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function NewsDetailsDataPage() {
   }
 
   const meta = {
-    title: `${blog.blogPost.title} | Anondo Baari Blog`,
+    title: `${blog.blogPost.title} | Anondo Housing Blog`,
     description:
       blog.blogPost.description ||
       `Read "${blog.blogPost.title}" – an insightful article from Anondo Baari on senior care, wellness, healthy aging, and holistic living.`,
@@ -42,9 +43,9 @@ export default function NewsDetailsDataPage() {
       ", "
     )}, Anondo Baari blog, senior wellness Bangladesh, healthy aging tips, elderly care, wellness lifestyle`,
     author: blog.blogPost.author || "Anondo Baari",
-    url: `https://www.anondobari.com/blog/${blog.slug}`,
+    url: `https://anondohousing.com/notice/${noticeData.slug}`,
     image:
-      blog.blogPost.image || "https://www.anondobari.com/blogs/blogs-og.jpg",
+      blog.blogPost.image || "https://anondohousing.com/notice/notice-og.jpg",
   };
 
   return (
