@@ -25,10 +25,10 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
       <LandingPage />
-      <AboutSection data={about} />
+      <AboutSection />
       <StatsSection data={stats} />
       <ProjectsSection data={projects} />
-      <HowToBecomeOwner data={steps} />
+      <HowToBecomeOwner />
       <PresidentSection data={steps} />
       <FAQSection data={faq} />
       <NoticeSection data={documents} />

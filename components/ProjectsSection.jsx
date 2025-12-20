@@ -27,7 +27,7 @@ export default function ProjectsSection() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-0">
         <h2 className="text-4xl font-bold text-center mb-4">আমাদের প্রকল্প</h2>
         <div className="w-20 h-[3px] bg-primary mt-4 mb-8 mx-auto"></div>
 
@@ -36,17 +36,17 @@ export default function ProjectsSection() {
           প্রকল্পের সমস্ত দিকগুলিতে শ্রেষ্ঠত্বের জন্য প্রচেষ্টা করে।
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
           {projects.map((item, index) => (
             <div key={index} className="group">
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-[380px] object-cover rounded-md shadow-lg"
+                className="w-full h-[380px] object-cover rounded-md"
               />
 
               <Link href={`/prokolpo/${item.slug}`}>
-                <button className="mt-6 bg-primary text-white font-semibold px-8 py-2 rounded shadow-md transition-all hover:bg-secondary">
+                <button className="mt-6 bg-primary text-white font-semibold px-8 py-3 rounded shadow-md transition-all hover:bg-secondary transform duration-500">
                   {item.title}
                 </button>
               </Link>

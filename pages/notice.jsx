@@ -1,17 +1,16 @@
-import BlogPageSection from "@/components/BlogPageSection";
 import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbar";
 import Head from "next/head";
-export default function BlogsPage() {
+import NewsPageSection from "@/components/NewsPageSection";
+export default function NoticePage() {
   const meta = {
-    title: "Blogs | Anondo Housing Society - Security & Protection Insights",
+    title: "Notice | Anondo Housing Society - Security & Protection Insights",
     description:
       "Read blogs and articles from Anondo Housing Society on professional security training, risk management, residential protection, corporate event safety, industrial site security, and modern surveillance technology in Bangladesh.",
     keywords:
       "Anondo Universal Services blogs, security training Bangladesh, risk management articles, residential protection tips, corporate event safety, industrial site security, CCTV surveillance Bangladesh, professional guards insights",
     author: "Anondo Housing Society",
-    url: "https://anondohousing.com/blogs",
-    image: "https://anondohousing.com/blogs/blog-og.jpg",
+    url: "https://anondohousing.com/notice",
+    image: "https://anondohousing.com/notice/notice-og.jpg",
   };
 
   return (
@@ -34,11 +33,11 @@ export default function BlogsPage() {
       </Head>
       <HeroSection
         hero={{
-          title: "Blogs",
+          title: "Notice",
           backgroundImage: "/blogs/blog-bg.jpeg",
         }}
       />
-      <BlogPageSection />
+      <NewsPageSection />
     </div>
   );
 }

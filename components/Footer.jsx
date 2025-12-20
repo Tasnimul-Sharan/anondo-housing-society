@@ -9,7 +9,13 @@ import {
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneCall } from "react-icons/fi";
-import { PiMapPinLight } from "react-icons/pi";
+import {
+  PiMapPinAreaBold,
+  PiMapPinAreaFill,
+  PiMapPinBold,
+  PiMapPinFill,
+  PiMapPinLight,
+} from "react-icons/pi";
 import Image from "next/image";
 
 export default function Footer() {
@@ -39,7 +45,7 @@ export default function Footer() {
             </p>
 
             <p className="flex items-center gap-3">
-              <FiPhoneCall size={20} className="text-yellow-400" />
+              <FiPhoneCall size={20} className="text-primary" />
               +8801318252050
             </p>
 
@@ -54,7 +60,7 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
             Office Address
-            <span className="block w-12 h-[3px] bg-yellow-400 mt-1"></span>
+            <span className="block w-12 h-[3px] bg-primary mt-1"></span>
           </h4>
 
           <ul className="space-y-2 text-sm mb-6">
@@ -66,7 +72,7 @@ export default function Footer() {
 
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
             Corporate Address
-            <span className="block w-12 h-[3px] bg-yellow-400 mt-1"></span>
+            <span className="block w-12 h-[3px] bg-primary mt-1"></span>
           </h4>
 
           <ul className="space-y-2 text-sm">
@@ -81,7 +87,7 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
             Quick-link
-            <span className="block w-12 h-[3px] bg-yellow-400 mt-1"></span>
+            <span className="block w-12 h-[3px] bg-primary mt-1"></span>
           </h4>
 
           <ul className="space-y-2 text-sm">
@@ -95,27 +101,26 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* NEWSLETTER */}
         <div>
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
             Get in Touch
-            <span className="block w-12 h-[3px] bg-yellow-400 mt-1"></span>
+            <span className="block w-12 h-[3px] bg-primary mt-1"></span>
           </h4>
 
           <div className="space-y-4 text-sm">
             <p className="flex items-start gap-3">
-              <PiMapPinLight size={22} />
-              Printers Building, 11–13th Floor, 5 Rajuk Avenue, Motijheel, 1000
+              <PiMapPinBold size={30} className="text-primary" />
+              Printers Building, 11–14th Floor, 5 Rajuk Avenue, Motijheel, 1000
               Dhaka
             </p>
 
             <p className="flex items-center gap-3">
-              <FiPhoneCall size={20} className="text-yellow-400" />
+              <FiPhoneCall size={20} className="text-primary" />
               +8801318252050
             </p>
 
             <p className="flex items-center gap-3">
-              <HiOutlineMail size={20} />
+              <HiOutlineMail size={20} className="text-primary" />
               anondohousings@gmail.com
             </p>
           </div>
@@ -149,8 +154,11 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <div className="border-t border-white/20 mt-10 pt-4 text-center text-sm">
-        © 2021 <span className="font-semibold">Anondo Housing</span> || Design &
-        Developed by Brandz Cooker
+        Copyright © {new Date().getFullYear()}{" "}
+        <span className="font-semibold text-primary">
+          Anondo Housing Society
+        </span>
+        . All rights reserved.
       </div>
     </footer>
   );
@@ -159,7 +167,7 @@ export default function Footer() {
 /* Small Reusable Icon Component */
 function SocialIcon({ icon }) {
   return (
-    <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer hover:bg-white/20 transition">
+    <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer hover:bg-primary hover:border-transparent transition-all transform duration-500">
       {icon}
     </div>
   );

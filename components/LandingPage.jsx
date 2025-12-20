@@ -5,7 +5,13 @@ import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaArrowLeft, FaArrowRight, FaLeaf } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaCity,
+  FaHome,
+  FaLeaf,
+} from "react-icons/fa";
 
 import Link from "next/link";
 import Button from "./Button";
@@ -20,7 +26,11 @@ const sliderData = [
 বিদ্যুৎ সংযোগ সুবিধাসহ এখনই বাড়ি করে বসবাস করার উপযোগী।
 `,
     image: "/slider/slider1.png",
-    primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
+    // primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
+    buttons: [
+      { text: "আমাদের প্রকল্প", link: "/about", variant: "primary" },
+      { text: "যোগাযোগ করুন", link: "/contact", variant: "outline" },
+    ],
   },
   {
     subtitle: "আনন্দ হাউজিং সোসাইটি",
@@ -30,7 +40,11 @@ const sliderData = [
 গ্রহণ করা হচ্ছে।
 `,
     image: "/slider/slider2.png",
-    primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
+    // primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
+    buttons: [
+      { text: "আমাদের প্রকল্প", link: "/about", variant: "primary" },
+      { text: "যোগাযোগ করুন", link: "/contact", variant: "outline" },
+    ],
   },
   {
     subtitle: "আনন্দ হাউজিং সোসাইটি",
@@ -40,29 +54,18 @@ const sliderData = [
 বিস্তারিত জানতে ও প্রকল্প পরিদর্শন করতে যোগাযোগ করুন!
 `,
     image: "/slider/slider3.jpg",
-    primaryButton: { text: "যোগাযোগ করুন", link: "/contact" },
+    // primaryButton: { text: "যোগাযোগ করুন", link: "/contact" },
+    buttons: [
+      { text: "আমাদের প্রকল্প", link: "/about", variant: "primary" },
+      { text: "যোগাযোগ করুন", link: "/contact", variant: "outline" },
+    ],
   },
 ];
 
 const LandingPage = () => {
-  // const hasMounted = useHasMounted();
   const [activeIndex, setActiveIndex] = useState(0);
   const sliderRef = useRef(null);
   const textRefs = useRef([]);
-
-  // useEffect(() => {
-  //   if (!hasMounted) return;
-  //   const currentText = textRefs.current[activeIndex];
-  //   if (currentText) {
-  //     gsap.fromTo(
-  //       currentText,
-  //       { opacity: 0, y: 10 },
-  //       { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
-  //     );
-  //   }
-  // }, [activeIndex, hasMounted]);
-
-  // if (!hasMounted) return <div className="w-full h-[80vh] bg-black" />;
 
   const settings = {
     dots: false,
@@ -105,10 +108,8 @@ const LandingPage = () => {
               style={{ backgroundImage: `url(${slide.image})` }}
             ></motion.div>
 
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-emerald-950/60"></div>
+            <div className="absolute inset-0 bg-slate-950/50"></div>
 
-            {/* Text Section */}
             <motion.div
               ref={(el) => (textRefs.current[index] = el)}
               className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center text-white z-10 px-4"
@@ -117,10 +118,10 @@ const LandingPage = () => {
               variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
             >
               <motion.p
-                className="uppercase tracking-[0.3em] text-sm text-green-200 relative inline-flex items-center gap-3 border border-primary rounded-full px-4 py-1 bg-emerald-950/20 backdrop-blur-sm"
+                className="uppercase tracking-[0.3em] text-sm text-green-200 relative inline-flex items-center gap-3 border border-primary rounded-full px-4 py-1 bg-slate-950/20 backdrop-blur-sm"
                 variants={textVariants}
               >
-                <FaLeaf className="text-primary text-sm" />
+                <FaHome className="text-primary text-sm" />
                 {slide.subtitle}
               </motion.p>
 
@@ -139,16 +140,18 @@ const LandingPage = () => {
                 {slide.description}
               </motion.p>
 
-              {slide?.primaryButton?.link && (
+              {slide?.buttons?.length > 0 && (
                 <motion.div
-                  className="mt-6 flex gap-4 flex-wrap"
+                  className="mt-6 flex gap-4 flex-wrap justify-center"
                   variants={textVariants}
                 >
-                  <Link href={slide.primaryButton.link}>
-                    <Button variant="primary">
-                      {slide.primaryButton.text}
-                    </Button>
-                  </Link>
+                  {slide.buttons.map((btn, i) => (
+                    <Link key={i} href={btn.link}>
+                      <Button variant={btn.variant || "primary"}>
+                        {btn.text}
+                      </Button>
+                    </Link>
+                  ))}
                 </motion.div>
               )}
             </motion.div>
@@ -159,7 +162,6 @@ const LandingPage = () => {
   );
 };
 
-// ✅ Custom Arrow Buttons
 const PrevArrow = ({ onClick }) => (
   <div
     className="absolute z-20 top-1/2 left-6 -translate-y-1/2 border-2 border-primary hover:bg-primary text-white p-4 rounded-full cursor-pointer opacity-0 group-hover:opacity-100 transition-all transform duration-1000"
