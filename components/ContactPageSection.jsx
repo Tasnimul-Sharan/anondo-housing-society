@@ -6,7 +6,7 @@ export default function ContactPageSection() {
     <div className="bg-white py-20">
       {/* Heading */}
       <h2 className="text-4xl font-bold text-center mb-2">Get In Touch</h2>
-      <div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
+      <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
 
       {/* Top Info Cards */}
       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-5">

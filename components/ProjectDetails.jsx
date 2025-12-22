@@ -15,7 +15,7 @@ export default function ProjectDetails({ project }) {
           width={1600}
           height={700}
           alt="Project Banner"
-          className="w-full max-h-[420px] object-cover"
+          className="w-full max-h-[500px] object-cover"
         />
       </div>
 

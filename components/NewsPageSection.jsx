@@ -125,8 +125,8 @@ export default function NewsPageSection() {
   ];
 
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+    <div className="py-16 bg-orange-50">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-6">
         {newsData.map((item) => (
           <div
             key={item.id}
@@ -158,7 +158,7 @@ export default function NewsPageSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition">
+              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary transition">
                 {item.title}
               </h3>
 
@@ -166,7 +166,7 @@ export default function NewsPageSection() {
               <p className="text-gray-600 mt-2 mb-5">{item.description}</p>
 
               {/* Button */}
-              <button className="px-5 py-2 bg-secondary text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+              <button className="px-5 py-2 bg-secondary text-white rounded-lg text-sm font-medium hover:bg-primary transition">
                 READ MORE
               </button>
             </div>
