@@ -3,11 +3,12 @@ import Head from "next/head";
 import NewsPageSection from "@/components/NewsPageSection";
 export default function NoticePage() {
   const meta = {
-    title: "Notice | Anondo Housing Society - Security & Protection Insights",
+    title:
+      "Notice & Updates | Anondo Housing Society – Housing Project Announcements",
     description:
-      "Read blogs and articles from Anondo Housing Society on professional security training, risk management, residential protection, corporate event safety, industrial site security, and modern surveillance technology in Bangladesh.",
+      "Stay updated with the latest notices, announcements, project updates, and important information from Anondo Housing Society. Get news about housing projects, plot and apartment ownership, booking updates, and official circulars.",
     keywords:
-      "Anondo Universal Services blogs, security training Bangladesh, risk management articles, residential protection tips, corporate event safety, industrial site security, CCTV surveillance Bangladesh, professional guards insights",
+      "Anondo Housing Society notice, housing project notices Bangladesh, real estate updates Bangladesh, apartment booking notice, plot ownership updates, housing society announcements, Anondo Housing news",
     author: "Anondo Housing Society",
     url: "https://anondohousing.com/notice",
     image: "https://anondohousing.com/notice/notice-og.jpg",
@@ -21,16 +22,19 @@ export default function NoticePage() {
         <meta name="keywords" content={meta.keywords} />
         <meta name="author" content={meta.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
+        <link rel="canonical" href={meta.url} />
+        <meta property="og:site_name" content="Anondo Housing Society" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
+
       <HeroSection
         hero={{
           title: "Notice",

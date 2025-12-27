@@ -7,11 +7,11 @@ import ContactPageSection from "@/components/ContactPageSection";
 export default function ContactPage() {
   const meta = {
     title:
-      "Contact | Anondo Housing Society - Professional Security Services in Bangladesh",
+      "Contact Us | Anondo Housing Society – Residential Housing in Bangladesh",
     description:
-      "Get in touch with Anondo Housing Society for inquiries, service requests, or consultations. Serving Bangladesh with manned guarding, corporate event protection, residential and industrial security, CCTV surveillance, and training programs.",
+      "Contact Anondo Housing Society for inquiries about residential housing projects, plot or apartment ownership, booking details, site visits, and general information. We are here to help you find secure and modern living solutions in Bangladesh.",
     keywords:
-      "Anondo Universal contact, security services Bangladesh, manned guarding inquiry, corporate event security contact, residential security, industrial security, CCTV services, security training, Anondo Universal phone, Anondo Universal email",
+      "Contact Anondo Housing Society, housing contact Bangladesh, real estate contact Bangladesh, apartment booking contact, plot purchase inquiry, housing project contact, residential housing Bangladesh",
     author: "Anondo Housing Society",
     url: "https://anondohousing.com/contact",
     image: "https://anondohousing.com/contact/contact-og.jpg",
@@ -24,11 +24,12 @@ export default function ContactPage() {
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="author" content={meta.author} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
+        <link rel="canonical" href={meta.url} />
+        <meta property="og:site_name" content="Anondo Housing Society" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.title} />
@@ -42,7 +43,7 @@ export default function ContactPage() {
         }}
       />
       <ContactPageSection />
-      <EventMap />
+      {/* <EventMap /> */}
     </div>
   );
 }

@@ -35,16 +35,27 @@ export default function ProjectDetailsPage() {
     );
   }
 
-  // Meta tags
   const meta = {
-    title: `${project.title} | Anondo Housing Projects`,
+    title: `${project.title} | Anondo Housing Society Projects`,
     description:
       project.description ||
-      `${project.title} – Full project layout, pricing table, gallery & location map.`,
-    keywords: `${project.keywords?.join(", ")}, Anondo Housing Projects`,
-    author: "Anondo Housing",
+      `${project.title} by Anondo Housing Society. View project overview, apartment layout, amenities, pricing details, gallery, and location information.`,
+    keywords: [
+      "Anondo Housing Society",
+      "Anondo Housing Projects",
+      "housing project Bangladesh",
+      "residential project Bangladesh",
+      "flat project Bangladesh",
+      "apartment project",
+      "real estate development",
+      "housing prokolpo",
+      ...(project.keywords || []),
+    ].join(", "),
+    author: "Anondo Housing Society",
     url: `https://www.anondohousing.com/prokolpo/${project.slug}`,
-    image: project.banner || "/projects/project-og.jpg",
+    image:
+      project.banner ||
+      "https://www.anondohousing.com/assets/og/anondo-housing-project.jpg",
   };
 
   return (
@@ -55,13 +66,12 @@ export default function ProjectDetailsPage() {
         <meta name="keywords" content={meta.keywords} />
         <meta name="author" content={meta.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={meta.url} />
         <meta property="og:image" content={meta.image} />
-
+        <meta property="og:site_name" content="Anondo Housing Society" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />

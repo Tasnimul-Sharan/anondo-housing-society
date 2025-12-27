@@ -9,14 +9,14 @@ import LotteryPage from "@/components/LotteryPageSection";
 export default function ProjectLotteryPolicy() {
   const meta = {
     title:
-      "Project Lottery Policy | Anondo Housing Society - Professional Security Services in Bangladesh",
+      "Project Lottery Policy | Anondo Housing Society – Housing Project Guidelines",
     description:
-      "Get in touch with Anondo Housing Society for inquiries, service requests, or consultations. Serving Bangladesh with manned guarding, corporate event protection, residential and industrial security, CCTV surveillance, and training programs.",
+      "Learn about the project lottery policy of Anondo Housing Society. Understand the rules, eligibility criteria, selection process, and official guidelines for plot and apartment allocation in our residential projects across Bangladesh.",
     keywords:
-      "Anondo Universal contact, security services Bangladesh, manned guarding inquiry, corporate event security contact, residential security, industrial security, CCTV services, security training, Anondo Universal phone, Anondo Universal email",
+      "Anondo Housing Society lottery policy, housing project lottery Bangladesh, apartment allocation guidelines, plot allocation rules, residential project policy, housing society selection process Bangladesh",
     author: "Anondo Housing Society",
-    url: "https://anondohousing.com/contact",
-    image: "https://anondohousing.com/contact/contact-og.jpg",
+    url: "https://anondohousing.com/project-lottery-policy",
+    image: "https://anondohousing.com/lottery/lottery-og.jpg",
   };
 
   return (
@@ -27,16 +27,19 @@ export default function ProjectLotteryPolicy() {
         <meta name="keywords" content={meta.keywords} />
         <meta name="author" content={meta.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
+        <link rel="canonical" href={meta.url} />
+        <meta property="og:site_name" content="Anondo Housing Society" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
+
       <HeroSection
         hero={{
           title: "Project Lottery Policy",

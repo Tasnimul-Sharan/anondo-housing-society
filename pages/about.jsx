@@ -6,11 +6,11 @@ import FAQ from "@/components/FAQ";
 export default function AboutPage() {
   const meta = {
     title:
-      "About Us | Anondo Housing Society - Security & Professional Services in Bangladesh",
+      "About Us | Anondo Housing Society – Trusted Residential & Community Development in Bangladesh",
     description:
-      "Learn about Anondo Housing Society (AUSL), a trusted provider of security, engineering, real estate, logistics, and business support services in Bangladesh. Discover our mission, vision, nationwide operations, and commitment to safety, efficiency, and integrity.",
+      "Learn about Anondo Housing Society, a trusted residential housing and community development organization in Bangladesh. Discover our vision, mission, values, leadership, and commitment to secure, modern, and well-planned living environments.",
     keywords:
-      "Anondo Housing Society, AUSL Bangladesh, security services Bangladesh, armed guards, logistics services, engineering solutions, real estate Bangladesh, CCTV installation, event management Bangladesh, business support services",
+      "About Anondo Housing Society, housing society Bangladesh, residential community Bangladesh, real estate development Bangladesh, housing project company Bangladesh, trusted housing developer, gated community Bangladesh, modern housing society",
     author: "Anondo Housing Society",
     url: "https://anondohousing.com/about",
     image: "https://anondohousing.com/about/about-og.jpg",

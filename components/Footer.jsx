@@ -71,7 +71,7 @@ export default function Footer() {
           </ul>
 
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
-            Corporate Address
+            Project Address
             <span className="block w-12 h-[3px] bg-primary mt-1"></span>
           </h4>
 
@@ -91,13 +91,18 @@ export default function Footer() {
           </h4>
 
           <ul className="space-y-2 text-sm">
-            <li className="hover:underline cursor-pointer">Home</li>
-            <li className="hover:underline cursor-pointer">About</li>
-            <li className="hover:underline cursor-pointer">Contact</li>
-            <li className="hover:underline cursor-pointer">Project</li>
-            <li className="hover:underline cursor-pointer">
-              Terms and Conditions
-            </li>
+            {[
+              "Home",
+              "About",
+              "Contact",
+              "Project",
+              "Terms and Conditions",
+            ].map((item, i) => (
+              <li key={i} className="relative group cursor-pointer w-fit">
+                <span className="transition-colors duration-300">{item}</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-500 group-hover:w-full"></span>
+              </li>
+            ))}
           </ul>
         </div>
 

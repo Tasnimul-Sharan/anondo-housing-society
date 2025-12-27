@@ -29,7 +29,7 @@ const menuItems = [
   },
   { name: "Form", path: "/form" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Contact", path: "/contact" },
+  // { name: "Contact", path: "/contact" },
 ];
 
 export default function Navbar() {
@@ -235,7 +235,7 @@ export default function Navbar() {
           {/* Desktop Button */}
           <div className="hidden lg:block">
             <Link href="/contact">
-              <button className="bg-primary text-white px-6 py-2 font-bold hover:bg-secondary transition">
+              <button className="bg-primary text-white px-6 py-2 font-bold hover:bg-secondary transition-all rounded transform duration-500">
                 Contact Us
               </button>
             </Link>

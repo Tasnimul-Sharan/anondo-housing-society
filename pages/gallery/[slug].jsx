@@ -5,7 +5,6 @@ import { RiLoader2Fill } from "react-icons/ri";
 import HeroSection from "@/components/HeroSection";
 import { galleryDetailsData } from "@/data/galleryDetailsData";
 import GalleryDetails from "@/components/GalleryDetails";
-import Navbar from "@/components/Navbar";
 
 export default function GalleryDetailsPage() {
   const router = useRouter();

@@ -35,17 +35,24 @@ export default function NewsDetailsDataPage() {
   }
 
   const meta = {
-    title: `${blog.blogPost.title} | Anondo Housing Blog`,
+    title: `${blog.blogPost.title} | Anondo Housing Society`,
     description:
       blog.blogPost.description ||
-      `Read "${blog.blogPost.title}" – an insightful article from Anondo Baari on senior care, wellness, healthy aging, and holistic living.`,
-    keywords: `${blog.blogPost.postTags.join(
-      ", "
-    )}, Anondo Baari blog, senior wellness Bangladesh, healthy aging tips, elderly care, wellness lifestyle`,
-    author: blog.blogPost.author || "Anondo Baari",
-    url: `https://anondohousing.com/notice/${noticeData.slug}`,
+      `Official notice and updates from Anondo Housing Society. Stay informed about community news, housing announcements, events, and important decisions.`,
+    keywords: [
+      "Anondo Housing Society",
+      "Anondo Housing notice",
+      "housing society Bangladesh",
+      "residential community update",
+      "senior living Bangladesh",
+      "housing announcement",
+      ...blog.blogPost.postTags,
+    ].join(", "),
+    author: blog.blogPost.author || "Anondo Housing Society",
+    url: `https://anondohousing.com/notice/${slug}`,
     image:
-      blog.blogPost.image || "https://anondohousing.com/notice/notice-og.jpg",
+      blog.blogPost.image ||
+      "https://anondohousing.com/assets/og/anondo-housing-notice.jpg",
   };
 
   return (
