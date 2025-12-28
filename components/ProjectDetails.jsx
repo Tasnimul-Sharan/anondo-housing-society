@@ -9,7 +9,7 @@ export default function ProjectDetails({ project }) {
   return (
     <div className="w-full">
       {/* Top Banner Image */}
-      <div className="w-full">
+      <div className="max-w-6xl mx-auto py-6 px-6 md:px-0">
         <Image
           src={banner}
           width={1600}
@@ -20,9 +20,9 @@ export default function ProjectDetails({ project }) {
       </div>
 
       {/* MAIN WRAPPER */}
-      <div className="max-w-6xl mx-auto py-16 px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
-        <h1 className="text-center text-3xl font-bold my-8">{title}</h1>
+        {/* <h1 className="text-center text-3xl font-bold my-8">{title}</h1> */}
 
         {/* Description */}
         {/* <div className="text-lg leading-relaxed whitespace-pre-line">
@@ -84,7 +84,7 @@ export default function ProjectDetails({ project }) {
         {/* Application + Brochure Buttons */}
         <div className="flex gap-4 justify-center mt-10">
           <a
-            href="/pdfs/application-form.pdf"
+            href="/form/Application Form-2.pdf"
             target="_blank"
             className="bg-primary text-white px-6 py-3 rounded font-semibold hover:bg-primary/90 transition-all transform duration-500"
           >
@@ -92,7 +92,7 @@ export default function ProjectDetails({ project }) {
           </a>
 
           <a
-            href="/pdfs/brochure.pdf"
+            href="/form/Brochure.pdf"
             target="_blank"
             className="bg-secondary text-white px-6 py-3 rounded font-semibold hover:bg-secondary/90 transition-all transform duration-500"
           >
@@ -121,25 +121,24 @@ export default function ProjectDetails({ project }) {
         <EventMap />
       </div>
 
-      {/* Phase Buttons */}
       <div className="max-w-5xl mx-auto flex flex-wrap gap-4 justify-center mt-6 mb-16 px-6">
         <a
-          href="/projects/prokolpo-1"
-          className="bg-gray-200 px-6 py-3 rounded hover:bg-gray-300"
+          href="/prokolpo/prokolpo-1"
+          className="bg-primary px-6 py-3 rounded hover:bg-secondary text-white transition-all transform duration-500"
         >
           ফেইজ ১ লেআউট
         </a>
 
         <a
-          href="/projects/prokolpo-2"
-          className="bg-gray-200 px-6 py-3 rounded hover:bg-gray-300"
+          href="/prokolpo/prokolpo-2"
+          className="bg-primary px-6 py-3 rounded hover:bg-secondary text-white transition-all transform duration-500"
         >
           ফেইজ ২ লেআউট
         </a>
 
         <a
-          href="/projects/prokolpo-3"
-          className="bg-gray-200 px-6 py-3 rounded hover:bg-gray-300"
+          href="/prokolpo/prokolpo-3"
+          className="bg-primary px-6 py-3 rounded hover:bg-secondary text-white transition-all transform duration-500"
         >
           ফেইজ ৩ লেআউট
         </a>

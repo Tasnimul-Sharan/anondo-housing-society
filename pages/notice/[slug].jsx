@@ -5,7 +5,6 @@ import { RiLoader2Fill } from "react-icons/ri";
 import HeroSection from "@/components/HeroSection";
 import { NoticeDetailsData } from "@/data/NoticeDetailsData";
 import NoticeDetails from "@/components/BlogDetails";
-import { noticeData } from "@/data/noticeData";
 
 export default function NewsDetailsDataPage() {
   const router = useRouter();

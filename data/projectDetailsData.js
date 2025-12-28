@@ -3,7 +3,7 @@ export const projectDetailsData = {
     {
       slug: "prokolpo-1",
       title: "ফেইজ - ১",
-      banner: "/projects/phase-1-banner.jpg",
+      banner: "/prokolpo/prokolpo-banner-1.jpg",
       description: [
         "প্রকল্পের ১ম পর্যায়ের মাটি ভরাট কাজ সম্পন্ন হয়েছে।",
         "লে–আউট চুড়ান্ত করে ২০১৭ সালে লটারীর মাধ্যমে প্লট হস্তান্তর করা হয়েছে।",
@@ -68,9 +68,9 @@ export const projectDetailsData = {
         },
       ],
       images: [
-        "/projects/phase-1-img-1.jpg",
-        "/projects/phase-1-img-2.jpg",
-        "/projects/phase-1-img-3.jpg",
+        "/prokolpo/prokolpo1-1.jpg",
+        "/prokolpo/prokolpo1-2.jpg",
+        "/prokolpo/prokolpo1-3.jpg",
       ],
       notes: [
         "মূল্য যে কোনো সময় পূর্ব নোটিশ ছাড়াই পরিবর্তন হতে পারে।",
@@ -86,25 +86,25 @@ export const projectDetailsData = {
     {
       slug: "prokolpo-2",
       title: "ফেইজ - ২",
-      banner: "/projects/phase-2-banner.jpg",
+      banner: "/prokolpo/prokolpo-banner-2.jpg",
       description: [
         "২য় পর্যায়ের মাটি ভরাট কাজ ২০২০ সালে সম্পন্ন হয়েছে।",
         "২০২১ সালে লটারীর মাধ্যমে প্লট বিতরণ করা হয়েছে।",
         "রাস্তাঘাট, ড্রেন, সুয়ারেজ, বৈদ্যুতিক সংযোগ চলমান।",
         "২০২২-২০২৪ এর মধ্যে সম্পূর্ণ উন্নয়ন শেষ হবে।",
       ],
-      priceTable: [], // ❌ Table নেই → UI তে দেখাবে না
+      priceTable: [],
       images: [
-        "/phase/phase-1-img-1.jpg",
-        "/projects/phase-1-img-2.jpg",
-        "/projects/phase-1-img-3.jpg",
+        "/prokolpo/prokolpo2-1.jpg",
+        "/prokolpo/prokolpo2-2.jpg",
+        "/prokolpo/prokolpo2-3.jpg",
       ],
-      notes: [], // ❌ Notes নেই → দেখাবে না
+      notes: [],
     },
     {
       slug: "prokolpo-3",
       title: "ফেইজ - ৩",
-      banner: "/phase/phase3.jpg",
+      banner: "/prokolpo/prokolpo-banner-3.jpg",
       description: ["৩য় পর্যায়ের মাটি ভরাট কাজ সম্পন্ন করা হয়েছে।"],
       priceTable: [
         {
@@ -133,9 +133,9 @@ export const projectDetailsData = {
         },
       ],
       images: [
-        "/phase/phase-3-1.png",
-        "/phase/phase-3-2.png",
-        "/phase/phase-3-3.jpg",
+        "/prokolpo/prokolpo3-1.jpg",
+        "/prokolpo/prokolpo3-2.jpg",
+        "/prokolpo/prokolpo3-3.jpg",
       ],
       notes: [
         "চুক্তির পর মূল্য পরিবর্তন হবে না।",
@@ -149,7 +149,7 @@ export const projectDetailsData = {
     {
       slug: "c-d-block",
       title: "C & D Block",
-      banner: "/projects/c-d-block-banner.jpg",
+      banner: "/prokolpo/prokolpo-banner-4.jpg",
 
       description: [
         "C & D ব্লকের সকল মাটি ভরাট কাজ সম্পন্ন হয়েছে।",
@@ -225,9 +225,9 @@ export const projectDetailsData = {
       ],
 
       images: [
-        "/phase/phase-3-1.png",
-        "/phase/phase-3-2.png",
-        "/phase/phase-3-3.jpg",
+        "/prokolpo/prokolpo4-1.jpg",
+        "/prokolpo/prokolpo4-2.jpg",
+        "/prokolpo/prokolpo4-3.jpg",
       ],
 
       notes: [

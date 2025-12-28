@@ -98,7 +98,7 @@ export default function AboutPage() {
       />
       <AboutUsSection />
       {/* <TeamSection /> */}
-      <FAQ faqData={faqData} />
+      {/* <FAQ faqData={faqData} /> */}
     </div>
   );
 }

@@ -4,27 +4,27 @@ const attachments = [
   {
     name: "Brochure",
     size: "2.88 MB",
-    url: "/pdf/Brochure.pdf",
+    url: "/form/Brochure.pdf",
   },
   {
     name: "Application Form",
     size: "3.25 MB",
-    url: "/pdf/Application Form.pdf",
+    url: "/form/Application Form.pdf",
   },
   {
     name: "List of Purchasers (Joint Purchase)",
     size: "80 KB",
-    url: "/pdf/List of Purchasers (Joint Purchase).pdf",
+    url: "/form/List of Purchasers (Joint Purchase).pdf",
   },
   {
     name: "Client Information Update Form",
     size: "250 KB",
-    url: "/pdf/Client Information Update request Form.pdf",
+    url: "/form/Client Information Update request Form.pdf",
   },
   {
     name: "Plot Selection Form (Lottery)",
     size: "135 KB",
-    url: "/pdf/Plot Selection Form (Lottery).pdf",
+    url: "/form/Plot Selection Form (Lottery).pdf",
   },
 ];
 

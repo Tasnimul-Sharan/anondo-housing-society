@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import Head from "next/head";
-import NewsPageSection from "@/components/NewsPageSection";
+import NoticePageSection from "@/components/NoticePageSection";
 export default function NoticePage() {
   const meta = {
     title:
@@ -41,7 +41,7 @@ export default function NoticePage() {
           backgroundImage: "/blogs/blog-bg.jpeg",
         }}
       />
-      <NewsPageSection />
+      <NoticePageSection />
     </div>
   );
 }
