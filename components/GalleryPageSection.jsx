@@ -25,9 +25,14 @@ export default function GalleryPageSection() {
       desc: "Description of image 2",
     },
     {
-      img: "/gallery/gallery3.jpg",
+      img: "/gallery/gallery3.jpeg",
       title: "Gallery Image 3",
       desc: "Description of image 3",
+    },
+    {
+      img: "/gallery/gallery4.jpeg",
+      title: "Gallery Image 4",
+      desc: "Description of image 4",
     },
     // {
     //   img: "/gallery/gallery4.jpg",

@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import Head from "next/head";
-import Navbar from "@/components/Navbar";
 import GalleryPageSection from "@/components/GalleryPageSection";
 export default function GalleryPage() {
   const meta = {

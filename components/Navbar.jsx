@@ -15,7 +15,7 @@ import {
 const menuItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Projects", path: "/projects" },
+  { name: "Projects", path: "/anondo-housing-society" },
   { name: "Notice", path: "/notice" },
   {
     name: "Corporate",
@@ -234,7 +234,7 @@ export default function Navbar() {
 
           {/* Desktop Button */}
           <div className="hidden lg:block">
-            <Link href="/contact">
+            <Link href="/contact-us">
               <button className="bg-primary text-white px-6 py-2 font-bold hover:bg-secondary transition-all rounded transform duration-500">
                 Contact Us
               </button>
@@ -289,7 +289,7 @@ export default function Navbar() {
         </ul>
 
         <div className="mt-10">
-          <Link href="/contact">
+          <Link href="/contact-us">
             <button className="w-full bg-primary text-white py-3 font-bold rounded-lg">
               Contact Us
             </button>

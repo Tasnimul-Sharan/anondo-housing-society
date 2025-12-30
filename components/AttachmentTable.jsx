@@ -24,7 +24,7 @@ const attachments = [
   {
     name: "Plot Selection Form (Lottery)",
     size: "135 KB",
-    url: "/form/Plot Selection Form (Lottery).pdf",
+    url: "/form/Plot Selection form (Lottery).pdf",
   },
 ];
 

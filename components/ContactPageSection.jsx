@@ -59,8 +59,8 @@ export default function ContactPageSection() {
             Address Street
           </h3>
           <p className="text-center text-gray-600 mt-2 leading-relaxed">
-            Address: Priyans Building, 13-th floor, 5, Rajuk Avenue, Motijheel,
-            1000 Dhaka
+            Address: Printers Building, 11–14th floor, 5, Rajuk Avenue,
+            Motijheel, 1000 Dhaka
           </p>
         </div>
 

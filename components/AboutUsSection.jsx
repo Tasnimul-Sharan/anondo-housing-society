@@ -6,9 +6,9 @@ export default function AboutUsSection() {
     <section className="py-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Image */}
-        <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-md">
+        <div className="relative w-full md:h-auto h-96 rounded-2xl overflow-hidden shadow-md">
           <Image
-            src="/about.jpg"
+            src="/about.png"
             alt="আমাদের কথা"
             width={1603}
             height={1069}
