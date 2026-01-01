@@ -131,20 +131,26 @@ export default function Navbar() {
 
           {/* RIGHT SIDE: SOCIAL LINKS */}
           <div className="flex items-center gap-4 text-xl">
-            <Link href="https://facebook.com" target="_blank">
-              <FaFacebookF className="hover:text-gray-300 cursor-pointer" />
+            <Link href="https://facebook.com/AnondoHousing" target="_blank">
+              <FaFacebookF className="hover:text-primary transition-all transform duration-500 cursor-pointer" />
             </Link>
 
-            <Link href="https://linkedin.com" target="_blank">
-              <FaLinkedinIn className="hover:text-gray-300 cursor-pointer" />
+            <Link
+              href="https://linkedin.com/company/anondo-housing-society"
+              target="_blank"
+            >
+              <FaLinkedinIn className="hover:text-primary transition-all transform duration-500 cursor-pointer" />
             </Link>
 
-            <Link href="https://instagram.com" target="_blank">
-              <FaInstagram className="hover:text-gray-300 cursor-pointer" />
+            <Link href="https://instagram.com/aphs_bd/" target="_blank">
+              <FaInstagram className="hover:text-primary transition-all transform duration-500 cursor-pointer" />
             </Link>
 
-            <Link href="https://youtube.com" target="_blank">
-              <FaYoutube className="hover:text-gray-300 cursor-pointer" />
+            <Link
+              href="https://youtube.com/@AnondoHousingSocietyOfficial"
+              target="_blank"
+            >
+              <FaYoutube className="hover:text-primary transition-all transform duration-500 cursor-pointer" />
             </Link>
 
             {/* <select className="text-black text-base px-2 py-1 rounded ml-3">

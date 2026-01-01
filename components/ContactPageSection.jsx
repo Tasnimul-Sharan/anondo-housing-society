@@ -39,7 +39,7 @@ export default function ContactPageSection() {
   };
 
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white md:pt-12 pt-6">
       {/* Heading */}
       <h2 className="text-4xl font-bold text-center mb-2">Get In Touch</h2>
       <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
@@ -64,7 +64,6 @@ export default function ContactPageSection() {
           </p>
         </div>
 
-        {/* Phone */}
         <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
           <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl transition duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:ring-2 group-hover:ring-primary group-hover:ring-offset-2 group-hover:ring-offset-white">
             <FaPhoneAlt />
@@ -100,8 +99,8 @@ export default function ContactPageSection() {
       </div>
 
       {/* Map Section */}
-      <div className="container mx-auto mt-16 px-5">
-        <div className="rounded-3xl overflow-hidden shadow-2xl border mt-10">
+      <div className="custom-container mx-auto mt-12">
+        <div className="rounded overflow-hidden border mt-10">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8676469000003!2d90.4146007!3d23.7297011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b858546b9d3b%3A0x4b924139d4a1e282!2sAnondo%20Police%20Housing%20Society%20(Corporate%20Office)!5e0!3m2!1sen!2sbd!4v1701111111111"
             className="w-full h-[550px] md:h-[650px] border-0"
@@ -112,7 +111,10 @@ export default function ContactPageSection() {
       </div>
 
       <div className="py-20 bg-[#f7f7f7]">
-        <form onSubmit={onSubmit} className="max-w-6xl mx-auto px-4 space-y-6">
+        <form
+          onSubmit={onSubmit}
+          className="max-w-3xl mx-auto md:px-0 px-6 space-y-6"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"

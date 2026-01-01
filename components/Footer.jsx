@@ -2,21 +2,16 @@
 
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaYoutube,
   FaInstagram,
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneCall } from "react-icons/fi";
-import {
-  PiMapPinAreaBold,
-  PiMapPinAreaFill,
-  PiMapPinBold,
-  PiMapPinFill,
-  PiMapPinLight,
-} from "react-icons/pi";
+import { PiMapPinBold } from "react-icons/pi";
 import Image from "next/image";
+import Link from "next/link";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -148,11 +143,26 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex items-center gap-4">
-            <SocialIcon icon={<FaFacebookF />} />
-            <SocialIcon icon={<FaTwitter />} />
-            <SocialIcon icon={<FaLinkedinIn />} />
-            <SocialIcon icon={<FaYoutube />} />
-            <SocialIcon icon={<FaInstagram />} />
+            <SocialIcon
+              icon={<FaFacebookF />}
+              href="https://www.facebook.com/AnondoHousing"
+            />
+            <SocialIcon
+              icon={<FaXTwitter />}
+              href="https://twitter.com/AnondoPolice"
+            />
+            <SocialIcon
+              icon={<FaLinkedinIn />}
+              href="https://www.linkedin.com/company/anondo-housing-society"
+            />
+            <SocialIcon
+              icon={<FaYoutube />}
+              href="https://www.youtube.com/@AnondoHousingSocietyOfficial"
+            />
+            <SocialIcon
+              icon={<FaInstagram />}
+              href="https://www.instagram.com/aphs_bd/"
+            />
           </div>
         </div>
       </div>
@@ -170,10 +180,15 @@ export default function Footer() {
 }
 
 /* Small Reusable Icon Component */
-function SocialIcon({ icon }) {
+function SocialIcon({ icon, href }) {
   return (
-    <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer hover:bg-primary hover:border-transparent transition-all transform duration-500">
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 rounded-full border border-white flex items-center justify-center hover:bg-primary hover:border-transparent transition-all duration-500"
+    >
       {icon}
-    </div>
+    </Link>
   );
 }
