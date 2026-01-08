@@ -84,7 +84,6 @@ export default function ProjectDetailsPage() {
           backgroundImage: project.banner || "/projects/project-bg.jpg",
         }}
       />
-
       <ProjectDetails project={project} />
     </div>
   );

@@ -15,7 +15,7 @@ import {
 const menuItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Projects", path: "/anondo-housing-society" },
+  { name: "Projects", path: "/projects" },
   { name: "Notice", path: "/notice" },
   {
     name: "Corporate",
@@ -99,7 +99,6 @@ export default function Navbar() {
         isScrolled ? "shadow-inner" : "shadow-none"
       }`}
     >
-      {/* ========== TOP INFO BAR (NO SHAKING) ========== */}
       <div
         className={`
     bg-secondary text-white overflow-hidden transition-all duration-500
@@ -108,28 +107,27 @@ export default function Navbar() {
       >
         <div className="custom-container mx-auto flex items-center justify-between text-base whitespace-nowrap gap-6">
           {/* LEFT SIDE: PHONE | EMAIL | TIME */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <FiPhoneCall className="text-white" />
-              <span>+8801318252050</span>
+          <div className="flex flex-wrap items-center gap-6 text-base text-white">
+            <div className="flex items-center gap-2 hover:text-primary transition">
+              <FiPhoneCall />
+              <span className="tracking-wide">+880 1318-252050</span>
             </div>
 
-            <span className="opacity-50">|</span>
+            <span className="h-4 w-px bg-white/30" />
 
-            <div className="flex items-center gap-2">
-              <FiMail className="text-white" />
-              <span>anondohousings@gmail.com</span>
+            <div className="flex items-center gap-2 hover:text-primary transition">
+              <FiMail />
+              <span className="tracking-wide">anondohousings@gmail.com</span>
             </div>
 
-            <span className="opacity-50">|</span>
+            <span className="h-4 w-px bg-white/30" />
 
-            <div className="flex items-center gap-2">
-              <FiClock className="text-white" />
-              <span>Sat–Thu 10–7</span>
+            <div className="flex items-center gap-2 text-white">
+              <FiClock />
+              <span>Sat – Thu · 10 AM – 6 PM</span>
             </div>
           </div>
 
-          {/* RIGHT SIDE: SOCIAL LINKS */}
           <div className="flex items-center gap-4 text-xl">
             <Link href="https://facebook.com/AnondoHousing" target="_blank">
               <FaFacebookF className="hover:text-primary transition-all transform duration-500 cursor-pointer" />
@@ -153,11 +151,6 @@ export default function Navbar() {
               <FaYoutube className="hover:text-primary transition-all transform duration-500 cursor-pointer" />
             </Link>
 
-            {/* <select className="text-black text-base px-2 py-1 rounded ml-3">
-              <option>ভাষা বেছে নিন</option>
-              <option>English</option>
-              <option>Bangla</option>
-            </select> */}
             <select
               className="text-black text-base px-2 py-1 rounded ml-3"
               onChange={(e) => {
@@ -192,7 +185,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ========== MAIN NAVBAR (NO MOTION, NO SHAKE) ========== */}
       <div className="bg-white border-b">
         <div className="custom-container mx-auto flex justify-between items-center">
           {/* Logo */}
@@ -238,16 +230,14 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop Button */}
           <div className="hidden lg:block">
-            <Link href="/contact-us">
+            <Link href="/contact">
               <button className="bg-primary text-white px-6 py-2 font-bold hover:bg-secondary transition-all rounded transform duration-500">
                 Contact Us
               </button>
             </Link>
           </div>
 
-          {/* Mobile Icon */}
           <button
             className="lg:hidden text-3xl text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}

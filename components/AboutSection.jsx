@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        {/* LEFT IMAGES GRID */}
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-2">
             <Image
@@ -38,7 +38,6 @@ export default function AboutSection() {
           </div> */}
         </div>
 
-        {/* RIGHT CONTENT */}
         <div className="">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center md:text-left">
             আনন্দ হাউজিং সোসাইটি
@@ -65,9 +64,11 @@ export default function AboutSection() {
             বসবাসের জন্য আপনাকে স্বাগতম।
           </p>
 
-          <button className="bg-primary text-white font-semibold px-6 py-2 rounded-md hover:bg-amber-600 transition">
-            আমাদের কথা
-          </button>
+          <Link href="/projects">
+            <button className="bg-primary text-white font-semibold px-6 py-2 rounded-md hover:bg-amber-600 transition">
+              আমাদের কথা
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import EventMap from "@/components/EventMap";
-import { FiCheckCircle } from "react-icons/fi";
-import { FaCheckCircle, FaRegCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { BsStarFill } from "react-icons/bs";
 
 export default function ProjectDetails({ project }) {
   const { banner, title, description, priceTable, notes, images } = project;
@@ -66,9 +66,16 @@ export default function ProjectDetails({ project }) {
                 </tbody>
               </table>
             </div>
+            {project?.approvedAt && (
+              <div className="mt-6 flex justify-center md:justify-end">
+                <p className="flex items-center gap-2 text-base font-medium text-primary">
+                  <BsStarFill className="text-primary" />
+                  মূল্য তালিকা {project.approvedAt} তারিখ হতে অনুমোদিত।
+                </p>
+              </div>
+            )}
           </div>
         )}
-
         {/* Notes Section */}
         {notes && notes.length > 0 && (
           <div className="bg-orange-50 border-l-4 border-primary p-6 rounded mb-12">

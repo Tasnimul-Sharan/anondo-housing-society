@@ -72,12 +72,13 @@ export default function ContactPageSection() {
             Phone Number
           </h3>
           <div className="text-center text-gray-600 mt-2 space-y-1">
-            <p>01750821004</p>
-            <p>01896180020</p>
-            <p>01750821012</p>
-            <p>01750821006</p>
-            <p>01630686068</p>
-            <p>01824682154</p>
+            <p>01750180094</p>
+            <p>01318252050</p>
+            <p>01750180095</p>
+            <p>01750180092</p>
+            <p>01750180096</p>
+            <p>01318252045</p>
+            <p>01324412954</p>
           </div>
         </div>
 

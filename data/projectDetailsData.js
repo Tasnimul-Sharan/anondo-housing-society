@@ -67,6 +67,7 @@ export const projectDetailsData = {
           price: "৪২,০০,০০০/-",
         },
       ],
+      approvedAt: "০১/১১/২০২৫",
       images: [
         "/prokolpo/prokolpo1-1.jpg",
         "/prokolpo/prokolpo1-2.jpg",
@@ -132,6 +133,7 @@ export const projectDetailsData = {
           price: "৫৫,০০,০০০/-",
         },
       ],
+      approvedAt: "০১/১১/২০২৫",
       images: [
         "/prokolpo/prokolpo3-1.jpg",
         "/prokolpo/prokolpo3-2.jpg",
@@ -223,13 +225,12 @@ export const projectDetailsData = {
           inc: "",
         },
       ],
-
+      approvedAt: "০১/১১/২০২৫",
       images: [
         "/prokolpo/prokolpo4-1.jpg",
         "/prokolpo/prokolpo4-2.jpg",
         "/prokolpo/prokolpo4-3.jpg",
       ],
-
       notes: [
         "Price may change at any time without prior notice. Once fixed by deed of agreement, it will not change.",
         "Booking/Application Money: 1,00,000/- BDT per plot, payable at booking time.",
