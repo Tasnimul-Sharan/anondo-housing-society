@@ -15,9 +15,8 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0E75B6] text-white pt-20 pb-6">
+    <footer className="bg-secondary text-white pt-20 pb-6">
       <div className="custom-container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* LEFT SECTION */}
         <div>
           <Image
             src="/Anondo-Housing-Logo.png"
@@ -26,32 +25,11 @@ export default function Footer() {
             height={180}
             className="mb-6"
           />
-
           <p className="text-sm leading-relaxed mb-6">
             Anondo Housing Society is a project of Anondo Family Welfare
             Multipurpose Co-operative Society, located in Purbachal new town.
           </p>
-
-          {/* <div className="space-y-4 text-sm">
-            <p className="flex items-start gap-3">
-              <PiMapPinLight size={22} />
-              Printers Building, 11–13th Floor, 5 Rajuk Avenue, Motijheel, 1000
-              Dhaka
-            </p>
-
-            <p className="flex items-center gap-3">
-              <FiPhoneCall size={20} className="text-primary" />
-              +8801318252050
-            </p>
-
-            <p className="flex items-center gap-3">
-              <HiOutlineMail size={20} />
-              anondohousings@gmail.com
-            </p>
-          </div> */}
         </div>
-
-        {/* OFFICE & CORPORATE ADDRESS */}
         <div>
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
             Office Address
@@ -77,8 +55,6 @@ export default function Footer() {
             <li>Bangladesh</li>
           </ul>
         </div>
-
-        {/* QUICK LINKS */}
         <div>
           <h4 className="text-xl font-semibold mb-4 relative inline-block">
             Quick-link
@@ -116,7 +92,7 @@ export default function Footer() {
 
             <p className="flex items-center gap-3">
               <FiPhoneCall size={20} className="text-primary" />
-              +8801318252050
+              +880 1313-775333
             </p>
 
             <p className="flex items-center gap-3">

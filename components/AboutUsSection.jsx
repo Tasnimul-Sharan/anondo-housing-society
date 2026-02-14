@@ -5,7 +5,6 @@ export default function AboutUsSection() {
   return (
     <section className="py-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        {/* Image */}
         <div className="relative w-full md:h-auto h-96 rounded-2xl overflow-hidden shadow-md">
           <Image
             src="/about.png"
@@ -15,8 +14,6 @@ export default function AboutUsSection() {
             className="object-cover w-full h-full"
           />
         </div>
-
-        {/* Text Section */}
         <div className="mt-10 text-gray-800">
           <h2 className="md:text-4xl text-3xl font-bold text-gray-900 mb-4 border-b-2 border-primary inline-block pb-2">
             আমাদের কথা

@@ -24,7 +24,7 @@ export default function ContactPageSection() {
     if (res.success) {
       setSuccess(true);
       setResult(
-        "✅ আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে। আমরা খুব শিগগিরই যোগাযোগ করবো!"
+        "✅ আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে। আমরা খুব শিগগিরই যোগাযোগ করবো!",
       );
       event.target.reset();
     } else {
@@ -32,7 +32,6 @@ export default function ContactPageSection() {
       setResult("❌ দুঃখিত! কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।");
     }
 
-    // Auto hide message after 5 seconds
     setTimeout(() => {
       setResult("");
     }, 5000);
@@ -40,17 +39,10 @@ export default function ContactPageSection() {
 
   return (
     <div className="bg-white md:pt-12 pt-6">
-      {/* Heading */}
       <h2 className="text-4xl font-bold text-center mb-2">Get In Touch</h2>
       <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
-
-      {/* Top Info Cards */}
       <div className="container mx-auto grid md:grid-cols-3 gap-10 px-5">
-        {/* Address */}
         <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-          {/* <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl group-hover:scale-110 group-hover:bg-primary transition duration-300">
-            <FaMapMarkerAlt />
-          </div> */}
           <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl transition duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:ring-2 group-hover:ring-primary group-hover:ring-offset-2 group-hover:ring-offset-white">
             <FaMapMarkerAlt />
           </div>
@@ -81,8 +73,6 @@ export default function ContactPageSection() {
             <p>01324412954</p>
           </div>
         </div>
-
-        {/* Email */}
         <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
           <div className="w-16 h-16 flex items-center justify-center mx-auto bg-gray-900 text-white rounded-full text-2xl transition duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:ring-2 group-hover:ring-primary group-hover:ring-offset-2 group-hover:ring-offset-white">
             <FaEnvelope />
@@ -98,8 +88,6 @@ export default function ContactPageSection() {
           </div>
         </div>
       </div>
-
-      {/* Map Section */}
       <div className="custom-container mx-auto mt-12">
         <div className="rounded overflow-hidden border mt-10">
           <iframe
@@ -154,8 +142,6 @@ export default function ContactPageSection() {
           >
             SEND MESSAGE
           </button>
-
-          {/* Success / Error Message */}
           {result && (
             <div
               className={`mt-6 p-4 rounded text-center font-medium ${
@@ -170,6 +156,5 @@ export default function ContactPageSection() {
         </form>
       </div>
     </div>
-    // </div>
   );
 }

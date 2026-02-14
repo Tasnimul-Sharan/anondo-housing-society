@@ -106,11 +106,10 @@ export default function Navbar() {
   `}
       >
         <div className="custom-container mx-auto flex items-center justify-between text-base whitespace-nowrap gap-6">
-          {/* LEFT SIDE: PHONE | EMAIL | TIME */}
           <div className="flex flex-wrap items-center gap-6 text-base text-white">
             <div className="flex items-center gap-2 hover:text-primary transition">
               <FiPhoneCall />
-              <span className="tracking-wide">+880 1318-252050</span>
+              <span className="tracking-wide">+880 1313-775333</span>
             </div>
 
             <span className="h-4 w-px bg-white/30" />
@@ -155,8 +154,6 @@ export default function Navbar() {
               className="text-black text-base px-2 py-1 rounded ml-3"
               onChange={(e) => {
                 const selectedLang = e.target.value;
-
-                // Force URL rewrite (Works even when iframe fails)
                 const googleTranslateCombo =
                   document.querySelector(".goog-te-combo");
 
@@ -166,7 +163,6 @@ export default function Navbar() {
                   return;
                 }
 
-                // Retry system — wait until translator loads
                 const waitForTranslate = setInterval(() => {
                   const combo = document.querySelector(".goog-te-combo");
                   if (combo) {

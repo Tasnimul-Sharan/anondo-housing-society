@@ -9,7 +9,7 @@ export const useLenis = () => {
       direction: "vertical",
       gestureDirection: "vertical",
       smoothTouch: true,
-      touchMultiplier: 2,
+      touchMultiplier: 1.2,
     });
     function raf(time) {
       lenis.raf(time);

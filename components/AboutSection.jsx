@@ -16,26 +16,6 @@ export default function AboutSection() {
               className="rounded-md w-full h-auto object-cover"
             />
           </div>
-          {/* 
-          <div>
-            <Image
-              src="/about2.png"
-              alt="about"
-              width={300}
-              height={300}
-              className="rounded-md w-full h-auto object-cover"
-            />
-          </div>
-
-          <div>
-            <Image
-              src="/about3.jpg"
-              alt="about"
-              width={300}
-              height={300}
-              className="rounded-md w-full h-auto object-cover"
-            />
-          </div> */}
         </div>
 
         <div className="">

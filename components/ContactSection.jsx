@@ -38,14 +38,11 @@ export default function ContactSection() {
 
   return (
     <>
-      {/* Heading */}
       <section className="py-16 bg-white text-center">
         <h2 className="text-4xl font-bold text-gray-800">যোগাযোগ করুন</h2>
         <div className="w-20 h-[3px] bg-primary mt-4 mb-4 mx-auto"></div>
         <p className="mt-2 text-gray-600">আমাদের সাথে যোগাযোগ করুন</p>
       </section>
-
-      {/* Form */}
       <section className="py-20 bg-[#f7f7f7]">
         <form onSubmit={onSubmit} className="max-w-4xl mx-auto px-4 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -86,8 +83,6 @@ export default function ContactSection() {
           >
             SEND MESSAGE
           </button>
-
-          {/* Success / Error Message */}
           {result && (
             <div
               className={`mt-6 p-4 rounded text-center font-medium ${

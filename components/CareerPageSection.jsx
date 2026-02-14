@@ -76,7 +76,6 @@ export default function CareerPageSection() {
           </div>
         ))}
 
-        {/* Pagination */}
         <div className="flex justify-center items-center gap-3 mt-10 text-sm font-medium">
           <button
             onClick={handlePrev}
