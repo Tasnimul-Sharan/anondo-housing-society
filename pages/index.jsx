@@ -44,7 +44,6 @@ export default function Home() {
         <meta property="twitter:description" content={meta.description} />
         <meta property="twitter:image" content={meta.image} />
       </Head>
-
       <LandingPage />
       <AboutSection />
       <StatsSection />

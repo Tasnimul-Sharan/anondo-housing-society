@@ -25,7 +25,7 @@ const sliderData = [
 বাউন্ডারি করা রেডি প্লট, ইতোমধ্যে নির্মিত অভ্যন্তরীন সড়ক,
 বিদ্যুৎ সংযোগ সুবিধাসহ এখনই বাড়ি করে বসবাস করার উপযোগী।
 `,
-    image: "/slider/slider1.png",
+    image: "/slider/slider1.jpg",
     // primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
     buttons: [
       { text: "আমাদের প্রকল্প", link: "/about", variant: "primary" },
@@ -39,7 +39,7 @@ const sliderData = [
 এককালীন ও সুদমুক্ত সহজ কিস্তিতে প্লট বরাদ্দের জন্য আবেদন
 গ্রহণ করা হচ্ছে।
 `,
-    image: "/slider/slider2.png",
+    image: "/slider/slider2.jpg",
     // primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
     buttons: [
       { text: "আমাদের প্রকল্প", link: "/about", variant: "primary" },

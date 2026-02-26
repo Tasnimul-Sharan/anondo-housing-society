@@ -61,7 +61,7 @@ export default function Navbar() {
       gsap.fromTo(
         items,
         { x: "-30px", opacity: 0 },
-        { x: "0px", opacity: 1, duration: 0.5, stagger: 0.1 }
+        { x: "0px", opacity: 1, duration: 0.5, stagger: 0.1 },
       );
     } else {
       gsap.to(menu, {
@@ -88,7 +88,7 @@ export default function Navbar() {
           includedLanguages: "en,bn",
           autoDisplay: false,
         },
-        "google_translate_element"
+        "google_translate_element",
       );
     };
   }, []);
@@ -101,6 +101,7 @@ export default function Navbar() {
     >
       <div
         className={`
+    hidden lg:block
     bg-secondary text-white overflow-hidden transition-all duration-500
     ${isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-4"}
   `}
@@ -235,7 +236,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="lg:hidden text-3xl text-primary"
+            className="lg:hidden text-3xl text-primary z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <HiOutlineX /> : <HiOutlineMenu />}
@@ -286,6 +287,70 @@ export default function Navbar() {
               Contact Us
             </button>
           </Link>
+        </div>
+        {/* ===== Mobile Bottom Info Section ===== */}
+        <div className="mt-12 border-t pt-6 space-y-5 text-base font-medium">
+          {/* Contact Info */}
+          <div className="space-y-3 text-gray-700">
+            <div className="flex items-center gap-3">
+              <FiPhoneCall className="text-primary" />
+              <span>+880 1313-775333</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <FiMail className="text-primary" />
+              <span>anondohousings@gmail.com</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <FiClock className="text-primary" />
+              <span>Sat – Thu · 10 AM – 6 PM</span>
+            </div>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex justify-center gap-5 text-xl pt-4">
+            <Link href="https://facebook.com/AnondoHousing" target="_blank">
+              <FaFacebookF className="text-gray-600 hover:text-primary transition" />
+            </Link>
+
+            <Link
+              href="https://linkedin.com/company/anondo-housing-society"
+              target="_blank"
+            >
+              <FaLinkedinIn className="text-gray-600 hover:text-primary transition" />
+            </Link>
+
+            <Link href="https://instagram.com/aphs_bd/" target="_blank">
+              <FaInstagram className="text-gray-600 hover:text-primary transition" />
+            </Link>
+
+            <Link
+              href="https://youtube.com/@AnondoHousingSocietyOfficial"
+              target="_blank"
+            >
+              <FaYoutube className="text-gray-600 hover:text-primary transition" />
+            </Link>
+          </div>
+
+          {/* Language Selector */}
+          {/* <div className="pt-4">
+            <select
+              className="w-full border rounded-md px-3 py-2 text-sm"
+              onChange={(e) => {
+                const selectedLang = e.target.value;
+                const combo = document.querySelector(".goog-te-combo");
+                if (combo) {
+                  combo.value = selectedLang;
+                  combo.dispatchEvent(new Event("change"));
+                }
+              }}
+            >
+              <option value="">ভাষা বেছে নিন</option>
+              <option value="en">English</option>
+              <option value="bn">Bangla</option>
+            </select>
+          </div> */}
         </div>
       </div>
       <div id="google_translate_element" style={{ display: "none" }}></div>
