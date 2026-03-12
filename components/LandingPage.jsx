@@ -26,6 +26,8 @@ const sliderData = [
 বিদ্যুৎ সংযোগ সুবিধাসহ এখনই বাড়ি করে বসবাস করার উপযোগী।
 `,
     image: "/slider/slider1.jpg",
+    // image:
+    //   "https://res.cloudinary.com/diekvoegj/image/upload/v1773288753/slider1_i1gmka.jpg",
     // primaryButton: { text: "আমাদের প্রকল্প", link: "/about" },
     buttons: [
       { text: "আমাদের প্রকল্প", link: "/about", variant: "primary" },
