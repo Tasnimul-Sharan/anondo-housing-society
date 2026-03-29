@@ -22,7 +22,6 @@ export default function EventPopup() {
       onClick={() => setShow(false)}
       className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4"
     >
-      {/* ❗ Popup content (stop closing when clicking inside) */}
       <div
         onClick={(e) => e.stopPropagation()}
         className="relative bg-white rounded-2xl shadow-2xl w-full custom-container mx-auto p-3 md:p-5"
