@@ -64,13 +64,11 @@ export default function ContactPageSection() {
             Phone Number
           </h3>
           <div className="text-center text-gray-600 mt-2 space-y-1">
-            <p>01750180094</p>
-            <p>01318252050</p>
-            <p>01750180095</p>
-            <p>01750180092</p>
-            <p>01750180096</p>
-            <p>01318252045</p>
-            <p>01324412954</p>
+            <p>01331115500</p>
+            <p>01331115511</p>
+            <p>01313775333</p>
+            <p>01313775334</p>
+            <p>01313775335</p>
           </div>
         </div>
         <div className="group bg-white p-8 rounded-2xl border hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">

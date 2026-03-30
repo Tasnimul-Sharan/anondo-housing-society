@@ -110,7 +110,7 @@ export default function Navbar() {
           <div className="flex flex-wrap items-center gap-6 text-base text-white">
             <div className="flex items-center gap-2 hover:text-primary transition">
               <FiPhoneCall />
-              <span className="tracking-wide">+880 1313-775333</span>
+              <span className="tracking-wide">+880 1331-115500</span>
             </div>
 
             <span className="h-4 w-px bg-white/30" />
@@ -294,14 +294,12 @@ export default function Navbar() {
           <div className="space-y-3 text-gray-700">
             <div className="flex items-center gap-3">
               <FiPhoneCall className="text-primary" />
-              <span>+880 1313-775333</span>
+              <span>+880 1331-115500</span>
             </div>
-
             <div className="flex items-center gap-3">
               <FiMail className="text-primary" />
               <span>anondohousings@gmail.com</span>
             </div>
-
             <div className="flex items-center gap-3">
               <FiClock className="text-primary" />
               <span>Sat – Thu · 10 AM – 6 PM</span>
