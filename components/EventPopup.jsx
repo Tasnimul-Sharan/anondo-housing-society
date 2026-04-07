@@ -2,14 +2,16 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function EventPopup() {
   const [show, setShow] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 1500); // 1.5 seconds delay
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -17,7 +19,6 @@ export default function EventPopup() {
   if (!show) return null;
 
   return (
-    // ✅ Overlay (outside click)
     <div
       onClick={() => setShow(false)}
       className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4"
@@ -36,26 +37,52 @@ export default function EventPopup() {
 
         {/* Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="relative w-full h-[250px] md:h-[600px]">
+          <div className="relative w-full rounded-xl">
             <Image
-              src="/invitation-card-01.png"
+              src="/invitation/invitation-card-01.png"
               alt="Event 1"
-              fill
-              className="object-contain w-full h-full rounded-xl"
+              width={1600}
+              height={1094}
+              className="object-cover w-full md:h-[500px] h-[220px] rounded-xl"
               priority
             />
           </div>
 
-          <div className="relative w-full h-[250px] md:h-[600px]">
+          <div className="relative w-full rounded-xl">
             <Image
-              src="/invitation-card-02.png"
+              src="/invitation/invitation-card-02.png"
               alt="Event 2"
-              fill
-              className="object-contain w-full h-full rounded-xl"
+              width={1600}
+              height={1096}
+              className="object-cover w-full md:h-[500px] h-[220px] rounded-xl"
+              priority
             />
           </div>
         </div>
+        <div className="text-center mt-5">
+          <button
+            onClick={() => {
+              setShow(false);
+              router.push("/event");
+            }}
+            className="bg-primary hover:bg-secondary text-white text-base md:px-6 md:py-3 px-3 py-2 rounded-xl
+             font-semibold shadow-md transition-all transform duration-500"
+          >
+            View Event Details
+          </button>
+        </div>
       </div>
+      {/* <div className="relative w-full h-full rounded-xl">
+          <Image
+            src="/invitation-card.png"
+            alt="Event Image 1"
+            width={3330}
+            height={1094}
+            className="object-cover w-full md:h-[500px] h-[230px] rounded-xl"
+          />
+        </div> */}
+      {/* ✅ Button */}
     </div>
+    // </div>
   );
 }
