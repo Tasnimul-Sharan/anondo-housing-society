@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         src="//code.tidio.co/ajdkwkyf6xekmj1gsudb5gljmvuswyyc.js"
         strategy="afterInteractive"
       />
-      <EventPopup />
+      {/* <EventPopup /> */}
       <Component {...pageProps} />
       <Analytics />
     </Layout>
