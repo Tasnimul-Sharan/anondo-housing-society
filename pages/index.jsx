@@ -10,6 +10,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import StatsSection from "@/components/StatsSection";
 import homepageData from "@/data/homepageData";
 import NoticeSection from "@/components/NoticeSection";
+import AGMGallery from "@/components/AGMGallery";
 
 export default function Home() {
   const meta = {
@@ -49,6 +50,7 @@ export default function Home() {
       <StatsSection />
       <ProjectsSection />
       <HowToBecomeOwner />
+      <AGMGallery />
       <PresidentSection />
       <FAQSection />
       <NoticeSection />
