@@ -28,6 +28,18 @@ export default function AGMGallery() {
     { img: "/agm/agm-12.jpg", date: "11 April 2026" },
     { img: "/agm/agm-13.jpg", date: "11 April 2026" },
     { img: "/agm/agm-14.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-15.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-16.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-17.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-18.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-19.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-20.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-21.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-22.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-23.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-24.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-25.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-26.jpg", date: "11 April 2026" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
