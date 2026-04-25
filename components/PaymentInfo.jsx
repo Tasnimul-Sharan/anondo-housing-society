@@ -1,3 +1,5 @@
+import PaymentInstructions from "./PaymentInstructions";
+
 export default function PaymentInfo() {
   const banks = [
     [
@@ -102,7 +104,7 @@ export default function PaymentInfo() {
       </div>
 
       {/* Instructions */}
-      <div className="mt-12 bg-orange-50 border-l-4 border-primary/90 p-6 rounded-md shadow-sm">
+      {/* <div className="mt-12 bg-orange-50 border-l-4 border-primary/90 p-6 rounded-md shadow-sm">
         <h3 className="text-lg font-semibold text-primary/80 flex items-center gap-2 mb-3">
           ⚠️ Important Information
         </h3>
@@ -132,10 +134,10 @@ export default function PaymentInfo() {
             <li>📞 01324412959</li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
       {/* Bengali Section */}
-      <div className="mt-16 bg-primary/50 p-8 rounded-xl border border-gray-200">
+      {/* <div className="mt-16 bg-primary/50 p-8 rounded-xl border border-gray-200">
         <h2 className="text-lg font-bold mb-4 text-gray-800">
           ● নতুন সদস্যদের টাকা জমাদান ও কিস্তি পরিশোধ পদ্ধতি :
         </h2>
@@ -158,7 +160,8 @@ export default function PaymentInfo() {
             জমা প্রদানের পর রশিদ সংগ্রহ করতে হবে এবং প্রয়োজনে প্রদর্শন করতে হবে।
           </li>
         </ul>
-      </div>
+      </div> */}
+      <PaymentInstructions/>
     </section>
   );
 }
