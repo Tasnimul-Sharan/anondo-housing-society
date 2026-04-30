@@ -13,7 +13,6 @@ module.exports = {
         tertiary: "#8A2BE2",
         off_white: "#F9F9F9",
         border_color: "#e5e7eb",
-        soft_black: "#1A1A1A",
       },
       keyframes: {
         ripple: {

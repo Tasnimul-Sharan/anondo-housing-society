@@ -11,6 +11,7 @@ import StatsSection from "@/components/StatsSection";
 import homepageData from "@/data/homepageData";
 import NoticeSection from "@/components/NoticeSection";
 import AGMGallery from "@/components/AGMGallery";
+import AGMDocumentary from "@/components/AGMDocumentary";
 
 export default function Home() {
   const meta = {
@@ -50,6 +51,7 @@ export default function Home() {
       <StatsSection />
       <ProjectsSection />
       <HowToBecomeOwner />
+      <AGMDocumentary />
       <AGMGallery />
       <PresidentSection />
       <FAQSection />
