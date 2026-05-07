@@ -20,15 +20,15 @@ export default function AGMGallery() {
     { img: "/agm/agm-04.jpg", date: "11 April 2026" },
     { img: "/agm/agm-05.jpg", date: "11 April 2026" },
     { img: "/agm/agm-06.jpg", date: "11 April 2026" },
-    { img: "/agm/agm-07.jpg", date: "11 April 2026" },
-    { img: "/agm/agm-08.jpg", date: "11 April 2026" },
-    { img: "/agm/agm-09.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-07.jpeg", date: "11 April 2026" },
+    { img: "/agm/agm-08.jpeg", date: "11 April 2026" },
+    { img: "/agm/agm-09.jpeg", date: "11 April 2026" },
     { img: "/agm/agm-10.jpg", date: "11 April 2026" },
     { img: "/agm/agm-11.jpg", date: "11 April 2026" },
     { img: "/agm/agm-12.jpg", date: "11 April 2026" },
     { img: "/agm/agm-13.jpg", date: "11 April 2026" },
     { img: "/agm/agm-14.jpg", date: "11 April 2026" },
-    { img: "/agm/agm-15.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-15.jpeg", date: "11 April 2026" },
     { img: "/agm/agm-16.jpg", date: "11 April 2026" },
     { img: "/agm/agm-17.jpg", date: "11 April 2026" },
     { img: "/agm/agm-18.jpg", date: "11 April 2026" },
@@ -40,6 +40,8 @@ export default function AGMGallery() {
     { img: "/agm/agm-24.jpg", date: "11 April 2026" },
     { img: "/agm/agm-25.jpg", date: "11 April 2026" },
     { img: "/agm/agm-26.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-27.jpg", date: "11 April 2026" },
+    { img: "/agm/agm-28.jpg", date: "11 April 2026" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
