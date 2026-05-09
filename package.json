@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.42",
     "@vercel/analytics": "^1.6.1",
     "file-saver": "^2.0.5",
     "framer-motion": "^12.19.1",
     "gsap": "^3.12.5",
     "leaflet": "^1.9.4",
+    "lenis": "^1.3.23",
     "lightbox.js-react": "^1.6.2",
     "next": "^16.1.1",
     "nodemailer": "^7.0.5",
