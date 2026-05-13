@@ -5,7 +5,6 @@ import { FaCalendarAlt, FaExternalLinkAlt, FaPlay } from "react-icons/fa";
 export default function AGMDocumentary() {
   return (
     <section className="relative overflow-hidden bg-[#F9F9F9] py-24 md:py-28">
-      {/* Premium Background */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
         <div className="absolute bottom-[-160px] left-[-120px] h-[420px] w-[420px] rounded-full bg-secondary/15 blur-[110px]" />
@@ -14,7 +13,6 @@ export default function AGMDocumentary() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        {/* Header */}
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary/20 bg-white/80 px-5 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl">
             <FaCalendarAlt className="text-primary" />
@@ -30,8 +28,6 @@ export default function AGMDocumentary() {
 
           <div className="mx-auto mt-6 flex w-full max-w-xs items-center justify-center gap-3">
             <span className="h-[2px] flex-1 bg-primary/60" />
-            {/* <span className="h-2 w-2 rounded-full bg-primary" />
-            <span className="h-px flex-1 bg-gradient-to-l from-transparent to-secondary/60" /> */}
           </div>
 
           <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-gray-600 md:text-lg">
@@ -40,18 +36,11 @@ export default function AGMDocumentary() {
             সাফল্যের গল্প।
           </p>
         </div>
-
-        {/* Video Area */}
         <div className="relative mx-auto mt-16 max-w-6xl">
-          {/* Top Decorative Label */}
           <div className="absolute -top-6 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/70 bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.25em] text-gray-700 shadow-lg">
             Official Documentary
           </div>
-
-          {/* Glow */}
           <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-r from-primary/25 via-secondary/20 to-tertiary/20 blur-3xl" />
-
-          {/* Main Frame */}
           <div className="relative overflow-hidden rounded-[2.2rem] border border-white/80 bg-white/85 p-3 shadow-[0_30px_90px_rgba(15,23,42,0.18)] backdrop-blur-2xl">
             <div className="relative overflow-hidden rounded-[1.65rem] bg-black shadow-2xl">
               <iframe
@@ -61,11 +50,7 @@ export default function AGMDocumentary() {
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
               />
-
-              {/* Video Overlay */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/30" />
-
-              {/* Now Playing Badge */}
               <div className="pointer-events-none absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-md">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -74,7 +59,6 @@ export default function AGMDocumentary() {
                 Now Playing
               </div>
 
-              {/* Bottom Content */}
               <div className="pointer-events-none absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <div className="max-w-2xl">
                   <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md">
@@ -92,8 +76,6 @@ export default function AGMDocumentary() {
                   </p>
                 </div>
               </div>
-
-              {/* Watch Button */}
               <a
                 href="https://youtu.be/XtCLHvVdrto?si=gE4dGadsEgC7ydv5"
                 target="_blank"
