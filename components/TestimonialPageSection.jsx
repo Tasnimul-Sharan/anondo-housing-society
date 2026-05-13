@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import {
   FaQuoteLeft,
   FaShieldAlt,
@@ -10,7 +13,10 @@ import {
   FaFileSignature,
   FaHome,
   FaArrowRight,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
+import SectionBadge from "./SectionBadge";
 
 const testimonials = [
   {
@@ -118,7 +124,53 @@ const fadeUp = {
   }),
 };
 
-export default function TestimonialSection() {
+function FeaturedPrevArrow({ onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="Previous testimonial"
+      className="absolute left-5 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-md transition hover:bg-primary lg:flex"
+    >
+      <FaChevronLeft className="text-sm" />
+    </button>
+  );
+}
+
+function FeaturedNextArrow({ onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="Next testimonial"
+      className="absolute right-5 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-md transition hover:bg-primary lg:flex"
+    >
+      <FaChevronRight className="text-sm" />
+    </button>
+  );
+}
+
+export default function TestimonialPageSection() {
+  const featuredSliderSettings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4500,
+    pauseOnHover: true,
+    prevArrow: <FeaturedPrevArrow />,
+    nextArrow: <FeaturedNextArrow />,
+    appendDots: (dots) => <ul className="custom-dots">{dots}</ul>,
+    customPaging: () => (
+      <button type="button" className="custom-dot-container">
+        <span className="custom-dot" />
+      </button>
+    ),
+  };
+
   return (
     <section
       className="relative overflow-hidden bg-[#f7fbff] py-20 sm:py-24 lg:py-28"
@@ -140,17 +192,15 @@ export default function TestimonialSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <div className="mx-auto mb-5 inline-flex items-center gap-3 rounded-full border border-secondary/10 bg-white px-5 py-2 shadow-[0_12px_40px_rgba(0,114,188,0.08)]">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-secondary sm:text-sm">
-              Plot Owner Testimonials
-            </span>
-          </div>
+          <SectionBadge label="প্লট মালিকদের মতামত" icon={FaQuoteLeft} />
 
-          <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] text-secondary sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl lg:text-5xl">
             প্লট মালিকদের বাস্তব অভিজ্ঞতা,
-            <br className="hidden sm:block" />
-            বিশ্বাস ও সন্তুষ্টির গল্প
+            <br className="hidden sm:block leading-6" />
+            <span className="mt-1 block leading-tight sm:mt-2">
+              {" "}
+              বিশ্বাস ও সন্তুষ্টির গল্প
+            </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
@@ -159,8 +209,7 @@ export default function TestimonialSection() {
           </p>
         </motion.div>
 
-        {/* Highlight Cards */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((item, index) => {
             const Icon = item.icon;
 
@@ -172,96 +221,39 @@ export default function TestimonialSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
-                className="group relative overflow-hidden rounded-3xl border border-white bg-white p-6 shadow-[0_20px_70px_rgba(0,114,188,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(0,114,188,0.16)]"
+                className="group relative overflow-hidden rounded-[1.75rem] border border-secondary/10 bg-white p-6 shadow-[0_18px_60px_rgba(0,114,188,0.07)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_28px_90px_rgba(0,114,188,0.14)]"
               >
-                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-primary/10 transition-all duration-300 group-hover:bg-primary/20" />
+                {/* Soft corner glow */}
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition-all duration-500 group-hover:bg-primary/20" />
+                <div className="absolute -bottom-16 -left-16 h-36 w-36 rounded-full bg-secondary/5 blur-2xl transition-all duration-500 group-hover:bg-secondary/10" />
 
-                <div className="relative mb-5 flex h-13 w-13 items-center justify-center rounded-2xl bg-secondary text-white shadow-[0_16px_35px_rgba(0,114,188,0.25)] transition duration-300 group-hover:bg-primary">
-                  <Icon className="text-lg" />
+                {/* Icon */}
+                <div className="relative mb-6 flex h-16 w-16 items-center justify-center">
+                  <span className="absolute inset-0 rounded-full bg-primary/10 opacity-0 transition-all duration-500 group-hover:scale-125 group-hover:opacity-100" />
+
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-secondary/10 bg-white shadow-[0_14px_35px_rgba(0,114,188,0.12)]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_14px_30px_rgba(246,133,33,0.30)]">
+                      <Icon className="text-lg" />
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="relative text-lg font-bold text-secondary">
-                  {item.title}
-                </h3>
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-xl font-extrabold tracking-[-0.02em] text-secondary">
+                    {item.title}
+                  </h3>
 
-                <p className="relative mt-2 text-sm leading-6 text-slate-600">
-                  {item.text}
-                </p>
+                  <div className="mt-3 h-[2px] w-10 rounded-full bg-primary/70 transition-all duration-500 group-hover:w-16" />
+
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.text}
+                  </p>
+                </div>
               </motion.div>
             );
           })}
         </div>
-
-        {/* Featured Testimonial */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          className="mt-16 overflow-hidden rounded-[2rem] bg-secondary shadow-[0_35px_110px_rgba(0,114,188,0.25)]"
-        >
-          <div className="grid items-stretch lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="relative min-h-[360px] lg:min-h-[520px]">
-              <Image
-                src="/testimonials/featured-owner.jpg"
-                alt="Anondo Housing Society plot owner testimonial"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent lg:bg-gradient-to-r lg:from-secondary/80 lg:via-transparent lg:to-transparent" />
-
-              <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-white/20 bg-white/15 p-5 text-white backdrop-blur-md">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/70">
-                  Featured Story
-                </p>
-
-                <h3 className="mt-2 text-2xl font-bold leading-snug">
-                  আনন্দ হাউজিংয়ের সাথে আস্থার যাত্রা
-                </h3>
-              </div>
-            </div>
-
-            <div className="relative flex flex-col justify-center p-7 sm:p-10 lg:p-14">
-              <div className="absolute right-8 top-8 hidden text-[120px] font-black leading-none text-white/5 lg:block">
-                ”
-              </div>
-
-              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_45px_rgba(246,133,33,0.35)]">
-                <FaQuoteLeft className="text-2xl" />
-              </div>
-
-              <p className="relative text-xl font-medium leading-10 text-white sm:text-2xl sm:leading-[3.1rem]">
-                “আনন্দ হাউজিং সোসাইটির সার্ভিস আমার কাছে অনেক ভালো লেগেছে।
-                তারা যে কমিটমেন্ট দিয়েছিল, সেটি সম্পূর্ণ পূরণ করেছে। আমার
-                প্লট আমাকে বুঝিয়ে দিয়েছে এবং আমি বাউন্ডারি করে বুঝে নিয়েছি।”
-              </p>
-
-              <div className="mt-9 flex items-center gap-4 border-t border-white/15 pt-6">
-                <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-white/40 bg-white/10">
-                  <Image
-                    src="/testimonials/featured-owner.jpg"
-                    alt="Plot owner"
-                    width={100}
-                    height={100}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-bold text-white">
-                    সম্মানিত প্লট মালিক
-                  </h4>
-                  <p className="mt-1 text-sm text-white/70">
-                    Anondo Housing Society
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
         {/* Testimonial Grid */}
         <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -331,14 +323,14 @@ export default function TestimonialSection() {
           </h3>
 
           <p className="relative mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600">
-            স্বচ্ছ ডকুমেন্ট, প্রতিশ্রুত সেবা এবং বাস্তব অভিজ্ঞতার ভিত্তিতে
-            আনন্দ হাউজিং সোসাইটি আপনার নিরাপদ ভবিষ্যৎ ঠিকানার অংশীদার।
+            স্বচ্ছ ডকুমেন্ট, প্রতিশ্রুত সেবা এবং বাস্তব অভিজ্ঞতার ভিত্তিতে আনন্দ
+            হাউজিং সোসাইটি আপনার নিরাপদ ভবিষ্যৎ ঠিকানার অংশীদার।
           </p>
 
           <div className="relative mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-bold text-white shadow-[0_16px_35px_rgba(246,133,33,0.30)] transition hover:-translate-y-0.5 hover:bg-[#dd7319]"
+              className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-sm font-bold text-white shadow-[0_16px_35px_rgba(246,133,33,0.30)] transition-all transform duration-500 hover:-translate-y-0.5 hover:bg-primary/90"
             >
               যোগাযোগ করুন
               <FaArrowRight className="text-xs transition group-hover:translate-x-1" />
@@ -346,7 +338,7 @@ export default function TestimonialSection() {
 
             <a
               href="/projects"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-secondary px-8 py-4 text-sm font-bold text-white shadow-[0_16px_35px_rgba(0,114,188,0.25)] transition hover:-translate-y-0.5 hover:bg-[#005f9d]"
+              className="group inline-flex items-center justify-center gap-3 rounded-xl bg-secondary px-8 py-4 text-sm font-bold text-white shadow-[0_16px_35px_rgba(0,114,188,0.25)] transition-all transform duration-500 hover:-translate-y-0.5 hover:bg-secondary/90"
             >
               প্রজেক্ট দেখুন
               <FaArrowRight className="text-xs transition group-hover:translate-x-1" />

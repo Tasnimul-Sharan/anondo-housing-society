@@ -1,6 +1,7 @@
 "use client";
 
 import { FaCalendarAlt, FaExternalLinkAlt, FaPlay } from "react-icons/fa";
+import SectionBadge from "./SectionBadge";
 
 export default function AGMDocumentary() {
   return (
@@ -14,10 +15,7 @@ export default function AGMDocumentary() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary/20 bg-white/80 px-5 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl">
-            <FaCalendarAlt className="text-primary" />
-            এজিএম ২০২৬ ডকুমেন্টারি
-          </div>
+          <SectionBadge label="এজিএম ২০২৬ ডকুমেন্টারি" icon={FaCalendarAlt} />
 
           <h2 className="text-4xl font-extrabold leading-[1.08] tracking-[-0.04em] text-gray-950 md:text-5xl lg:text-6xl">
             বার্ষিক সাধারণ সভার{" "}

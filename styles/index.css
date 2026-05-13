@@ -266,8 +266,6 @@ h3 {
   height: 100%;
 }
 
-
-
 .home-testimonial-slider .slick-dots {
   position: static !important;
   bottom: auto !important;
@@ -335,4 +333,66 @@ h3 {
   outline-color: #f68521 !important;
   outline-offset: 5px !important;
   box-shadow: 0 8px 20px rgba(246, 133, 33, 0.22);
+}
+
+.featured-testimonial-slider .slick-dots {
+  position: static !important;
+  bottom: auto !important;
+  margin-top: 20px !important;
+  padding: 0 !important;
+}
+
+.featured-testimonial-slider .custom-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.featured-testimonial-slider .custom-dots li {
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.featured-testimonial-slider .custom-dots li button::before {
+  display: none !important;
+}
+
+.featured-testimonial-slider .custom-dot-container {
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: none !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.featured-testimonial-slider .custom-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 114, 188, 0.25);
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  transition:
+    background-color 0.6s ease-in-out,
+    outline-color 1.1s ease-in-out,
+    outline-offset 1.1s ease-in-out;
+}
+
+.featured-testimonial-slider .custom-dot-container:hover .custom-dot {
+  background-color: #f68521 !important;
+}
+
+.featured-testimonial-slider .slick-dots li.slick-active .custom-dot {
+  background-color: #f68521 !important;
+  outline-color: #f68521 !important;
+  outline-offset: 5px !important;
 }

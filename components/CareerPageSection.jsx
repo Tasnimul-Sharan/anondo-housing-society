@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import SectionBadge from "./SectionBadge";
+import { FaBriefcase } from "react-icons/fa";
 
 const jobs = [
   {
@@ -26,52 +28,52 @@ const jobs = [
       "Basic computer and reporting knowledge.",
     ],
   },
-  {
-    id: 2,
-    title: "Civil Engineer",
-    department: "Engineering",
-    location: "Purbachal, Dhaka",
-    type: "Full-time",
-    experience: "2+ Years",
-    deadline: "Open Until Filled",
-    description:
-      "Responsible for on-site supervision, quality control, work progress monitoring, and project coordination. Must have practical experience in real estate or construction projects.",
-    responsibilities: [
-      "Supervise construction and development work on site.",
-      "Ensure quality control and safety standards.",
-      "Prepare daily progress reports.",
-      "Coordinate with contractors, vendors, and management.",
-    ],
-    requirements: [
-      "Diploma/B.Sc. in Civil Engineering.",
-      "Minimum 2 years of relevant experience.",
-      "Strong site supervision knowledge.",
-      "Ability to read drawings and project plans.",
-    ],
-  },
-  {
-    id: 3,
-    title: "Marketing Officer",
-    department: "Marketing",
-    location: "Head Office, Dhaka",
-    type: "Full-time",
-    experience: "1–2 Years",
-    deadline: "Open Until Filled",
-    description:
-      "Creative and target-driven individual needed to plan and execute marketing activities for housing projects. Prior experience in property marketing will be preferred.",
-    responsibilities: [
-      "Plan and execute marketing activities.",
-      "Coordinate with the digital marketing and creative teams.",
-      "Support campaign planning, lead generation, and client communication.",
-      "Prepare marketing reports and campaign updates.",
-    ],
-    requirements: [
-      "Experience in real estate marketing will be preferred.",
-      "Good communication and presentation skills.",
-      "Basic knowledge of digital marketing is a plus.",
-      "Ability to work with targets and deadlines.",
-    ],
-  },
+  // {
+  //   id: 2,
+  //   title: "Civil Engineer",
+  //   department: "Engineering",
+  //   location: "Purbachal, Dhaka",
+  //   type: "Full-time",
+  //   experience: "2+ Years",
+  //   deadline: "Open Until Filled",
+  //   description:
+  //     "Responsible for on-site supervision, quality control, work progress monitoring, and project coordination. Must have practical experience in real estate or construction projects.",
+  //   responsibilities: [
+  //     "Supervise construction and development work on site.",
+  //     "Ensure quality control and safety standards.",
+  //     "Prepare daily progress reports.",
+  //     "Coordinate with contractors, vendors, and management.",
+  //   ],
+  //   requirements: [
+  //     "Diploma/B.Sc. in Civil Engineering.",
+  //     "Minimum 2 years of relevant experience.",
+  //     "Strong site supervision knowledge.",
+  //     "Ability to read drawings and project plans.",
+  //   ],
+  // },
+  // {
+  //   id: 3,
+  //   title: "Marketing Officer",
+  //   department: "Marketing",
+  //   location: "Head Office, Dhaka",
+  //   type: "Full-time",
+  //   experience: "1–2 Years",
+  //   deadline: "Open Until Filled",
+  //   description:
+  //     "Creative and target-driven individual needed to plan and execute marketing activities for housing projects. Prior experience in property marketing will be preferred.",
+  //   responsibilities: [
+  //     "Plan and execute marketing activities.",
+  //     "Coordinate with the digital marketing and creative teams.",
+  //     "Support campaign planning, lead generation, and client communication.",
+  //     "Prepare marketing reports and campaign updates.",
+  //   ],
+  //   requirements: [
+  //     "Experience in real estate marketing will be preferred.",
+  //     "Good communication and presentation skills.",
+  //     "Basic knowledge of digital marketing is a plus.",
+  //     "Ability to work with targets and deadlines.",
+  //   ],
+  // },
 ];
 
 export default function CareerPageSection() {
@@ -158,14 +160,15 @@ export default function CareerPageSection() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center rounded-full border border-[#0072bc]/15 bg-white px-5 py-2 shadow-sm">
-            <span className="mr-3 h-1.5 w-8 rounded-full bg-[#f68521]" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0072bc] sm:text-sm">
-              Career Opportunities
-            </span>
-          </div>
+          <SectionBadge
+            label="Career Opportunities"
+            icon={FaBriefcase}
+            className="mb-6 border-secondary/15 text-secondary"
+            iconClassName="text-secondary"
+            textClassName="uppercase tracking-[0.2em] text-secondary"
+          />
 
-          <h1 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] text-[#0072bc] sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl lg:text-5xl">
             Join Anondo Housing Society
           </h1>
 

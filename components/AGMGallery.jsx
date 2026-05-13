@@ -11,6 +11,9 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import { FiEye } from "react-icons/fi";
+import SectionBadge from "./SectionBadge";
+import { FaCalendarCheck } from "react-icons/fa6";
+import { FaCalendar } from "react-icons/fa";
 
 export default function AGMGallery() {
   const gallery = [
@@ -56,6 +59,9 @@ export default function AGMGallery() {
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-0">
         {/* Title */}
+        <div className="mb-3 flex justify-center">
+          <SectionBadge label="এজিএম ২০২৬ গ্যালারি" icon={FaCalendar} />
+        </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 text-center">
           AGM 2026 – সফল আয়োজনের স্মরণীয় মুহূর্তসমূহ
         </h2>

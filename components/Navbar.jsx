@@ -29,7 +29,7 @@ const menuItems = [
   },
   { name: "Form", path: "/form" },
   { name: "Gallery", path: "/gallery" },
-  // { name: "Contact", path: "/contact" },
+  { name: "Testimonials", path: "/testimonials" },
 ];
 
 export default function Navbar() {
