@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { IoAdd, IoRemove } from "react-icons/io5";
 
-export default function FAQ() {
+export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [

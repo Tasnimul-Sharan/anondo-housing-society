@@ -3,6 +3,8 @@ import HeroSection from "@/components/HeroSection";
 import TeamSection from "@/components/TeamSection";
 import Head from "next/head";
 import FAQ from "@/components/FAQ";
+import Testimonials from "@/components/Testimonials";
+import FAQSection from "@/components/FAQSection";
 export default function AboutPage() {
   const meta = {
     title:
@@ -97,6 +99,8 @@ export default function AboutPage() {
         }}
       />
       <AboutUsSection />
+      <Testimonials />
+      <FAQSection />
       {/* <TeamSection /> */}
       {/* <FAQ faqData={faqData} /> */}
     </div>
