@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
       />
       {/* <EventPopup /> */}
-      <EidOfferPopup />
+      {/* <EidOfferPopup /> */}
       <Component {...pageProps} />
       <Analytics />
     </Layout>
