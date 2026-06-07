@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import EventPopup from "@/components/EventPopup";
-import EidOfferPopup from "@/components/EidOfferPopup";
+import OfferPopup from "@/components/OfferPopup";
 function MyApp({ Component, pageProps }) {
   useLenis();
   return (
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
       />
       {/* <EventPopup /> */}
-      {/* <EidOfferPopup /> */}
+      <OfferPopup />
       <Component {...pageProps} />
       <Analytics />
     </Layout>

@@ -1,9 +1,10 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaTimes, FaPhoneAlt, FaGlobe, FaCheckCircle } from "react-icons/fa";
 
-export default function EidOfferPopup() {
+export default function OfferPopup() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function EidOfferPopup() {
 
   const benefits = [
     "ক্লিয়ার ও সুরক্ষিত ডকুমেন্টেশন",
-    "দ্রুত উন্নয়নশীল লোকেশন – পূর্বাচল সংলগ্ন",
+    "দ্রুত উন্নয়নশীল লোকেশন – পূর্বাচল ৩০০ ফিট সংলগ্ন",
     "রেডি রোড, ড্রেনেজ ও পরিকল্পিত প্লটিং",
     "ভবিষ্যৎ বিনিয়োগের জন্য হাই গ্রোথ এরিয়া",
     "সহজ কিস্তি সুবিধা",
@@ -27,11 +28,11 @@ export default function EidOfferPopup() {
   return (
     <div
       onClick={() => setShow(false)}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 px-4 py-6"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/75 px-4 py-6 lg:items-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-[1400px] mx-auto overflow-hidden rounded-3xl bg-white shadow-2xl"
+        className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-3xl bg-white shadow-2xl"
       >
         <button
           onClick={() => setShow(false)}
@@ -41,39 +42,44 @@ export default function EidOfferPopup() {
           <FaTimes className="text-lg" />
         </button>
 
-        <div className="grid max-h-[90vh] grid-cols-1 overflow-y-auto lg:grid-cols-[1fr_0.9fr]">
-          <div className="relative min-h-[330px] bg-gray-100 sm:min-h-[460px] lg:min-h-[650px]">
+        <div className="grid max-h-none grid-cols-1 lg:max-h-[90vh] lg:grid-cols-[1fr_0.9fr]">
+          {/* Image Area */}
+          <div className="relative flex min-h-[360px] items-center justify-center bg-gray-100 sm:min-h-[520px] lg:min-h-[90vh]">
             <Image
-              src="/offers/eid-lakh-takar-offer.jpg"
-              alt="Anondo Housing Society Eid Offer"
+              src="/offers/lakh-takar-offer.jpg"
+              alt="Anondo Housing Society Offer"
               fill
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
 
-          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+          {/* Content Area */}
+          <div className="overflow-y-auto p-6 sm:p-8 lg:max-h-[90vh] lg:p-10">
             <div className="mb-4 inline-flex w-fit rounded-full bg-[#F48220]/10 px-4 py-2 text-sm font-bold text-[#F48220]">
-              ঈদ স্পেশাল অফার
+              সুখবর! অফারের সময়সীমা বৃদ্ধি
             </div>
 
             <h2 className="text-3xl font-extrabold leading-tight text-secondary sm:text-4xl">
-              স্বপ্নপূরণে লাখ টাকার অফার!
+              স্বপ্নপূরণ লক্ষ টাকার অফার এখন ১৫ জুন ২০২৬ পর্যন্ত!
             </h2>
 
             <p className="mt-4 text-lg font-semibold leading-relaxed text-gray-800">
-              এই ঈদ হোক স্বপ্নপূরণের ঈদ। রূপগঞ্জে পূর্বাচল ৩০০ ফিট সংলগ্ন
-              পরিকল্পিত কমিউনিটিতে জমি কিনে পাচ্ছেন প্রতি কাঠায় লাখ টাকা পর্যন্ত
-              বিশেষ ছাড়!
+              সম্মানিত গ্রাহকদের ব্যাপক আগ্রহ ও অনুরোধের কথা বিবেচনা করে আনন্দ
+              হাউজিং সোসাইটি’র “স্বপ্নপূরণ লক্ষ টাকার অফার” এর মেয়াদ আগামী ১৫
+              জুন ২০২৬ পর্যন্ত বৃদ্ধি করা হয়েছে।
             </p>
 
             <div className="mt-5 rounded-2xl border border-[#F48220]/20 bg-[#FFF7EF] p-4">
               <p className="text-base font-bold text-secondary">
-                অফার চলবে কুরবানির ঈদ পর্যন্ত
+                স্বপ্নের জমি কেনার সেরা সুযোগ এখন আরও কিছুদিন আপনার জন্য
+                উন্মুক্ত
               </p>
               <p className="mt-1 text-sm leading-relaxed text-gray-700">
-                এখনই বুকিং করলে পাবেন সবচেয়ে বড় সুবিধা।
+                পূর্বাচল ৩০০ ফিট সংলগ্ন রূপগঞ্জে পরিকল্পিত আবাসিক কমিউনিটিতে
+                এখনই বুকিং করুন আপনার কাঙ্ক্ষিত প্লট এবং উপভোগ করুন বিশেষ
+                মূল্যছাড়ের সুবিধা।
               </p>
             </div>
 
@@ -98,7 +104,6 @@ export default function EidOfferPopup() {
               আজকের সিদ্ধান্তই হতে পারে আপনার আগামী দিনের নিরাপদ বিনিয়োগ।
             </p>
 
-            {/* CTA Buttons */}
             <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <a
                 href="tel:+8801331115500"
@@ -112,7 +117,7 @@ export default function EidOfferPopup() {
                 href="https://www.anondohousing.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary px-5 py-3 text-base font-bold text-white shadow-lg transition hover:bg-secondary"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary px-5 py-3 text-base font-bold text-white shadow-lg transition hover:bg-secondary/90"
               >
                 <FaGlobe />
                 Visit Website
