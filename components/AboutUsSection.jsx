@@ -7,7 +7,7 @@ export default function AboutUsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="relative w-full md:h-auto h-96 rounded-2xl overflow-hidden shadow-md">
           <Image
-            src="/about.png"
+            src="/about.jpg"
             alt="আমাদের কথা"
             width={1603}
             height={1069}
