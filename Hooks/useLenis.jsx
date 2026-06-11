@@ -1,37 +1,62 @@
+"use client";
+
 import { useEffect } from "react";
-import { useRouter } from "next/router";
-import Lenis from "lenis";
-import "lenis/dist/lenis.css";
 
 export const useLenis = () => {
-  const router = useRouter();
-
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      anchors: true,
-      autoRaf: true,
+    let lenis = null;
+    let rafId;
+    let cancelled = false;
+
+    const startLenis = async () => {
+      const Lenis = (await import("lenis")).default;
+
+      if (cancelled) return;
+
+      lenis = new Lenis({
+        lerp: 0.08,
+        smoothWheel: true,
+        syncTouch: false,
+        touchMultiplier: 1.5,
+        anchors: true,
+      });
+
+      const raf = (time) => {
+        if (!lenis) return;
+
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      };
+
+      rafId = requestAnimationFrame(raf);
+    };
+
+    const startOnIntent = () => {
+      startLenis();
+    };
+
+    window.addEventListener("wheel", startOnIntent, {
+      once: true,
+      passive: true,
     });
 
-    const handleRouteChangeStart = () => {
-      lenis.stop();
-    };
+    window.addEventListener("touchstart", startOnIntent, {
+      once: true,
+      passive: true,
+    });
 
-    const handleRouteChangeComplete = () => {
-      lenis.start();
-      lenis.scrollTo(0, { immediate: true });
-    };
-
-    router.events.on("routeChangeStart", handleRouteChangeStart);
-    router.events.on("routeChangeComplete", handleRouteChangeComplete);
-    router.events.on("routeChangeError", handleRouteChangeComplete);
+    window.addEventListener("keydown", startOnIntent, {
+      once: true,
+    });
 
     return () => {
-      router.events.off("routeChangeStart", handleRouteChangeStart);
-      router.events.off("routeChangeComplete", handleRouteChangeComplete);
-      router.events.off("routeChangeError", handleRouteChangeComplete);
-      lenis.destroy();
+      cancelled = true;
+
+      if (rafId !== undefined) {
+        cancelAnimationFrame(rafId);
+      }
+
+      lenis?.destroy();
     };
-  }, [router.events]);
+  }, []);
 };

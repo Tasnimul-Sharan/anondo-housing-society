@@ -24,7 +24,7 @@ export default function StatsSection() {
     },
     {
       icon: <FaChartLine size={45} />,
-      value: "১৮০+",
+      value: "২০০+",
       label: "কর্মীর সংখ্যা",
     },
   ];
