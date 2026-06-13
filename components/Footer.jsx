@@ -92,7 +92,7 @@ export default function Footer() {
 
             <p className="flex items-center gap-3">
               <FiPhoneCall size={20} className="text-primary" />
-              +880 1313-775333
+              +880 1331-115500
             </p>
 
             <p className="flex items-center gap-3">
