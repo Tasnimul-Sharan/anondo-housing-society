@@ -14,13 +14,13 @@ import { FiEye } from "react-icons/fi";
 
 export default function GalleryPageSection() {
   const sections = [
-    {
-      title: "General Gallery",
-      data: [
-        { img: "/gallery/gallery1.jpg", date: "12 January 2025" },
-        { img: "/gallery/gallery2.jpg", date: "18 January 2025" },
-      ],
-    },
+    // {
+    //   title: "General Gallery",
+    //   data: [
+    //     { img: "/gallery/gallery1.jpg", date: "12 January 2025" },
+    //     { img: "/gallery/gallery2.jpg", date: "18 January 2025" },
+    //   ],
+    // },
     {
       title: "Our Clients",
       data: [
@@ -32,6 +32,18 @@ export default function GalleryPageSection() {
         { img: "/clients/client-6.jpg", date: "20 February 2025" },
         { img: "/clients/client-7.jpg", date: "22 February 2025" },
         { img: "/clients/client-8.jpg", date: "25 February 2025" },
+        { img: "/clients/client-9.jpg", date: "25 June 2026" },
+        { img: "/clients/client-10.jpg", date: "25 June 2026" },
+        { img: "/clients/client-11.jpg", date: "25 June 2026" },
+        { img: "/clients/client-12.jpg", date: "25 June 2026" },
+        { img: "/clients/client-13.jpg", date: "25 June 2026" },
+        { img: "/clients/client-14.jpg", date: "25 June 2026" },
+        { img: "/clients/client-15.jpg", date: "25 June 2026" },
+        { img: "/clients/client-16.jpg", date: "25 June 2026" },
+        { img: "/clients/client-17.jpg", date: "25 June 2026" },
+        { img: "/clients/client-18.jpg", date: "25 June 2026" },
+        { img: "/clients/client-19.jpg", date: "25 June 2026" },
+        { img: "/clients/client-20.jpg", date: "25 June 2026" },
       ],
     },
     {
