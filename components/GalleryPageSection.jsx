@@ -22,7 +22,7 @@ export default function GalleryPageSection() {
     //   ],
     // },
     {
-      title: "Our Clients",
+      title: "প্লট রেজিস্ট্রেশন/হস্তান্তর উৎসব ২০২৫",
       data: [
         { img: "/clients/client-1.jpg", date: "02 February 2025" },
         { img: "/clients/client-2.jpg", date: "05 February 2025" },
@@ -32,6 +32,11 @@ export default function GalleryPageSection() {
         { img: "/clients/client-6.jpg", date: "20 February 2025" },
         { img: "/clients/client-7.jpg", date: "22 February 2025" },
         { img: "/clients/client-8.jpg", date: "25 February 2025" },
+      ],
+    },
+    {
+      title: "প্লট রেজিস্ট্রেশন/হস্তান্তর উৎসব ২০২৬",
+      data: [
         { img: "/clients/client-9.jpg", date: "25 June 2026" },
         { img: "/clients/client-10.jpg", date: "25 June 2026" },
         { img: "/clients/client-11.jpg", date: "25 June 2026" },
@@ -44,6 +49,16 @@ export default function GalleryPageSection() {
         { img: "/clients/client-18.jpg", date: "25 June 2026" },
         { img: "/clients/client-19.jpg", date: "25 June 2026" },
         { img: "/clients/client-20.jpg", date: "25 June 2026" },
+        { img: "/clients/client-21.jpg", date: "01 May 2026" },
+        { img: "/clients/client-22.jpg", date: "01 May 2026" },
+        { img: "/clients/client-23.jpg", date: "01 May 2026" },
+        { img: "/clients/client-24.jpg", date: "01 May 2026" },
+        { img: "/clients/client-25.jpg", date: "01 May 2026" },
+        { img: "/clients/client-26.jpg", date: "01 May 2026" },
+        { img: "/clients/client-27.jpg", date: "01 May 2026" },
+        { img: "/clients/client-28.jpg", date: "01 May 2026" },
+        { img: "/clients/client-29.jpg", date: "01 May 2026" },
+        { img: "/clients/client-30.jpg", date: "01 May 2026" },
       ],
     },
     {
@@ -98,9 +113,10 @@ export default function GalleryPageSection() {
       {sections.map((section, sIdx) => (
         <div key={sIdx}>
           {/* Section Title */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-800">
             {section.title}
           </h2>
+          <div className="mb-6 h-1 w-20 rounded-full bg-primary" />
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

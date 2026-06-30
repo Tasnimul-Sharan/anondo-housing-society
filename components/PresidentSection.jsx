@@ -27,6 +27,16 @@ const images = [
   "/clients/client-18.jpg",
   "/clients/client-19.jpg",
   "/clients/client-20.jpg",
+  "/clients/client-21.jpg",
+  "/clients/client-22.jpg",
+  "/clients/client-23.jpg",
+  "/clients/client-24.jpg",
+  "/clients/client-25.jpg",
+  "/clients/client-26.jpg",
+  "/clients/client-27.jpg",
+  "/clients/client-28.jpg",
+  "/clients/client-29.jpg",
+  "/clients/client-30.jpg",
 ];
 
 function PrevArrow({ onClick }) {
@@ -77,7 +87,7 @@ export default function PresidentSection() {
 
         <p className="text-gray-700">
           আনন্দ হাউজিং সোসাইটির বিশ্বাসযোগ্য উন্নয়ন, ব্যবস্থাপনা এবং নিয়মিত
-          পেশাদার অভিজ্ঞ ব্যাক্তিদের নিয়ে গঠিত।
+          পেশাদার অভিজ্ঞ ব্যাক্তিদের নিয়ে গঠিত।  
         </p>
       </div>
 
