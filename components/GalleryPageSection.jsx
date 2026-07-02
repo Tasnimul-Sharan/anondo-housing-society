@@ -59,6 +59,8 @@ export default function GalleryPageSection() {
         { img: "/clients/client-28.jpg", date: "01 May 2026" },
         { img: "/clients/client-29.jpg", date: "01 May 2026" },
         { img: "/clients/client-30.jpg", date: "01 May 2026" },
+        { img: "/clients/client-31.jpg", date: "01 May 2026" },
+        { img: "/clients/client-32.jpg", date: "01 May 2026" },
       ],
     },
     {

@@ -37,6 +37,8 @@ const images = [
   "/clients/client-28.jpg",
   "/clients/client-29.jpg",
   "/clients/client-30.jpg",
+  "/clients/client-31.jpg",
+  "/clients/client-32.jpg",
 ];
 
 function PrevArrow({ onClick }) {
