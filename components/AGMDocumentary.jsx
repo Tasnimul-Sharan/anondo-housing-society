@@ -19,17 +19,17 @@ export default function AGMDocumentary() {
 
           <h2 className="text-4xl font-extrabold leading-[1.08] tracking-[-0.04em] text-gray-950 md:text-5xl lg:text-6xl">
             বার্ষিক সাধারণ সভার{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-primary bg-clip-text text-transparent">
               বিশেষ মুহূর্ত
             </span>
           </h2>
 
           <div className="mx-auto mt-6 flex w-full max-w-xs items-center justify-center gap-3">
-            <span className="h-[2px] flex-1 bg-primary/60" />
+            <span className="h-[3px] flex-1 bg-primary" />
           </div>
 
           <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-gray-600 md:text-lg">
-            আনন্দ হাউজিং সোসাইটির এজিএম ২০২৬ ডকুমেন্টারির মাধ্যমে দেখুন স্মরণীয়
+            আনন্দ হাউজিং সোসাইটির এজিএম ২০২৬ ডকুমেন্টারির মাধ্যমে দেখুন স্মরণীয়
             মুহূর্ত, অনুপ্রেরণামূলক বক্তব্য, ভবিষ্যৎ পরিকল্পনা, অর্জন এবং
             সাফল্যের গল্প।
           </p>
@@ -48,7 +48,7 @@ export default function AGMDocumentary() {
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/30" />
+              {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/30" /> */}
               <div className="pointer-events-none absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-md">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -64,14 +64,14 @@ export default function AGMDocumentary() {
                     AGM 2026
                   </p>
 
-                  <h3 className="text-2xl font-bold leading-tight text-white md:text-4xl">
+                  {/* <h3 className="text-2xl font-bold leading-tight text-white md:text-4xl">
                     Anondo Housing Society AGM 2026 Documentary
                   </h3>
 
                   <p className="mt-3 max-w-xl text-sm leading-6 text-white/75 md:text-base">
                     Annual General Meeting Highlights, Future Plans & Success
                     Story
-                  </p>
+                  </p> */}
                 </div>
               </div>
               <a

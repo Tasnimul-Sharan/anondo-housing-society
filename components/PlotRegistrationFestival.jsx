@@ -28,6 +28,30 @@ export default function PlotRegistrationFestival() {
       id="plot-registration-festival"
       className="relative overflow-hidden bg-[#F9F9F9] py-20 sm:py-24 lg:py-28"
     >
+  {/* Premium Background Design */}
+<div className="pointer-events-none absolute inset-0 overflow-hidden">
+  {/* Base gradient */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(246,133,33,0.14),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(0,114,188,0.12),transparent_40%),linear-gradient(180deg,#ffffff_0%,#f9fafb_50%,#ffffff_100%)]" />
+
+  {/* Dot pattern */}
+  <div className="absolute inset-0 bg-[radial-gradient(rgba(15,23,42,0.10)_1px,transparent_1px)] bg-[size:24px_24px] opacity-35 [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
+
+  {/* Diagonal light beam */}
+  <div className="absolute left-1/2 top-[-220px] h-[700px] w-[240px] -translate-x-1/2 rotate-[28deg] bg-gradient-to-b from-primary/20 via-primary/5 to-transparent blur-3xl" />
+
+  {/* Left decorative rings */}
+  <div className="absolute -left-28 top-20 h-72 w-72 rounded-full border border-primary/15" />
+  <div className="absolute -left-16 top-32 h-48 w-48 rounded-full border border-primary/20" />
+  <div className="absolute left-4 top-48 h-16 w-16 rounded-full bg-primary/10 blur-xl" />
+
+  {/* Right decorative rings */}
+  <div className="absolute -right-32 bottom-[-80px] h-96 w-96 rounded-full border border-secondary/15" />
+  <div className="absolute -right-16 bottom-[-25px] h-64 w-64 rounded-full border border-secondary/20" />
+  <div className="absolute right-10 bottom-16 h-24 w-24 rounded-full bg-secondary/10 blur-2xl" />
+
+  {/* Center soft glow */}
+  <div className="absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 blur-[100px]" />
+</div>
       {/* Background Grid */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30" />
 
@@ -51,7 +75,7 @@ export default function PlotRegistrationFestival() {
             <span className="text-primary">উৎসব ২০২৬</span>
           </h2>
 
-          <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-primary" />
+          <div className="mx-auto mt-5 h-[3px] w-32 rounded-full bg-primary" />
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg">
             আনন্দ হাউজিং সোসাইটির প্লট রেজিস্ট্রেশন ও হস্তান্তর উৎসবের স্মরণীয়
