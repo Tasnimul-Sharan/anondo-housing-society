@@ -97,7 +97,7 @@ export default function Footer() {
 
             <p className="flex items-center gap-3">
               <HiOutlineMail size={20} className="text-primary" />
-              anondohousings@gmail.com
+              info.anondohousing@gmail.com
             </p>
           </div>
 

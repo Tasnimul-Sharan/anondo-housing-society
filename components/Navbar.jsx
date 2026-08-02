@@ -117,7 +117,9 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2 hover:text-primary transition">
               <FiMail />
-              <span className="tracking-wide">anondohousings@gmail.com</span>
+              <span className="tracking-wide">
+                info.anondohousing@gmail.com
+              </span>
             </div>
 
             <span className="h-4 w-px bg-white/30" />

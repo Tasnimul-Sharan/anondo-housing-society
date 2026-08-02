@@ -79,10 +79,9 @@ export default function ContactPageSection() {
             Address Email
           </h3>
           <div className="text-center text-gray-600 mt-2 space-y-1">
-            <p>anondohousingsociety@gmail.com</p>
+            {/* <p>anondohousings@gmail.com</p> */}
+            <p>info.anondohousing@gmail.com</p>
             <p>info@anondohousing.com</p>
-            <p>marketing@anondohousing.com</p>
-            <p>sales@anondohousing.com</p>
           </div>
         </div>
       </div>
