@@ -19,6 +19,7 @@ export const NoticeDetailsData = {
     blogPost: {
       title: item.title,
       image: item.image,
+      images: item.images || [item.image],
       author: item.author,
       date: item.date,
       description: item.description,

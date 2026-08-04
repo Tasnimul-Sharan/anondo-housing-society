@@ -89,7 +89,7 @@ export const noticeData = [
     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রি...",
     date: "15 October, 2024",
     author: "Admin",
-    image: "/notice/notice-10.jpg",
+    image: "/notice/notice-9.png",
     description:
       "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়  ফেইজের ১০ কাঠা  প্লটের তালিকা",
     slug: "anondo-housing-society-registration-3rd-copy",
@@ -99,7 +99,7 @@ export const noticeData = [
     title: "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রি...",
     date: "15 October, 2024",
     author: "Admin",
-    image: "/notice/notice-11.png",
+    image: "/notice/notice-10.png",
     description:
       "আনন্দ হাউজিং সোসাইটি রেজিস্ট্রিযোগ্য ৩য়  ফেইজের ০৫ কাঠা  প্লটের তালিকা",
     slug: "anondo-housing-society-registration-3rd-copy-2",
@@ -122,5 +122,29 @@ export const noticeData = [
     image: "/notice/notice-12.png",
     description: "ইউটিলিটি ব্যয়ের অর্থ পরিশোধ সংক্রান্ত নোটিশ",
     slug: "utility-payment-notice",
+  },
+  {
+    id: 13,
+    title: "দায়মুক্ত সনদ (NEC) ও পরিবেশ অধিদপ্তরের নোটিশ",
+    date: "04 August, 2026",
+    author: "Admin",
+    image: "/notice/notice-13-1.jpeg",
+    images: [
+      "/notice/notice-13-1.jpeg",
+      "/notice/notice-13-2.jpeg",
+    ],
+    description:
+      "আনন্দ হাউজিং সোসাইটির প্রকল্প সম্পর্কিত দায়মুক্ত সনদ (NEC) ও পরিবেশ অধিদপ্তরের অফিসিয়াল নথি প্রকাশ করা হলো।",
+    slug: "nec-environment-clearance-notice",
+  },
+  {
+    id: 14,
+    title: "পরিবেশগত প্রভাব মূল্যায়ন (EIA) এর ToR অনুমোদন নোটিশ",
+    date: "02 December, 2025",
+    author: "Admin",
+    image: "/notice/notice-13-3.jpeg",
+    description:
+      "পরিবেশ অধিদপ্তর কর্তৃক আনন্দ হাউজিং সোসাইটির EIA-এর Terms of Reference (ToR) অনুমোদন সংক্রান্ত নথি প্রকাশ করা হলো।",
+    slug: "eia-tor-approval-notice",
   },
 ];

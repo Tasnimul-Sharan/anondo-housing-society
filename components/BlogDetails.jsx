@@ -6,19 +6,29 @@ import { AiOutlineTag } from "react-icons/ai";
 import { FaQuoteLeft, FaRegCheckCircle, FaReply } from "react-icons/fa";
 
 export default function NoticeDetails({ blogsData }) {
-  const { blogPost, socialIcons } = blogsData;
+  const { blogPost } = blogsData;
+  const noticeImages = blogPost.images?.length
+    ? blogPost.images
+    : [blogPost.image];
 
   return (
     <div className="max-w-6xl mx-auto md:px-0 px-6 space-y-8 py-20">
-      <div className="rounded-2xl overflow-hidden">
-        <Image
-          src={blogPost.image}
-          alt={blogPost.title}
-          width={1400}
-          height={1200}
-          priority
-          className="w-full h-full object-cover"
-        />
+      <div className="space-y-6">
+        {noticeImages.map((image, index) => (
+          <div
+            key={image}
+            className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-3 shadow-sm"
+          >
+            <Image
+              src={image}
+              alt={`${blogPost.title} - page ${index + 1}`}
+              width={1400}
+              height={1800}
+              priority={index === 0}
+              className="h-full w-full object-contain"
+            />
+          </div>
+        ))}
       </div>
       <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
         {blogPost.title}
