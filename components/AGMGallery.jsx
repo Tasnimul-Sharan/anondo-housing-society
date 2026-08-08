@@ -40,7 +40,7 @@ export default function AGMGallery() {
     { img: "/agm/agm-21.jpg", date: "11 April 2026" },
     { img: "/agm/agm-22.jpg", date: "11 April 2026" },
     { img: "/agm/agm-23.jpg", date: "11 April 2026" },
-    { img: "/agm/agm-24.jpg", date: "11 April 2026" },
+    // { img: "/agm/agm-24.jpg", date: "11 April 2026" },
     { img: "/agm/agm-25.jpg", date: "11 April 2026" },
     { img: "/agm/agm-26.jpg", date: "11 April 2026" },
     { img: "/agm/agm-27.jpg", date: "11 April 2026" },
