@@ -12,6 +12,27 @@ export default function OfferPopup() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (!show) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [show]);
+
+  const handleContentWheel = (event) => {
+    const panel = event.currentTarget;
+
+    if (panel.scrollHeight <= panel.clientHeight) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    panel.scrollTop += event.deltaY;
+  };
+
   if (!show) return null;
 
   const benefits = [
@@ -25,11 +46,16 @@ export default function OfferPopup() {
   return (
     <div
       onClick={() => setShow(false)}
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/75 px-4 py-6 lg:items-center"
+      onWheel={(event) => event.preventDefault()}
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto overscroll-contain bg-black/75 px-4 py-6 lg:items-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+        className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+        style={{
+          "--offer-popup-media-size":
+            "min(606px, calc((100vw - 2rem) * 0.526315))",
+        }}
       >
         <button
           onClick={() => setShow(false)}
@@ -39,19 +65,22 @@ export default function OfferPopup() {
           <FaTimes className="text-lg" />
         </button>
 
-        <div className="grid max-h-none grid-cols-1 lg:max-h-[90vh] lg:grid-cols-[1fr_0.9fr]">
-          <div className="relative flex min-h-[360px] items-center justify-center bg-gray-100 sm:min-h-[520px] lg:min-h-[90vh]">
+        <div className="grid max-h-none grid-cols-1 lg:grid-cols-[1fr_0.9fr]">
+          <div className="relative aspect-square w-full bg-white lg:h-[var(--offer-popup-media-size)] lg:aspect-auto">
             <Image
-              src="/offers/offer-1.jpeg"
+              src="/offers/offer-1.jpg"
               alt="আনন্দ হাউজিং প্রতিষ্ঠাবার্ষিকী বিশেষ অফার"
               fill
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
 
-          <div className="overflow-y-auto p-6 sm:p-8 lg:max-h-[90vh] lg:p-10">
+          <div
+            onWheel={handleContentWheel}
+            className="overflow-y-auto overscroll-contain p-6 sm:p-8 lg:max-h-[var(--offer-popup-media-size)] lg:p-10"
+          >
             <div className="mb-4 inline-flex w-fit rounded-full bg-[#F48220]/10 px-4 py-2 text-sm font-bold text-[#F48220]">
               প্রতিষ্ঠাবার্ষিকী বিশেষ অফার
             </div>
