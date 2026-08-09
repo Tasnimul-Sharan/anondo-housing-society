@@ -58,7 +58,6 @@ export default function AGMGallery() {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-0">
-        {/* Title */}
         <div className="mb-3 flex justify-center">
           <SectionBadge label="এজিএম ২০২৬ গ্যালারি" icon={FaCalendar} />
         </div>
@@ -66,7 +65,6 @@ export default function AGMGallery() {
           AGM 2026 – সফল আয়োজনের স্মরণীয় মুহূর্তসমূহ
         </h2>
         <div className="w-20 h-[3px] bg-primary mt-4 mb-8 mx-auto"></div>
-        {/* Description */}
         <div className="max-w-3xl mx-auto text-center text-gray-600 mb-10 leading-relaxed space-y-4">
           <p>
             গত ১১ এপ্রিল ২০২৬ তারিখে Anondo Housing Society-এর বার্ষিক সাধারণ
@@ -88,7 +86,6 @@ export default function AGMGallery() {
           </p> */}
         </div>
 
-        {/* Gallery */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {gallery.map((item, idx) => (
             <div

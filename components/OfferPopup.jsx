@@ -17,9 +17,11 @@ export default function OfferPopup() {
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    document.body.classList.add("offer-popup-open");
 
     return () => {
       document.body.style.overflow = originalOverflow;
+      document.body.classList.remove("offer-popup-open");
     };
   }, [show]);
 
@@ -46,12 +48,11 @@ export default function OfferPopup() {
   return (
     <div
       onClick={() => setShow(false)}
-      onWheel={(event) => event.preventDefault()}
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto overscroll-contain bg-black/75 px-4 py-6 lg:items-center"
+      className="fixed inset-0 z-[9999] flex items-start justify-center overflow-y-auto overscroll-contain bg-black/75 px-3 py-3 sm:px-4 sm:py-6 lg:items-center"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+        className="relative mx-auto max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-2xl bg-white shadow-2xl sm:max-h-[calc(100dvh-3rem)] sm:rounded-3xl lg:max-h-none lg:overflow-hidden"
         style={{
           "--offer-popup-media-size":
             "min(606px, calc((100vw - 2rem) * 0.526315))",
@@ -60,7 +61,7 @@ export default function OfferPopup() {
         <button
           onClick={() => setShow(false)}
           aria-label="Close popup"
-          className="absolute right-4 top-4 z-20 rounded-full bg-white p-2.5 text-gray-700 shadow-lg transition hover:scale-110 hover:text-primary"
+          className="fixed right-5 top-5 z-20 rounded-full bg-white p-2.5 text-gray-700 shadow-lg transition hover:scale-110 hover:text-primary lg:absolute lg:right-4 lg:top-4"
         >
           <FaTimes className="text-lg" />
         </button>
@@ -79,17 +80,17 @@ export default function OfferPopup() {
 
           <div
             onWheel={handleContentWheel}
-            className="overflow-y-auto overscroll-contain p-6 sm:p-8 lg:max-h-[var(--offer-popup-media-size)] lg:p-10"
+            className="overflow-visible overscroll-contain p-5 sm:p-8 lg:max-h-[var(--offer-popup-media-size)] lg:overflow-y-auto lg:p-10"
           >
             <div className="mb-4 inline-flex w-fit rounded-full bg-[#F48220]/10 px-4 py-2 text-sm font-bold text-[#F48220]">
               প্রতিষ্ঠাবার্ষিকী বিশেষ অফার
             </div>
 
-            <h2 className="text-3xl font-extrabold leading-tight text-secondary sm:text-4xl">
+            <h2 className="text-2xl font-extrabold leading-tight text-secondary sm:text-4xl">
               আনন্দ হাউজিং-এর প্রতিষ্ঠাবার্ষিকী উপলক্ষে ১০ লাখ টাকা ছাড়!
             </h2>
 
-            <p className="mt-4 text-lg font-semibold leading-relaxed text-gray-800">
+            <p className="mt-4 text-base font-semibold leading-relaxed text-gray-800 sm:text-lg">
               স্বপ্নের ঠিকানা গড়ার এটাই হতে পারে আপনার জীবনের সবচেয়ে বড় সুযোগ! আনন্দ হাউজিং সোসাইটির প্রতিষ্ঠাবার্ষিকী উপলক্ষে প্রথম ২০ জন গ্রাহকের জন্য থাকছে সর্বোচ্চ ১০ লাখ টাকা পর্যন্ত বিশেষ ছাড়।
             </p>
 
@@ -150,6 +151,14 @@ export default function OfferPopup() {
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        body.offer-popup-open #tidio-chat {
+          display: none !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+      `}</style>
     </div>
   );
 }
