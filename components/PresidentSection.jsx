@@ -7,14 +7,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const images = [
-  "/clients/client-1.jpg",
-  "/clients/client-2.jpg",
-  "/clients/client-3.jpg",
-  "/clients/client-4.jpg",
-  "/clients/client-5.jpg",
-  "/clients/client-6.jpg",
-  "/clients/client-7.jpg",
-  "/clients/client-8.jpg",
+  // "/clients/client-1.jpg",
+  // "/clients/client-2.jpg",
+  // "/clients/client-3.jpg",
+  // "/clients/client-4.jpg",
+  // "/clients/client-5.jpg",
+  // "/clients/client-6.jpg",
+  // "/clients/client-7.jpg",
+  // "/clients/client-8.jpg",
   "/clients/client-9.jpg",
   "/clients/client-10.jpg",
   "/clients/client-11.jpg",
@@ -89,7 +89,7 @@ export default function PresidentSection() {
 
         <p className="text-gray-700">
           আনন্দ হাউজিং সোসাইটির বিশ্বাসযোগ্য উন্নয়ন, ব্যবস্থাপনা এবং নিয়মিত
-          পেশাদার অভিজ্ঞ ব্যাক্তিদের নিয়ে গঠিত।  
+          পেশাদার অভিজ্ঞ ব্যাক্তিদের নিয়ে গঠিত।
         </p>
       </div>
 
