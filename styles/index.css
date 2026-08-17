@@ -19,11 +19,6 @@ body {
   outline: none;
 }
 
-/* body {
-  font-family: "Poppins", "Noto Sans Bengali", sans-serif;
-  @apply antialiased;
-} */
-
 .custom-container {
   @apply container px-6 md:px-12;
 }
