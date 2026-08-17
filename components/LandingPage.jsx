@@ -120,7 +120,7 @@ const LandingPage = () => {
               variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
             >
               <motion.p
-                className="uppercase tracking-[0.3em] text-sm text-primary relative inline-flex items-center gap-3 border border-primary rounded-full px-4 py-1 bg-slate-950/20 backdrop-blur-sm"
+                className="uppercase tracking-tight text-lg text-primary relative inline-flex items-center gap-3 border border-primary rounded-full px-4 py-1 bg-slate-950/20 backdrop-blur-sm"
                 variants={textVariants}
               >
                 <FaHome className="text-primary text-sm" />
