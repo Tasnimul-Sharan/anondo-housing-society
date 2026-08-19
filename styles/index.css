@@ -1,6 +1,12 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap");
 
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; 
+
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss/base";
@@ -49,22 +55,6 @@ h3 {
     opacity: 0;
   }
 }
-
-/* @keyframes ripple {
-  0% {
-    box-shadow: rgba(9, 136, 62, 0.4) 0 0 0 0;
-  }
-  70% {
-    box-shadow: rgba(9, 136, 62, 0) 0 0 0 10px;
-  }
-  100% {
-    box-shadow: rgba(9, 136, 62, 0) 0 0 0 0;
-  }
-}
-
-.ripple {
-  animation: ripple 1.5s infinite;
-} */
 
 .slick-dots {
   position: absolute;
@@ -133,40 +123,6 @@ h3 {
   transition: width 0.3s ease-out;
 }
 
-/* .custom-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
-  gap: 8px;
-}
-
-.custom-dot-container {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.custom-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #ddd;
-  transition: all 0.6s ease-in-out;
-}
-
-.custom-dot-container:hover .custom-dot {
-  background-color: #f99b24 !important;
-  outline: 2px solid #f99b24 !important;
-}
-
-.slick-dots li.slick-active .custom-dot {
-  background-color: #f99b24 !important;
-  outline: 2px solid #f99b24 !important;
-  outline-offset: 5px !important;
-} */
-
 .font-outline {
   font-family: "Poppins", sans-serif;
   -webkit-text-stroke: 1.5px #000000;
@@ -185,26 +141,10 @@ h3 {
     color 0.3s ease;
 }
 
-/* .slick-track {
-  overflow: visible !important;
-} */
-
-/* .slick-list {
-  overflow: visible !important;
-} */
-
-/* .slick-slide > div {
-  overflow: visible !important;
-} */
-
 .slick-list {
   overflow: visible !important;
 }
-/* .slick-slide {
-  padding: 0 8px;
-} */
 
-/* FIX: Show only 1 image — no overflow */
 .slick-list {
   overflow: hidden !important;
 }
@@ -212,11 +152,6 @@ h3 {
 .slick-slide {
   overflow: hidden !important;
 }
-
-/* .slick-slide > div {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-} */
 
 .service-item:hover .font-outline {
   -webkit-text-stroke: 1.5px #f99b24;
