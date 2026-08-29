@@ -13,6 +13,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
 
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Project", href: "/projects" },
+  { label: "Terms and Conditions", href: "/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-secondary text-white pt-20 pb-6">
@@ -62,15 +71,14 @@ export default function Footer() {
           </h4>
 
           <ul className="space-y-2 text-sm">
-            {[
-              "Home",
-              "About",
-              "Contact",
-              "Project",
-              "Terms and Conditions",
-            ].map((item, i) => (
-              <li key={i} className="relative group cursor-pointer w-fit">
-                <span className="transition-colors duration-300">{item}</span>
+            {quickLinks.map((item) => (
+              <li key={item.href} className="relative group w-fit">
+                <Link
+                  href={item.href}
+                  className="transition-colors duration-300 hover:text-primary"
+                >
+                  {item.label}
+                </Link>
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-500 group-hover:w-full"></span>
               </li>
             ))}
