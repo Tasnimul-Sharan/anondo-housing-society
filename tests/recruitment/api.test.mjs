@@ -1,0 +1,119 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { Readable } from "node:stream";
+import { access } from "node:fs/promises";
+import { v2 as cloudinary } from "cloudinary";
+import jobsHandler from "../../pages/api/admin/jobs/index.js";
+import editJobHandler from "../../pages/api/admin/jobs/[id].js";
+import openJobsHandler from "../../pages/api/recruitment/jobs.js";
+import applyHandler from "../../pages/api/recruitment/applications.js";
+import reviewHandler from "../../pages/api/admin/applications/[id]/index.js";
+import cvHandler from "../../pages/api/admin/applications/[id]/cv.js";
+
+test("mocked providers: publish, apply, upload privately, review, download, close, and failure cleanup", async t => {
+  const jobId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
+  const adminId = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";
+  const jobs = [];
+  const applications = [];
+  const uploads = [];
+  const destroyed = [];
+  let failInsert = false;
+  let rateAllowed = true;
+  const settings = { NEXT_PUBLIC_SUPABASE_URL: "https://recruitment-test.supabase.co", SUPABASE_SERVICE_ROLE_KEY: "test-server-key", CLOUDINARY_CLOUD_NAME: "test-cloud", CLOUDINARY_API_KEY: "test-key", CLOUDINARY_API_SECRET: "test-secret" };
+  const previous = Object.fromEntries(Object.keys(settings).map(key => [key, process.env[key]]));
+  Object.assign(process.env, settings);
+  t.after(() => { for (const [key, value] of Object.entries(previous)) { if (value === undefined) delete process.env[key]; else process.env[key] = value; } });
+  const response = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", ...headers } });
+  t.mock.method(globalThis, "fetch", async (input, options = {}) => {
+    const url = new URL(typeof input === "string" ? input : input.url);
+    assert.equal(url.origin, settings.NEXT_PUBLIC_SUPABASE_URL, "No live provider calls are allowed");
+    const headers = new Headers(options.headers);
+    if (url.pathname === "/auth/v1/user") return response({ id: headers.get("Authorization") === "Bearer admin" ? adminId : "cccccccc-cccc-4ccc-8ccc-cccccccccccc", email: "test@example.test" });
+    if (url.pathname.endsWith("/rpc/recruitment_take_rate_limit")) return response(rateAllowed);
+    const table = url.pathname.split("/").pop();
+    if (table === "recruitment_admins") return response(url.searchParams.get("user_id") === `eq.${adminId}` ? [{ user_id: adminId }] : []);
+    let list = table === "recruitment_applications" ? applications : jobs;
+    for (const key of ["id", "email", "job_id", "cv_public_id"]) {
+      const filter = url.searchParams.get(key);
+      if (filter) list = list.filter(item => item[key] === filter.slice(3));
+    }
+    if (table === "recruitment_open_jobs") list = list.filter(item => item.status === "published");
+    const body = options.body ? JSON.parse(options.body) : null;
+    if (options.method === "POST") {
+      if (table === "recruitment_applications") {
+        if (failInsert) return response({ code: "database-unavailable" }, 500);
+        applications.push({ ...body, status: "new", notes: "", recruitment_jobs: { title: jobs[0].title } });
+        return response(null, 201);
+      }
+      const job = { ...body, id: jobId };
+      jobs.push(job);
+      return response(job, 201);
+    }
+    if (options.method === "PATCH") list.forEach(item => Object.assign(item, body));
+    if (headers.get("Accept")?.includes("vnd.pgrst.object")) return response(list[0] || null);
+    return response(list, 200, { "Content-Range": `0-${Math.max(0, list.length - 1)}/${list.length}` });
+  });
+  t.mock.method(cloudinary.uploader, "upload", async (path, options) => {
+    uploads.push({ path, options });
+    return { public_id: options.public_id, secure_url: `https://res.cloudinary.com/test-cloud/raw/authenticated/${options.public_id}` };
+  });
+  t.mock.method(cloudinary.uploader, "destroy", async id => { destroyed.push(id); return { result: "ok" }; });
+  async function call(handler, req) {
+    const res = { headers: {}, setHeader(key, value) { this.headers[key] = value; }, status(code) { this.code = code; return this; }, json(body) { this.body = body; } };
+    await handler({ method: "GET", headers: {}, query: {}, ...req }, res);
+    return res;
+  }
+  async function multipart(email = "applicant@example.test", file = "%PDF-1.7\n" + "fixture".repeat(50)) {
+    const data = new FormData();
+    for (const [key, value] of Object.entries({ job_id: jobId, full_name: "Test Applicant", email, phone: "01700000000", address: "Dhaka", education: "BBA", experience: "Fresh graduate", availability: "Now", consent: "true" })) data.set(key, value);
+    data.set("cv", new Blob([file], { type: "application/pdf" }), "cv.pdf");
+    const request = new Request("http://localhost/api/recruitment/applications", { method: "POST", body: data });
+    const buffer = Buffer.from(await request.arrayBuffer());
+    const stream = Readable.from([buffer]);
+    stream.headers = { "content-type": request.headers.get("content-type"), "content-length": String(buffer.length) };
+    stream.method = "POST";
+    stream.socket = { remoteAddress: "127.0.0.1" };
+    const res = { setHeader() {}, status(code) { this.code = code; return this; }, json(body) { this.body = body; } };
+    await applyHandler(stream, res);
+    return res;
+  }
+  const job = { title: "Sales Executive", department: "Sales", location: "Dhaka", type: "Full-time", experience: "1 year", description: "Fixture job", requirements: ["Communication"], responsibilities: ["Client support"], status: "draft" };
+  assert.equal((await call(jobsHandler, { method: "POST", body: job })).code, 401);
+  assert.equal((await call(jobsHandler, { headers: { authorization: "Bearer viewer" } })).code, 403);
+  const adminHeaders = { authorization: "Bearer admin" };
+  assert.equal((await call(jobsHandler, { method: "POST", headers: adminHeaders, body: job })).code, 201);
+  assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
+  assert.equal((await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, status: "published" } })).code, 200);
+  assert.equal((await call(openJobsHandler)).body.jobs.length, 1);
+  const submitted = await multipart();
+  assert.equal(submitted.code, 201, JSON.stringify(submitted.body));
+  assert.equal(uploads[0].options.resource_type, "raw");
+  assert.equal(uploads[0].options.type, "authenticated");
+  assert.equal(applications[0].cv_url.includes("/authenticated/"), true);
+  await assert.rejects(access(uploads[0].path), /ENOENT/);
+  assert.equal((await multipart()).code, 409);
+  assert.equal(uploads.length, 1, "Duplicate does not upload a second CV");
+  assert.equal((await multipart("invalid@example.test", "MZ" + "fake".repeat(100))).code, 400);
+  const query = { id: submitted.body.id };
+  assert.equal((await call(reviewHandler, { headers: adminHeaders, query })).body.application.full_name, "Test Applicant");
+  const saved = await call(reviewHandler, { method: "PATCH", headers: adminHeaders, query, body: { status: "shortlisted", notes: "Test review" } });
+  assert.equal(saved.body.application.status, "shortlisted");
+  assert.equal((await call(cvHandler, { query })).code, 401);
+  const cv = await call(cvHandler, { headers: adminHeaders, query });
+  assert.equal(cv.code, 200);
+  const download = new URL(cv.body.url);
+  assert.equal(download.searchParams.get("type"), "authenticated");
+  assert.ok(download.searchParams.get("signature"));
+  assert.equal(download.searchParams.get("attachment"), "true");
+  assert.ok(Number(download.searchParams.get("expires_at")) <= Date.now() / 1000 + 300);
+  failInsert = true;
+  assert.equal((await multipart("failure@example.test")).code, 500);
+  assert.equal(destroyed.length, 1, "Failed database insert cleans up its CV");
+  failInsert = false;
+  rateAllowed = false;
+  assert.equal((await multipart("rate@example.test")).code, 429);
+  rateAllowed = true;
+  await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, status: "closed" } });
+  assert.equal((await multipart("closed@example.test")).code, 409);
+  assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
+});

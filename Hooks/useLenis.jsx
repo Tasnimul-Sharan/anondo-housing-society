@@ -2,8 +2,9 @@
 
 import { useEffect } from "react";
 
-export const useLenis = () => {
+export const useLenis = (enabled = true) => {
   useEffect(() => {
+    if (!enabled) return;
     let lenis = null;
     let rafId;
     let cancelled = false;
@@ -58,5 +59,5 @@ export const useLenis = () => {
 
       lenis?.destroy();
     };
-  }, []);
+  }, [enabled]);
 };

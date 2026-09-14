@@ -6,7 +6,8 @@ import Script from "next/script";
 import EventPopup from "@/components/EventPopup";
 import OfferPopup from "@/components/OfferPopup";
 function MyApp({ Component, pageProps }) {
-  useLenis();
+  useLenis(!Component.adminPage);
+  if (Component.adminPage) return <Component {...pageProps} />;
   return (
     <Layout>
       <Script
