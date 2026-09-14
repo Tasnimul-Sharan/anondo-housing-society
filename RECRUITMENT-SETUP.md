@@ -166,6 +166,10 @@ server executions. Define your organization's CV retention period and remove
 expired applications and corresponding Cloudinary assets together.
 
 Automated checks: `npm run test:recruitment` and `npm run build`.
+After building, run `npm run test:recruitment` again: the production-upload test
+checks CV validation with only the dependencies included in Next.js's serverless
+file trace, isolated from the local node_modules directory. CV detection uses a
+size-bounded buffer to avoid file-type's untraced runtime filesystem imports.
 Live-provider testing requires your credentials; local mocked tests do not prove
 your account permissions, email delivery or Cloudinary delivery configuration.
 

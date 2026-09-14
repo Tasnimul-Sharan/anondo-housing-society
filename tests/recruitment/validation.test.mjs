@@ -52,6 +52,10 @@ test("CV validation checks bytes and rejects renamed executables and oversized f
     await assert.rejects(validateCv({ ...data, originalFilename: "cv.exe" }), /valid PDF/);
     await writeFile(file, "MZ" + "executable".repeat(30));
     await assert.rejects(validateCv(data), /valid PDF/);
+    await writeFile(file, Buffer.alloc(MAX_CV_BYTES + 1));
+    await assert.rejects(validateCv({ ...data, size: 200 }), /3 MB/, "Actual file size must be checked too");
+    await writeFile(file, Buffer.alloc(0));
+    await assert.rejects(validateCv(data), /3 MB/);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 
