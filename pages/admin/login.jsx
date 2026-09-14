@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FaLock } from "react-icons/fa";
+import { FaArrowRight, FaThLarge, FaLock } from "react-icons/fa";
 import { authClient, apiRequest } from "@/lib/recruitment/client";
-import { Field } from "@/components/recruitment/ApplicationForm";
+import BrandLogo from "@/components/admin/BrandLogo";
+import PasswordField from "@/components/admin/PasswordField";
+import a from "@/styles/Admin.module.css";
 import s from "@/styles/Recruitment.module.css";
 
 export default function AdminLogin() {
@@ -50,22 +52,24 @@ export default function AdminLogin() {
     } catch (err) { setError(err.message); }
     finally { setBusy(false); }
   }
-  return <div className={`${s.scope} ${s.login}`}>
+  return <div className={`${s.scope} ${a.root} ${a.loginPage}`}>
     <Head><title>Admin login | Anondo Housing Society</title><meta name="robots" content="noindex,nofollow" /></Head>
-    <div className={s.loginForm}>
-      <Link href="/" className={s.brand}>Anondo Housing Society</Link>
-      <h1 className="mt-8">{mode === "login" ? "Recruitment admin" : mode === "reset" ? "Reset password" : "Set new password"}</h1>
-      <p className={`${s.muted} mt-3`}>Authorized staff access</p>
+    <header className={a.loginHeader}><BrandLogo /><span className={a.portalName}><FaThLarge />Administration</span></header>
+    <main className={a.loginMain}><div className={a.loginContent}>
+      <FaLock className={a.loginMark} />
+      <h1>{mode === "login" ? "Welcome back" : mode === "reset" ? "Reset password" : "Set new password"}</h1>
+      <p className={a.loginSubtitle}>Anondo Housing Society</p>
       {error && <p role="alert" className={s.error}>{error}</p>}
       {message && <p role="status" className={s.success}>{message}</p>}
-      <form onSubmit={submit} key={mode}>
-        {mode !== "recovery" && <Field label="Email address" name="email" type="email" autoComplete="username" required disabled={busy} />}
-        {mode !== "reset" && <Field label="Password" name="password" type="password" minLength={mode === "recovery" ? 12 : undefined} autoComplete={mode === "recovery" ? "new-password" : "current-password"} required disabled={busy} />}
-        {mode === "recovery" && <Field label="Confirm password" name="confirm" type="password" autoComplete="new-password" minLength={12} required disabled={busy} />}
-        <button className={s.button} disabled={busy}><FaLock />{busy ? "Please wait..." : mode === "login" ? "Sign in" : mode === "reset" ? "Send reset link" : "Update password"}</button>
+      <form onSubmit={submit} key={mode} className={a.loginForm}>
+        {mode !== "recovery" && <label className={a.field}>Email address<input className={a.input} name="email" type="email" autoComplete="username" required disabled={busy} /></label>}
+        {mode !== "reset" && <PasswordField name="password" minLength={mode === "recovery" ? 12 : undefined} autoComplete={mode === "recovery" ? "new-password" : "current-password"} required disabled={busy} />}
+        {mode === "recovery" && <PasswordField label="Confirm password" name="confirm" autoComplete="new-password" minLength={12} required disabled={busy} />}
+        <button className={s.button} disabled={busy}>{busy ? "Please wait..." : mode === "login" ? "Sign in" : mode === "reset" ? "Send reset link" : "Update password"}<FaArrowRight /></button>
       </form>
-      {mode !== "recovery" && <button className="mt-5 text-sm text-[#0072bc]" disabled={busy} onClick={() => { setMode(mode === "login" ? "reset" : "login"); setError(""); setMessage(""); }}>{mode === "login" ? "Forgot password?" : "Back to sign in"}</button>}
-    </div>
+      {mode === "reset" && <button className="mt-5 text-sm text-[#0072bc]" disabled={busy} onClick={() => { setMode("login"); setError(""); setMessage(""); }}>Back to sign in</button>}
+    </div></main>
+    <footer className={a.loginFooter}><Link href="/">Anondo Housing Society</Link> / Administration</footer>
   </div>;
 }
 AdminLogin.adminPage = true;

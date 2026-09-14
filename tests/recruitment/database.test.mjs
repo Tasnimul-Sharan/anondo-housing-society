@@ -11,8 +11,13 @@ test("PostgreSQL schema enforces privacy, duplicate prevention, deadlines and ra
     const sql = await readFile(new URL("../../supabase/recruitment.sql", import.meta.url), "utf8");
     await db.exec(sql);
     await db.exec(sql); // Re-running setup is safe.
+    const deletionSql = await readFile(new URL("../../supabase/recruitment-permanent-delete.sql", import.meta.url), "utf8");
+    await db.exec(deletionSql);
+    await db.exec(deletionSql);
     await db.exec("set role anon");
     await assert.rejects(db.query("select * from public.recruitment_applications"), /permission denied/);
+    await assert.rejects(db.query("select * from public.recruitment_cv_deletions"), /permission denied/);
+    await assert.rejects(db.query("select public.recruitment_permanently_delete_job(gen_random_uuid(), 'test')"), /permission denied/);
     await assert.rejects(db.query("select * from public.recruitment_open_jobs"), /permission denied/);
     await db.exec("reset role; set role authenticated");
     await assert.rejects(db.query("insert into public.recruitment_admins(user_id) values (gen_random_uuid())"), /permission denied/);
@@ -38,5 +43,13 @@ test("PostgreSQL schema enforces privacy, duplicate prevention, deadlines and ra
     }
     await db.exec("update public.recruitment_rate_limits set expires_at = now() - interval '1 second'");
     assert.equal((await db.query("select public.recruitment_take_rate_limit('test-ip') as allowed")).rows[0].allowed, true);
+    await assert.rejects(db.query("select public.recruitment_permanently_delete_job($1, 'Test job')", [job.id]), /Only jobs in Trash/);
+    await db.query("update public.recruitment_jobs set status = 'archived' where id = $1", [job.id]);
+    await assert.rejects(db.query("select public.recruitment_permanently_delete_job($1, 'wrong')", [job.id]), /exact job title/);
+    assert.equal((await db.query("select * from public.recruitment_applications")).rows.length, 1);
+    await db.query("select public.recruitment_permanently_delete_job($1, 'Test job')", [job.id]);
+    assert.equal((await db.query("select * from public.recruitment_jobs")).rows.length, 0);
+    assert.equal((await db.query("select * from public.recruitment_applications")).rows.length, 0);
+    assert.equal((await db.query("select public_id from public.recruitment_cv_deletions")).rows[0].public_id, "first");
   } finally { await db.close(); }
 });

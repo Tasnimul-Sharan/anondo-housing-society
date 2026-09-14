@@ -35,6 +35,9 @@ CLOUDINARY_API_SECRET=YOUR_API_SECRET
 
 Open Supabase > SQL Editor and run `supabase/recruitment.sql`.
 
+Then run `supabase/recruitment-permanent-delete.sql`. Existing installations also
+need this second file once to enable permanent deletion and durable CV cleanup.
+
 It creates jobs, applications, admin membership and rate-limit tables with Row
 Level Security. Browser users cannot read applications or write jobs directly.
 The server verifies the Supabase login and admin membership on every admin API
@@ -77,7 +80,10 @@ Set Supabase Authentication > URL Configuration:
 - Redirect URLs: `http://localhost:3000/admin/login` and
   `https://YOUR_DOMAIN/admin/login`. Add the actual localhost port if different.
 
-The login page has a Forgot password flow and a new-password form. Configure a
+The login page's Forgot password link is currently hidden. Signed-in staff can
+use Change password in the dashboard header, verify their current password, and
+enter a new password (at least 12 characters) twice. The recovery-link form is
+retained for administrator-issued recovery links. Configure a
 production SMTP provider in Supabase Auth before relying on reset emails for
 staff; Supabase's default email service has delivery restrictions and limits.
 
@@ -95,7 +101,20 @@ The legacy peer flag is needed by the project's existing older lightbox package
 with React 19, not by the recruitment feature.
 
 - `/admin/login`: sign in using your Supabase admin account.
-- `/admin`: create and edit positions; select Draft, Published, Closed or Archived.
+- `/admin`: general administration dashboard with Overview, Jobs, Applications and Trash.
+- Post a job opens the editor with Published selected. Publish job immediately
+  makes it available on careers. Save draft keeps it private. Publishing with a
+  past deadline is rejected. Existing jobs can also be closed from the editor.
+- Delete job moves it to Trash and removes it from careers. Applications and CVs
+  are retained. Restore in Trash brings the job back as a draft. This uses the
+  existing archived status. Permanently delete in Trash requires typing the job
+  title and removes the job and all associated applications in one transaction.
+  Their Cloudinary CVs are deleted too. Failed/pending CV deletions remain in a
+  private queue; use Retry CV cleanup in Trash until the pending count is zero.
+  Each attempt processes up to 20 CVs. The permanent-delete SQL update above is
+  required; it does not delete any records merely by being installed.
+- Careers refreshes on tab focus, visibility changes, same-browser job changes,
+  and every 30 seconds while visible. Supabase Realtime is not required.
 - `/career-opportunities`: displays published jobs whose deadline has not passed.
   Deadlines end at midnight in Bangladesh time. Blank deadlines stay open.
 - Apply Now opens a large responsive form with personal details, education,

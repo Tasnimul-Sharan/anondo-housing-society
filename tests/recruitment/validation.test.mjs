@@ -66,6 +66,28 @@ test("admin authorization rejects missing/invalid sessions and non-admin users",
   assert.deepEqual(await requireAdmin({ headers: { authorization: "Bearer valid" } }, db), user);
 });
 
+test("invalid server keys and provider outages are not reported as expired sessions", async () => {
+  const request = { headers: { authorization: "Bearer valid-user-session" } };
+  for (const message of ["Unregistered API key", "Invalid API key"]) {
+    const db = { auth: { getUser: async () => ({ error: { status: 401, message } }) } };
+    await assert.rejects(requireAdmin(request, db), error => error.status === 503 && error.message.includes("SUPABASE_SERVICE_ROLE_KEY"));
+  }
+  for (const status of [0, 500, 503]) {
+    const db = { auth: { getUser: async () => ({ error: { status, message: "Provider unavailable" } }) } };
+    await assert.rejects(requireAdmin(request, db), error => error.status === 503 && !error.message.includes("expired"));
+  }
+  const db = { auth: { getUser: async () => ({ error: { status: 401, message: "JWT expired" } }) } };
+  await assert.rejects(requireAdmin(request, db), error => error.status === 401 && error.message.includes("expired"));
+});
+
+test("database API key errors return an actionable configuration error without leaking provider details", async () => {
+  const res = { setHeader() {}, status(code) { this.code = code; return this; }, json(data) { this.body = data; } };
+  await apiHandler(["GET"], () => { throw { message: "Unregistered API key", details: "private-provider-details" }; })({ method: "GET" }, res);
+  assert.equal(res.code, 503);
+  assert.match(res.body.error, /SUPABASE_SERVICE_ROLE_KEY/);
+  assert.equal(JSON.stringify(res.body).includes("private-provider-details"), false);
+});
+
 test("API rejects unsupported methods and disables caching", async () => {
   const headers = {};
   const res = { setHeader: (key, value) => { headers[key] = value; }, status(code) { this.code = code; return this; }, json(data) { this.body = data; } };

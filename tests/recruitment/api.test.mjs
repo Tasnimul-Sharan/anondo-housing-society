@@ -9,6 +9,8 @@ import openJobsHandler from "../../pages/api/recruitment/jobs.js";
 import applyHandler from "../../pages/api/recruitment/applications.js";
 import reviewHandler from "../../pages/api/admin/applications/[id]/index.js";
 import cvHandler from "../../pages/api/admin/applications/[id]/cv.js";
+import overviewHandler from "../../pages/api/admin/overview.js";
+import cleanupHandler from "../../pages/api/admin/cv-cleanup.js";
 
 test("mocked providers: publish, apply, upload privately, review, download, close, and failure cleanup", async t => {
   const jobId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
@@ -17,6 +19,8 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
   const applications = [];
   const uploads = [];
   const destroyed = [];
+  const deletionQueue = [];
+  let failDestroy = false;
   let failInsert = false;
   let rateAllowed = true;
   const settings = { NEXT_PUBLIC_SUPABASE_URL: "https://recruitment-test.supabase.co", SUPABASE_SERVICE_ROLE_KEY: "test-server-key", CLOUDINARY_CLOUD_NAME: "test-cloud", CLOUDINARY_API_KEY: "test-key", CLOUDINARY_API_SECRET: "test-secret" };
@@ -30,13 +34,28 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
     const headers = new Headers(options.headers);
     if (url.pathname === "/auth/v1/user") return response({ id: headers.get("Authorization") === "Bearer admin" ? adminId : "cccccccc-cccc-4ccc-8ccc-cccccccccccc", email: "test@example.test" });
     if (url.pathname.endsWith("/rpc/recruitment_take_rate_limit")) return response(rateAllowed);
+    if (url.pathname.endsWith("/rpc/recruitment_permanently_delete_job")) {
+      const body = JSON.parse(options.body);
+      const job = jobs.find(item => item.id === body.target_id);
+      if (!job) return response({ code: "P0002" }, 400);
+      if (job.status !== "archived") return response({ code: "23514" }, 400);
+      if (body.confirmation !== job.title) return response({ code: "22023" }, 400);
+      const removed = applications.filter(item => item.job_id === job.id);
+      deletionQueue.push(...removed.map(item => ({ public_id: item.cv_public_id })));
+      for (const item of removed) applications.splice(applications.indexOf(item), 1);
+      jobs.splice(jobs.indexOf(job), 1);
+      return response(removed.length);
+    }
     const table = url.pathname.split("/").pop();
     if (table === "recruitment_admins") return response(url.searchParams.get("user_id") === `eq.${adminId}` ? [{ user_id: adminId }] : []);
-    let list = table === "recruitment_applications" ? applications : jobs;
-    for (const key of ["id", "email", "job_id", "cv_public_id"]) {
+    let list = table === "recruitment_cv_deletions" ? deletionQueue : table === "recruitment_applications" ? applications : jobs;
+    for (const key of ["id", "email", "job_id", "cv_public_id", "public_id"]) {
       const filter = url.searchParams.get(key);
       if (filter) list = list.filter(item => item[key] === filter.slice(3));
     }
+    const statusFilter = url.searchParams.get("status");
+    if (statusFilter?.startsWith("eq.")) list = list.filter(item => item.status === statusFilter.slice(3));
+    if (statusFilter?.startsWith("neq.")) list = list.filter(item => item.status !== statusFilter.slice(4));
     if (table === "recruitment_open_jobs") list = list.filter(item => item.status === "published");
     const body = options.body ? JSON.parse(options.body) : null;
     if (options.method === "POST") {
@@ -50,6 +69,7 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
       return response(job, 201);
     }
     if (options.method === "PATCH") list.forEach(item => Object.assign(item, body));
+    if (options.method === "DELETE" && table === "recruitment_cv_deletions") list.forEach(item => deletionQueue.splice(deletionQueue.indexOf(item), 1));
     if (headers.get("Accept")?.includes("vnd.pgrst.object")) return response(list[0] || null);
     return response(list, 200, { "Content-Range": `0-${Math.max(0, list.length - 1)}/${list.length}` });
   });
@@ -57,7 +77,11 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
     uploads.push({ path, options });
     return { public_id: options.public_id, secure_url: `https://res.cloudinary.com/test-cloud/raw/authenticated/${options.public_id}` };
   });
-  t.mock.method(cloudinary.uploader, "destroy", async id => { destroyed.push(id); return { result: "ok" }; });
+  t.mock.method(cloudinary.uploader, "destroy", async (id, options) => {
+    if (failDestroy) throw new Error("Provider unavailable");
+    assert.equal(options.resource_type, "raw"); assert.equal(options.type, "authenticated");
+    destroyed.push(id); return { result: "ok" };
+  });
   async function call(handler, req) {
     const res = { headers: {}, setHeader(key, value) { this.headers[key] = value; }, status(code) { this.code = code; return this; }, json(body) { this.body = body; } };
     await handler({ method: "GET", headers: {}, query: {}, ...req }, res);
@@ -83,6 +107,17 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
   const adminHeaders = { authorization: "Bearer admin" };
   assert.equal((await call(jobsHandler, { method: "POST", headers: adminHeaders, body: job })).code, 201);
   assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
+  assert.equal((await call(editJobHandler, { method: "DELETE", query: { id: jobId } })).code, 401);
+  assert.equal((await call(editJobHandler, { method: "DELETE", headers: { authorization: "Bearer viewer" }, query: { id: jobId } })).code, 403);
+  const removed = await call(editJobHandler, { method: "DELETE", headers: adminHeaders, query: { id: jobId } });
+  assert.equal(removed.body.job.status, "archived");
+  assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
+  assert.equal((await call(jobsHandler, { headers: adminHeaders })).body.jobs.length, 0);
+  assert.equal((await call(jobsHandler, { headers: adminHeaders, query: { trash: "true" } })).body.jobs.length, 1);
+  const restored = await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: job });
+  assert.equal(restored.body.job.status, "draft");
+  assert.equal((await call(jobsHandler, { headers: adminHeaders })).body.jobs.length, 1);
+  assert.equal((await call(jobsHandler, { headers: adminHeaders, query: { trash: "true" } })).body.jobs.length, 0);
   assert.equal((await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, status: "published" } })).code, 200);
   assert.equal((await call(openJobsHandler)).body.jobs.length, 1);
   const submitted = await multipart();
@@ -113,7 +148,37 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
   rateAllowed = false;
   assert.equal((await multipart("rate@example.test")).code, 429);
   rateAllowed = true;
+  const overview = await call(overviewHandler, { headers: adminHeaders });
+  assert.equal(overview.body.stats.jobs, 1);
+  assert.equal(overview.body.stats.live, 1);
+  assert.equal(overview.body.stats.applications, 1);
+  assert.equal((await call(overviewHandler)).code, 401);
   await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, status: "closed" } });
   assert.equal((await multipart("closed@example.test")).code, 409);
   assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
+  await call(editJobHandler, { method: "DELETE", headers: adminHeaders, query: { id: jobId } });
+  assert.equal(applications.length, 1, "Deleting a job preserves applicant records");
+  assert.equal(destroyed.length, 1, "Deleting a job does not destroy applicant CVs");
+  assert.equal((await multipart("deleted@example.test")).code, 409);
+  const permanentRequest = { method: "DELETE", headers: adminHeaders, query: { id: jobId, permanent: "true" }, body: { confirmation: job.title } };
+  assert.equal((await call(editJobHandler, { ...permanentRequest, headers: {} })).code, 401);
+  assert.equal((await call(editJobHandler, { ...permanentRequest, headers: { authorization: "Bearer viewer" } })).code, 403);
+  assert.equal((await call(editJobHandler, { ...permanentRequest, body: {} })).code, 400);
+  assert.equal((await call(editJobHandler, { ...permanentRequest, body: { confirmation: "wrong" } })).code, 400);
+  failDestroy = true;
+  const purged = await call(editJobHandler, permanentRequest);
+  assert.equal(purged.code, 200);
+  assert.equal(purged.body.cleanup.pending, 1);
+  assert.equal(jobs.length, 0); assert.equal(applications.length, 0);
+  assert.equal(deletionQueue.length, 1, "Failed Cloudinary cleanup is retained for retry");
+  assert.equal((await call(cleanupHandler, { method: "POST" })).code, 401);
+  failDestroy = false;
+  assert.equal((await call(cleanupHandler, { method: "POST", headers: adminHeaders })).body.pending, 0);
+  assert.equal(deletionQueue.length, 0);
+  assert.ok(destroyed.includes(uploads[0].options.public_id));
+  assert.equal((await call(editJobHandler, permanentRequest)).code, 404);
+  const publishedByDefault = await call(jobsHandler, { method: "POST", headers: adminHeaders, body: { ...job, status: undefined } });
+  assert.equal(publishedByDefault.body.job.status, "published");
+  assert.equal((await call(editJobHandler, permanentRequest)).code, 409, "A live job cannot be permanently deleted");
+  assert.equal((await call(jobsHandler, { method: "POST", headers: adminHeaders, body: { ...job, status: "published", deadline: "2020-01-01" } })).code, 400);
 });
