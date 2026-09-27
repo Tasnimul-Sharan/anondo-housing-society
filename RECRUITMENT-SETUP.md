@@ -38,6 +38,18 @@ Open Supabase > SQL Editor and run `supabase/recruitment.sql`.
 Then run `supabase/recruitment-permanent-delete.sql`. Existing installations also
 need this second file once to enable permanent deletion and durable CV cleanup.
 
+Finally run `supabase/recruitment-job-details.sql` for the detailed job advert
+fields. On an existing installation, run only this new migration (the original
+setup scripts do not need to be rerun). The migration is repeatable and preserves
+existing jobs, applications, CVs, RLS and admin membership. It appends public fields
+to `recruitment_open_jobs`; no Realtime setting or new credential is needed.
+
+Optional: run `supabase/recruitment-sales-marketing-draft.sql` to load the supplied
+Senior Executive / Executive (Sales & Marketing) advert as a draft. It retains the
+supplied publication date of 05 Sep 2026 and deadline of 05 Oct 2026. Review and
+publish it from Admin > Jobs; this SQL does not publish it or replace another job.
+The fixed UUID prevents duplicates if this optional script is run again.
+
 It creates jobs, applications, admin membership and rate-limit tables with Row
 Level Security. Browser users cannot read applications or write jobs directly.
 The server verifies the Supabase login and admin membership on every admin API
@@ -117,6 +129,21 @@ with React 19, not by the recruitment feature.
   and every 30 seconds while visible. Supabase Realtime is not required.
 - `/career-opportunities`: displays published jobs whose deadline has not passed.
   Deadlines end at midnight in Bangladesh time. Blank deadlines stay open.
+- `/career-opportunities/[id]`: shareable job details, Requirements,
+  Responsibilities & Context, Skills, and Salary & Benefits.
+  Only open, published jobs can be fetched by this public page or its API.
+- The job editor also accepts vacancy, age range, qualifications, preferred
+  institutions, relevant business areas, freshers preference, skills, benefits,
+  and workplace. Optional empty sections are omitted publicly.
+  All positions belong to Anondo Housing Society: the name is fixed in the header
+  and page title. There are no company fields or repeated company section. Existing
+  company database columns are retained for compatibility but are not edited or displayed.
+  Existing descriptions/responsibilities/requirements remain intact. A blank
+  published date is filled when a job is first published; an explicit date is a
+  display date, not a scheduled-publishing control. Status controls visibility.
+- Save stores a bookmark on the current browser, not an applicant account.
+  The careers list's Saved on this browser filter shows bookmarked open jobs.
+  Share links open the specific job. No private application insights are public.
 - Apply Now opens a large responsive form with personal details, education,
   experience, availability, optional salary/portfolio/cover letter, CV and consent.
 - Accepted CVs: PDF, DOC, DOCX; maximum 3 MB. Content signatures are checked on the

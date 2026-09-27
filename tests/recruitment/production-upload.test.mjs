@@ -21,7 +21,7 @@ test("CV validation works with only dependencies traced into the production func
     // Outside the repository, Node cannot fall back to untraced local dependencies.
     const files = manifest.files.map(file => relative(root, resolve(dirname(manifestPath), file)))
       .filter(file => file.startsWith(`node_modules${sep}`));
-    files.push("lib/recruitment/upload.mjs", "lib/recruitment/validation.mjs");
+    files.push("lib/recruitment/upload.mjs", "lib/recruitment/validation.mjs", "lib/recruitment/job-details.mjs");
     for (const file of files) {
       const target = join(isolated, file);
       await mkdir(dirname(target), { recursive: true });

@@ -6,6 +6,7 @@ import { v2 as cloudinary } from "cloudinary";
 import jobsHandler from "../../pages/api/admin/jobs/index.js";
 import editJobHandler from "../../pages/api/admin/jobs/[id].js";
 import openJobsHandler from "../../pages/api/recruitment/jobs.js";
+import jobDetailsHandler from "../../pages/api/recruitment/jobs/[id].js";
 import applyHandler from "../../pages/api/recruitment/applications.js";
 import reviewHandler from "../../pages/api/admin/applications/[id]/index.js";
 import cvHandler from "../../pages/api/admin/applications/[id]/cv.js";
@@ -107,6 +108,8 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
   const adminHeaders = { authorization: "Bearer admin" };
   assert.equal((await call(jobsHandler, { method: "POST", headers: adminHeaders, body: job })).code, 201);
   assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
+  assert.equal((await call(jobDetailsHandler, { query: { id: jobId } })).code, 404, "Draft details are private");
+  assert.equal((await call(jobDetailsHandler, { query: { id: "invalid" } })).code, 400);
   assert.equal((await call(editJobHandler, { method: "DELETE", query: { id: jobId } })).code, 401);
   assert.equal((await call(editJobHandler, { method: "DELETE", headers: { authorization: "Bearer viewer" }, query: { id: jobId } })).code, 403);
   const removed = await call(editJobHandler, { method: "DELETE", headers: adminHeaders, query: { id: jobId } });
@@ -120,6 +123,12 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
   assert.equal((await call(jobsHandler, { headers: adminHeaders, query: { trash: "true" } })).body.jobs.length, 0);
   assert.equal((await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, status: "published" } })).code, 200);
   assert.equal((await call(openJobsHandler)).body.jobs.length, 1);
+  const details = { vacancy: "10", age_min: "18", age_max: "35", education: ["MBA", "BBA"], skills: ["CRM"], benefits: ["Festival Bonus: 2"], freshers_allowed: true, published_date: "2026-09-05", workplace: "Work at office" };
+  assert.equal((await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, ...details, status: "published" } })).code, 200);
+  const publicJob = (await call(jobDetailsHandler, { query: { id: jobId } })).body.job;
+  assert.equal(publicJob.vacancy, 10);
+  assert.deepEqual(publicJob.education, ["MBA", "BBA"]);
+  assert.equal(publicJob.freshers_allowed, true);
   const submitted = await multipart();
   assert.equal(submitted.code, 201, JSON.stringify(submitted.body));
   assert.equal(uploads[0].options.resource_type, "raw");
@@ -155,6 +164,7 @@ test("mocked providers: publish, apply, upload privately, review, download, clos
   assert.equal((await call(overviewHandler)).code, 401);
   await call(editJobHandler, { method: "PATCH", headers: adminHeaders, query: { id: jobId }, body: { ...job, status: "closed" } });
   assert.equal((await multipart("closed@example.test")).code, 409);
+  assert.equal((await call(jobDetailsHandler, { query: { id: jobId } })).code, 404, "Closed details are private");
   assert.equal((await call(openJobsHandler)).body.jobs.length, 0);
   await call(editJobHandler, { method: "DELETE", headers: adminHeaders, query: { id: jobId } });
   assert.equal(applications.length, 1, "Deleting a job preserves applicant records");

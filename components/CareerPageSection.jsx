@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { FaBriefcase, FaMapMarkerAlt, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import SectionBadge from "./SectionBadge";
 import ApplicationForm from "./recruitment/ApplicationForm";
 import { apiRequest } from "@/lib/recruitment/client";
+import { formatJobDate } from "@/lib/recruitment/job-details.mjs";
 import s from "@/styles/Recruitment.module.css";
 
 export default function CareerPageSection() {
@@ -15,7 +17,8 @@ export default function CareerPageSection() {
   const [department, setDepartment] = useState("");
   const [type, setType] = useState("");
   const [page, setPage] = useState(1);
-  const [expanded, setExpanded] = useState(null);
+  const [savedOnly, setSavedOnly] = useState(false);
+  const [savedIds, setSavedIds] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const request = useRef(null);
   const load = useCallback(async (background = false) => {
@@ -50,10 +53,20 @@ export default function CareerPageSection() {
       document.removeEventListener("visibilitychange", refresh);
     };
   }, [load]);
+  useEffect(() => {
+    function readSaved() {
+      try { setSavedIds(jobs.filter(job => localStorage.getItem(`anondo:saved-job:${job.id}`) === "true").map(job => job.id)); }
+      catch { setSavedIds([]); }
+    }
+    readSaved();
+    window.addEventListener("storage", readSaved);
+    return () => window.removeEventListener("storage", readSaved);
+  }, [jobs]);
   const filtered = useMemo(() => jobs.filter(job =>
+    (!savedOnly || savedIds.includes(job.id)) &&
     (!department || job.department === department) && (!type || job.type === type) &&
     [job.title, job.department, job.location, job.description].join(" ").toLowerCase().includes(search.trim().toLowerCase())
-  ), [jobs, department, type, search]);
+  ), [jobs, department, type, search, savedOnly, savedIds]);
   const pages = Math.ceil(filtered.length / 3);
   const activePage = Math.min(page, Math.max(1, pages));
   function filter(setter, value) { setter(value); setPage(1); }
@@ -71,23 +84,21 @@ export default function CareerPageSection() {
           <label className={s.field}>Job type<select className={s.input} value={type} onChange={e => filter(setType, e.target.value)}><option value="">All job types</option>{[...new Set(jobs.map(job => job.type))].map(item => <option key={item}>{item}</option>)}</select></label>
         </div>
         {loading ? <p className={s.empty} role="status">Loading open positions...</p> : error ? <div className={s.error} role="alert">{error} <button className={s.secondary} onClick={() => load()}>Try again</button></div> : <>
-          <p className={s.muted + " mb-5"}>{filtered.length} open position{filtered.length === 1 ? "" : "s"}</p>
+          <div className={s.between + " mb-5"}><p className={s.muted}>{filtered.length} open position{filtered.length === 1 ? "" : "s"}</p><label className={s.check + " !my-0"}><input type="checkbox" checked={savedOnly} onChange={event => filter(setSavedOnly, event.target.checked)} />Saved on this browser</label></div>
           <div className={s.jobs}>
             {filtered.slice((activePage - 1) * 3, activePage * 3).map(job => <article key={job.id} className={s.job}>
               <div className={s.between}>
                 <div className="min-w-0 flex-1">
                   <div className={s.row + " mb-3"}><span className={s.pill}>{job.department}</span><span className={s.muted}>{job.type}</span></div>
-                  <h3 className="break-words">{job.title}</h3>
+                  <h3 className="break-words"><Link href={`/career-opportunities/${job.id}`} className="hover:text-primary">{job.title}</Link></h3>
                   <div className={s.row + " " + s.muted + " mt-3"}><span className={s.row}><FaMapMarkerAlt />{job.location}</span><span>Experience: {job.experience}</span></div>
-                  <p className={s.muted + " mt-2"}>Deadline: {job.deadline || "Open until filled"}{job.salary ? " | Salary: " + job.salary : ""}</p>
+                  <p className={s.muted + " mt-2"}>Deadline: {job.deadline ? formatJobDate(job.deadline) : "Open until filled"}{job.salary ? " | Salary: " + job.salary : ""}</p>
+                  {job.vacancy != null && <p className={s.muted + " mt-2"}>Vacancy: {job.vacancy}{job.workplace ? ` | ${job.workplace}` : ""}</p>}
                 </div>
                 <button className={s.button} onClick={() => setSelectedJob(job)}>Apply Now <FaArrowRight /></button>
               </div>
               <p className="my-5 leading-8 text-gray-600">{job.description}</p>
-              <button className={s.secondary} aria-expanded={expanded === job.id} onClick={() => setExpanded(expanded === job.id ? null : job.id)}>{expanded === job.id ? "Hide details" : "View details"}</button>
-              {expanded === job.id && <div className={s.grid + " mt-6 border-t border-gray-200 pt-6"}>
-                {[["Key responsibilities", job.responsibilities], ["Requirements", job.requirements]].map(([label, items]) => <div key={label}><h4 className="font-semibold">{label}</h4><ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-gray-600">{items.map((item, index) => <li key={index}>{item}</li>)}</ul></div>)}
-              </div>}
+              <Link className={s.secondary} href={`/career-opportunities/${job.id}`}>View details <FaArrowRight /></Link>
             </article>)}
           </div>
           {!filtered.length && <div className={s.empty}><h3>{jobs.length ? "No matching positions" : "No open positions at the moment"}</h3><p className="mt-3">{jobs.length ? "Try a different search or filter." : "Please check back for future opportunities."}</p></div>}

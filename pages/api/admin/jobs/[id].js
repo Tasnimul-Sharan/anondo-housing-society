@@ -24,6 +24,7 @@ export default apiHandler(["PATCH", "DELETE"], async (req, res) => {
   const update = req.method === "DELETE" ? { status: "archived" } : validateJob(req.body);
   if (update.status === "published" && !isJobOpen(update)) throw new RequestError("Choose a current or future deadline before publishing.");
   const { data, error } = await db.from("recruitment_jobs").update(update).eq("id", validId(req.query.id)).select().maybeSingle();
+  if (error?.code === "PGRST204") throw new RequestError("Run supabase/recruitment-job-details.sql in Supabase SQL Editor before saving detailed jobs.", 503);
   if (error) throw error;
   if (!data) throw new RequestError("Job not found.", 404);
   res.status(200).json({ job: data });

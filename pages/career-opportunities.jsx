@@ -11,7 +11,7 @@ export default function CareerOpportunitiesPage() {
     keywords:
       "Anondo Housing Society careers, housing jobs Bangladesh, real estate jobs Bangladesh, construction jobs Bangladesh, engineering jobs housing, sales marketing jobs real estate, site supervisor jobs Bangladesh",
     author: "Anondo Housing Society",
-    url: "https://anondohousing.com/career",
+    url: "https://www.anondohousing.com/career-opportunities",
     image: "https://anondohousing.com/career/career-og.jpg",
   };
 

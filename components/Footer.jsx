@@ -25,7 +25,7 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer className="bg-secondary text-white pt-20 pb-6">
-      <div className="custom-container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="custom-container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12">
         <div>
           <Image
             src="/Anondo-Housing-Logo.png"
@@ -104,8 +104,8 @@ export default function Footer() {
             </p>
 
             <p className="flex items-center gap-3">
-              <HiOutlineMail size={20} className="text-primary" />
-              info.anondohousing@gmail.com
+              <HiOutlineMail size={20} className="text-primary shrink-0" />
+              <span className="min-w-0 break-words">info.anondohousing@gmail.com</span>
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
             <input
               type="email"
               placeholder="email@example.com"
-              className="px-4 py-2 w-full bg-transparent outline-none placeholder-white/80 text-sm"
+              className="px-4 py-2 w-full min-w-0 bg-transparent outline-none placeholder-white/80 text-sm"
             />
             <button className="px-4 transition-colors">
               <HiOutlineMail />
@@ -126,7 +126,7 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <SocialIcon
               icon={<FaFacebookF />}
               href="https://www.facebook.com/AnondoHousing"

@@ -8,6 +8,7 @@ export default apiHandler(["GET", "POST"], async (req, res) => {
     const job = validateJob({ ...req.body, status: req.body?.status || "published" });
     if (job.status === "published" && !isJobOpen(job)) throw new RequestError("Choose a current or future deadline before publishing.");
     const { data, error } = await db.from("recruitment_jobs").insert({ ...job, created_by: user.id }).select().single();
+    if (error?.code === "PGRST204") throw new RequestError("Run supabase/recruitment-job-details.sql in Supabase SQL Editor before saving detailed jobs.", 503);
     if (error) throw error;
     return res.status(201).json({ job: data });
   }
