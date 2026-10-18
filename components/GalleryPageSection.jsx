@@ -37,6 +37,10 @@ export default function GalleryPageSection() {
     {
       title: "প্লট রেজিস্ট্রেশন/হস্তান্তর উৎসব ২০২৬",
       data: [
+        { img: "/clients/2026/AHL_1246.jpg", date: "2026" },
+        { img: "/clients/2026/AHL_1178.jpg", date: "2026" },
+        { img: "/clients/2026/AHL_1212.jpg", date: "2026" },
+        { img: "/clients/2026/AHL_1230.jpg", date: "2026" },
         { img: "/clients/client-9.jpg", date: "25 June 2026" },
         { img: "/clients/client-10.jpg", date: "25 June 2026" },
         { img: "/clients/client-11.jpg", date: "25 June 2026" },
