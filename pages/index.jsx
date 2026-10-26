@@ -8,7 +8,6 @@ import LandingPage from "@/components/LandingPage";
 import PresidentSection from "@/components/PresidentSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import StatsSection from "@/components/StatsSection";
-import homepageData from "@/data/homepageData";
 import NoticeSection from "@/components/NoticeSection";
 import AGMGallery from "@/components/AGMGallery";
 import AGMDocumentary from "@/components/AGMDocumentary";
