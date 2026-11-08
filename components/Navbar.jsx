@@ -21,12 +21,12 @@ const menuItems = [
     name: "Corporate",
     path: "#",
     submenu: [
-      { name: "Career Opportunities", path: "/career-opportunities" },
       { name: "Payment Procedures", path: "/payment-procedures" },
       { name: "Terms And Condition", path: "/terms-and-conditions" },
       { name: "Project Lottery Policy", path: "/project-lottery-policy" },
     ],
   },
+  { name: "Career", path: "/career-opportunities" },
   { name: "Form", path: "/form" },
   { name: "Gallery", path: "/gallery" },
   { name: "Testimonials", path: "/testimonials" },
