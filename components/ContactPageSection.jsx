@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 
 export default function ContactPageSection() {
   const [result, setResult] = useState("");
@@ -24,12 +24,12 @@ export default function ContactPageSection() {
     if (res.success) {
       setSuccess(true);
       setResult(
-        "✅ আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে। আমরা খুব শিগগিরই যোগাযোগ করবো!",
+        "আপনার বার্তা সফলভাবে পাঠানো হয়েছে। আমাদের প্রতিনিধি শিগগিরই আপনার সঙ্গে যোগাযোগ করবেন।",
       );
       event.target.reset();
     } else {
       setSuccess(false);
-      setResult("❌ দুঃখিত! কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।");
+      setResult("আপনার বার্তা পাঠানো সম্ভব হয়নি। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।");
     }
 
     setTimeout(() => {
@@ -116,15 +116,24 @@ export default function ContactPageSection() {
               className="w-full bg-[#e9e9e9] p-4 outline-none"
               required
             />
+            <input
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              inputMode="tel"
+              aria-label="Phone number"
+              placeholder="Phone Number *"
+              className="w-full bg-[#e9e9e9] p-4 outline-none"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject *"
+              className="w-full bg-[#e9e9e9] p-4 outline-none"
+              required
+            />
           </div>
-
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject *"
-            className="w-full bg-[#e9e9e9] p-4 outline-none"
-            required
-          />
 
           <textarea
             name="message"
@@ -141,13 +150,22 @@ export default function ContactPageSection() {
           </button>
           {result && (
             <div
-              className={`mt-6 p-4 rounded text-center font-medium ${
+              role={success ? "status" : "alert"}
+              aria-live={success ? "polite" : "assertive"}
+              aria-atomic="true"
+              lang="bn"
+              className={`mt-6 flex items-start gap-3 rounded p-4 text-left text-sm font-medium leading-relaxed ${
                 success
                   ? "bg-green-100 text-green-700 border border-green-300"
                   : "bg-red-100 text-red-700 border border-red-300"
               }`}
             >
-              {result}
+              {success ? (
+                <FaCheckCircle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+              ) : (
+                <FaExclamationCircle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+              )}
+              <span className="min-w-0 flex-1">{result}</span>
             </div>
           )}
         </form>
